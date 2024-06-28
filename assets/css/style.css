@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+}
+
+#menu {
+  background-color: rgb(44, 62, 80);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+#menu a {
+  font-family: "Russo One, sans empatement";
+  text-decoration: none;
+  color: rgb(0, 255, 0);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+#menu a:hover {
+  background-color: rgb(34, 34, 34);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+.form-container h1 {
+  font-family: "Russo One, sans empatement";
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.form-container .vertical {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.form-container .vertical label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.form-container .vertical input[type=text] {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .vertical input[type=text]:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+.form-container .vertical button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .vertical button:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+.welcome-message {
+  font-size: 1.5rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logout-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logout-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.logout-form button:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+.form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+.form-login h1 {
+  font-family: "Russo One, sans empatement";
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.form-login .vertical {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.form-login .vertical label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.form-login .vertical input {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.form-login .vertical input:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+.form-login .vertical button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.form-login .vertical button:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+#logo {
+  font-family: "Russo One, sans empatement";
+  text-align: center;
+  font-size: 80px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  margin-top: 30px;
+}
+
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+.carousel .carousel-slides {
+  margin-top: 30px;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel .carousel-slides .slide {
+  position: relative;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.carousel .carousel-slides .slide img {
+  width: 100%;
+  display: block;
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carousel .carousel-slides .slide .carousel-title {
+  font-family: "Russo One, sans empatement";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  z-index: 50;
+  padding: 1rem 0;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  background: rgba(0, 0, 0, 0.7);
+}
+.carousel .carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  cursor: pointer;
+}
+.carousel .carousel-button-prev {
+  left: 10px;
+}
+.carousel .carousel-button-next {
+  right: 10px;
+}
+.carousel .carousel-button:focus {
+  outline: none;
+}
+
+h2 {
+  font-family: "Russo One, sans empatement";
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  margin-top: 40px;
+}
+
+.presentation-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.presentation-container .presentation {
+  width: 60%;
+  margin: 20px auto;
+}
+.presentation-container .presentation .section {
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(44, 62, 80);
+  margin-bottom: 20px;
+}
+.presentation-container .presentation .section h3 {
+  font-size: 1.8em;
+  font-family: "Russo One, sans empatement";
+  margin-bottom: 10px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.presentation-container .presentation .section p {
+  font-family: "Exo";
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.presentation-container .presentation .section a {
+  font-size: 1.2em;
+  font-family: "Russo One, sans empatement";
+  margin-bottom: 10px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  text-align: center;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  width: 100%;
+}
+.dropdown-container .dropdown {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+.dropdown-container .dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-container .dropdown .lien {
+  background-color: rgb(0, 255, 0);
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  font-family: "Russo One, sans empatement";
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-container .dropdown .dropdown-content {
+  margin-top: 3rem;
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.dropdown-container .dropdown .dropdown-content a {
+  color: rgb(0, 0, 0);
+  font-family: "Russo One, sans empatement";
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-container .dropdown .dropdown-content a:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+.form-container h1 {
+  font-family: "Russo One, sans empatement";
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.form-container .form label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.form-container .form input[type=text] {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .form input[type=text]:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+.form-container .form textarea {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .form textarea:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+.form-container .form input[type=file] {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .form input[type=file]:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+.form-container .form input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .form input[type=submit]:hover {
+  background-color: rgb(44, 62, 80);
+}/*# sourceMappingURL=style.css.map */
