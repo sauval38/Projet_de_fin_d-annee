@@ -8,12 +8,14 @@ class GamesModels {
     protected $db;
 
     public function __construct() {
-        $database = new Database();
-        $this->db = $database->getConnection();
+        $this->db = new Database();
     }
 
     public function gameList() {
-        $sqlArticle = "SELECT title_article, description_article, path FROM games;";
+        $sqlArticle = "SELECT title_article, description_article, image_article, path FROM games";
+        $query = $this->db->getConnection()->prepare($sqlArticle);
+        $query->execute();
+        return $query->fetchAll();
     }
 } 
    

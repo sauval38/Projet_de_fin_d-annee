@@ -48,8 +48,7 @@ switch($action) {
 
     case 'games';
         $gamesController = new GamesController();
-        $gamesController->gamesList();
-        $gamesController->gamlist();
+        $gamesController->gamList();
         break;  
 
     case 'inscription':

@@ -12,10 +12,8 @@ class GamesController {
         $this->gamesViews = new GamesViews();
         $this->gamesModels = new GamesModels();
     }
-    public function gamesList() {
-        $this->gamesViews->list();
-    }
     public function gamlist() {
-        $this->gamesModels->gameList();
+        $games = $this->gamesModels->gameList();
+        $this->gamesViews->list($games);
     }
 }
