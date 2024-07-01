@@ -394,4 +394,51 @@ h2 {
 }
 .form-container .form input[type=submit]:hover {
   background-color: rgb(44, 62, 80);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Russo One, sans empatement";
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+
+.games-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.games-container .game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(44, 62, 80);
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: calc(30% - 40px);
+}
+.games-container .game-card a {
+  font-family: "Russo One, sans empatement";
+  text-align: center;
+  font-size: 1.2em;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  margin-top: 40px;
+}
+.games-container .game-card p {
+  text-align: justify;
+  font-family: "Exo";
+  padding-top: 10px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+.games-container .game-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
 }/*# sourceMappingURL=style.css.map */

@@ -18,7 +18,7 @@ body {
         text-decoration: none;
         color: $color_2;
         padding: 5px 10px;
-        border-radius: $border_radius;
+        border-radius: $border_radius_1;
         transition: background-color 0.3s;
         &:hover{
             background-color: $background-color_1;
@@ -47,7 +47,7 @@ body {
         input[type="text"] {
             padding:10px;
             border: 2px solid $color_2;
-            border-radius: $border_radius;
+            border-radius: $border_radius_1;
             background-color: $background-color_1;
             color: $color_1;
             font-size: 1em;
@@ -61,7 +61,7 @@ body {
         button {
             padding: 10px 20px;
             border: none;
-            border-radius: $border_radius;
+            border-radius: $border_radius_1;
             background-color: $color_2;
             color: $color_4;
             font-size: 1.2rem;
@@ -85,7 +85,7 @@ body {
     button {
         padding: 10px 20px;
         border: none;
-        border-radius: $border_radius;
+        border-radius: $border_radius_1;
         color: $color_1;
         font-size: 1.2em;
         cursor: pointer;
@@ -117,7 +117,7 @@ body {
         input {
             padding: 10px;
             border: 2px solid $color_2;
-            border-radius: $border_radius;
+            border-radius: $border_radius_1;
             background-color: $background-color_1;
             color: $color_1;
             font-size: 1em;
@@ -131,7 +131,7 @@ body {
         button {
             padding: 10px 20px;
             border: none;
-            border-radius: $border_radius;
+            border-radius: $border_radius_1;
             background-color: $color_2;
             color: $color_4;
             font-size: 1.2em;
@@ -220,7 +220,7 @@ h2 {
         margin: 20px auto;
         .section {
             border: 2px solid $color_2;
-            border-radius: 10px;
+            border-radius: $border_radius_2;
             padding: 20px;
             background-color: $background-color_2;
             margin-bottom: 20px;
@@ -311,7 +311,7 @@ h2 {
 		input[type=text] {
 			padding: 10px;
 			border: 2px solid $color_2;
-			border-radius: $border_radius;
+			border-radius: $border_radius_1;
 			background-color: $background-color_1;
 			color: $color_1;
 			font-size: 1em;
@@ -325,7 +325,7 @@ h2 {
 		textarea {
 			padding: 10px;
 			border: 2px solid $border;
-			border-radius: $border_radius;
+			border-radius: $border_radius_1;
 			background-color: $background-color_1;
 			color: $color_1;
 			font-size: 1em;
@@ -339,7 +339,7 @@ h2 {
 		input[type=file] {
 			padding: 10px;
 			border: 2px solid $border;
-			border-radius: $border_radius;
+			border-radius: $border_radius_1;
 			background-color: $background-color_1;
 			color: $color_1;
 			font-size: 1em;
@@ -353,7 +353,7 @@ h2 {
 		input[type=submit] {
 			padding: 10px 20px;
 			border: none;
-			border-radius: $border_radius;
+			border-radius: $border_radius_1;
 			background-color: $background-color_4;
 			color: $color_4;
 			font-size: 1.2rem;
@@ -364,4 +364,47 @@ h2 {
 			}
 		}
 	}
+}
+h1{
+    text-align: center;
+    margin-top: 30px;
+    font-family: "Russo One, sans empatement";
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.games-container {
+    @include flexbox(space-around, false, false, wrap);
+    margin: 20px;
+    .game-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $background-color_2;
+        border: 2px solid $border;
+        border-radius: $border_radius_2;
+        padding: 20px;
+        margin: 10px;
+        width: calc(30% - 40px);
+        a {
+            font-family: $fonttitle;
+            text-align: center;
+            font-size: 1.2em;
+            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+            margin-top: 40px;
+        }
+        p {
+            text-align: justify;
+            font-family: $fontpara;
+            padding-top: 10px;
+            font-size: 1.2em;
+            color: $color_1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $border_radius_1;
+            margin-top: 10px;
+        }
+    }
 }
