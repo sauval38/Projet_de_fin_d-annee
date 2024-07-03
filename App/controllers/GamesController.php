@@ -1,8 +1,8 @@
 <?php
 namespace Controllers;
 
-use Models\GamesModels;
 use Views\GamesViews;
+use Models\GamesModels;
 
 class GamesController {
     protected $gamesViews;
@@ -12,8 +12,14 @@ class GamesController {
         $this->gamesViews = new GamesViews();
         $this->gamesModels = new GamesModels();
     }
-    public function gamlist() {
-        $games = $this->gamesModels->gameList();
-        $this->gamesViews->list($games);
+
+    public function game() {
+        $id = $_GET['id'] ?? null; 
+        if ($id) {
+            $game = $this->gamesModels->games($id);
+            $this->gamesViews->displayGame($game);
+        } else {
+            echo 'ID de jeu non fourni';
+        }
     }
-}
+}   

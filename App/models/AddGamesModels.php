@@ -12,34 +12,37 @@ class AddGamesModels {
         $this->db = $database->getConnection();
     }
 
-    public function addGameWithImage($title_article, $description_article, $contents_article, $platforms_article, $mode_article, $genres_article, $designers_article, $developers_article, $editors_article, $date_release, $image_article, $path) {
+    public function addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $graphics_article, $soundtrack_article, $dates_release, $images_article, $path) {
         try {
             $path = 'assets/images/';
             
             $this->db->beginTransaction();
-            $img = $image_article['name'];
+            $img = $images_article['name'];
             
-            $sqlArticle = "INSERT INTO games (title_article, description_article, contents_article, platforms_article, mode_article, genres_article, designers_article, developers_article, editors_article, date_release, image_article, path) VALUES (:title_article, :description_article, :contents_article, :platforms_article, :mode_article, :genres_article, :designers_article, :developers_article, :editors_article, :date_release, :image_article, :path)";
+            $sqlArticle = "INSERT INTO games (titles_article, descriptions_article, story_article, platforms_article, modes_article, genres_article, designers_article, developers_article, editors_article, gameplay_article, graphics_article, soundtrack_article, dates_release, images_article, path) VALUES (:titles_article, :descriptions_article, :story_article, :platforms_article, :modes_article, :genres_article, :designers_article, :developers_article, :editors_article, :gameplay_article, :graphics_article, :soundtrack_article, :dates_release, :images_article, :path)";
             
             $stmtArticle = $this->db->prepare($sqlArticle);
-            $stmtArticle->bindParam(':title_article', $title_article);
-            $stmtArticle->bindParam(':description_article', $description_article);
-            $stmtArticle->bindParam(':contents_article', $contents_article);
+            $stmtArticle->bindParam(':titles_article', $titles_article);
+            $stmtArticle->bindParam(':descriptions_article', $descriptions_article);
+            $stmtArticle->bindParam(':story_article', $story_article);
             $stmtArticle->bindParam(':platforms_article', $platforms_article);
-            $stmtArticle->bindParam(':mode_article', $mode_article);
+            $stmtArticle->bindParam(':modes_article', $modes_article);
             $stmtArticle->bindParam(':genres_article', $genres_article);
             $stmtArticle->bindParam(':designers_article', $designers_article);
             $stmtArticle->bindParam(':developers_article', $developers_article);
             $stmtArticle->bindParam(':editors_article', $editors_article);
-            $stmtArticle->bindParam(':date_release', $date_release);
-            $stmtArticle->bindParam(':image_article', $img);
+            $stmtArticle->bindParam(':gameplay_article', $gameplay_article);
+            $stmtArticle->bindParam(':graphics_article', $graphics_article);
+            $stmtArticle->bindParam(':soundtrack_article', $soundtrack_article);
+            $stmtArticle->bindParam(':dates_release', $dates_release);
+            $stmtArticle->bindParam(':images_article', $img);
             $stmtArticle->bindParam(':path', $path);
             $stmtArticle->execute();
 
             
-            if (isset($image_article) && $image_article['error'] === UPLOAD_ERR_OK) {
-                $imageTmpPath = $image_article['tmp_name'];
-                $imageName = basename($image_article['name']);
+            if (isset($images_article) && $images_article['error'] === UPLOAD_ERR_OK) {
+                $imageTmpPath = $images_article['tmp_name'];
+                $imageName = basename($images_article['name']);
                 $uploadDir = 'assets/images/';
                 $imagePath = $uploadDir . $imageName;
                 

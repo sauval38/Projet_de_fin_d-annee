@@ -11,10 +11,11 @@ use Controllers\HomeController;
 use Controllers\AddGamesController;
 use App\Database;
 use Controllers\ButtonAdminController;
+use Controllers\ListGamesController;
 use Controllers\GamesController;
 
 $pdo = new Database;
-
+$id = $_REQUEST['id'] ?? null;
 $action = $_REQUEST['action'] ?? null;
 $step = $_REQUEST['step'] ?? null;
 
@@ -46,10 +47,19 @@ switch($action) {
         }
         break;
 
+    case 'listgames';
+        $listGamesController = new ListGamesController();
+        $listGamesController->gamList();
+    break; 
+    
     case 'games';
         $gamesController = new GamesController();
-        $gamesController->gamList();
-        break;  
+        if ($id){
+            $gamesController->game();
+        }
+        
+    break; 
+            
 
     case 'inscription':
         $registerController = new RegisterController();

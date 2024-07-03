@@ -19,22 +19,25 @@ class AddGamesController {
 
     public function addGame() {
         
-        if (isset($_POST) && isset($_FILES["image_path"])) {
+        if (isset($_POST) && isset($_FILES["images_path"])) {
 
-            $title_article = $_POST["title"];
-            $description_article = $_POST["description"];
-            $contents_article = $_POST["contents"];
+            $titles_article = $_POST["titles"];
+            $descriptions_article = $_POST["descriptions"];
+            $story_article = $_POST["story"];
             $platforms_article = $_POST["platforms"];
-            $mode_article = $_POST["mode"];
+            $modes_article = $_POST["modes"];
             $genres_article = $_POST["genres"];
             $designers_article = $_POST["designers"];
             $developers_article = $_POST["developers"];
             $editors_article = $_POST["editors"];
-            $date_release = $_POST["date"];
-            $image_article = $_FILES["image_path"]; 
+            $gameplay_article = $_POST["gameplay"];
+            $graphics_article = $_POST["graphics"];
+            $soundtrack_article = $_POST["soundtrack"];
+            $dates_release = $_POST["dates"];
+            $images_article = $_FILES["images_path"]; 
             $path = 'assets/images/';
 
-          $this->addGamesModels->addGameWithImage($title_article, $description_article, $contents_article, $platforms_article, $mode_article, $genres_article, $designers_article, $developers_article, $editors_article, $date_release, $image_article, $path);
+          $this->addGamesModels->addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $graphics_article, $soundtrack_article, $dates_release, $images_article, $path);
         } 
         else {
             echo "Veuillez fournir tous les champs nécessaires.";

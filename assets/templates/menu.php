@@ -3,7 +3,7 @@ echo'
 <nav id="menu">
    
         <a href="">Accueil</a></li>
-        <a href="games">Jeux</a></li>
+        <a href="listgames">Jeux</a></li>
         <a href="personnage">Personnage</a></li>';
         if(isset($_SESSION['id'])){
                 echo '<a href="admin">Admin</a></li>

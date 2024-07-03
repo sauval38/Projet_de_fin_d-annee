@@ -3,17 +3,18 @@ namespace Models;
 
 use App\Database;
 
-class GamesModels {
+class ListGamesModels {
     protected $db;
 
     public function __construct() {
         $this->db = new Database();
     }
-    
-    public function games($id) {
-        $sqlArticle = "SELECT * FROM games WHERE id = ?";
+
+    public function gameList() {
+        $sqlArticle = "SELECT * FROM games";
         $query = $this->db->getConnection()->prepare($sqlArticle);
-        $query->execute([$id]);
-        return $query->fetch();  
+        $query->execute();
+        return $query->fetchAll();
     }
-}
+} 
+   

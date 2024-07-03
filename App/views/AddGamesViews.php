@@ -1,49 +1,62 @@
 <?php
-namespace Views;
+namespace Views; // Définit un espace de noms pour cette classe
 
-class AddGamesViews {
-    public function add() {
-        echo '
-        <div class="form-container">
-            <h1 id="ajouter">Ajouter un jeux</h1>
-            <form class="form" action="admin/ajouterunjeux" method="post" enctype="multipart/form-data">
+class AddGamesViews { // Début de la déclaration de la classe AddGamesViews
+  
+  public function add() { // Début de la méthode publique add qui génère le formulaire d'ajout de jeu
+    
+    echo '
+        <div class="form-container"> <!-- Début du conteneur de formulaire -->
+            <h1 id="ajouter">Ajouter un jeu</h1> <!-- Titre du formulaire -->
+            <form class="form" action="admin/ajouterunjeux" method="post" enctype="multipart/form-data"> <!-- Début du formulaire avec enctype pour gérer les fichiers -->
 
-                <label for="title">Titre :</label>
-                <input type="text" id="title" name="title" required>
+                <label for="titles">Titres :</label> <!-- Champ pour le titre -->
+                <input type="text" id="titles" name="titles" required> <!-- Champ de saisie pour le titre -->
                 
-                <label for="description">Description :</label>
-                <textarea id="description" name="description" required></textarea>
+                <label for="descriptions">Descriptions :</label> <!-- Champ pour la description -->
+                <textarea id="descriptions" name="descriptions" required></textarea> <!-- Champ de saisie pour la description -->
 
-                <label for="contents">Contenu :</label>
-                <textarea id="contents" name="contents" required></textarea>
+                <label for="story">Histoires :</label> <!-- Champ pour le contenu -->
+                <textarea id="story" name="story" required></textarea> <!-- Champ de saisie pour le contenu -->
 
-                <label for="platforms">Plates-formes :</label>
-                <input type="text" id="platforms" name="platforms" required>
+                <label for="platforms">Plates-formes :</label> <!-- Champ pour les plates-formes -->
+                <input type="text" id="platforms" name="platforms" required> <!-- Champ de saisie pour les plates-formes -->
 
-                <label for="mode">Mode de jeux :</label>
-                <input type="text" id="mode" name="mode" required>
+                <label for="modes">Modes de jeux :</label> <!-- Champ pour le mode de jeu -->
+                <input type="text" id="modes" name="modes" required> <!-- Champ de saisie pour le mode de jeu -->
 
-                <label for="genres">Genres :</label>
-                <input type="text" id="genres" name="genres" required>
+                <label for="genres">Genres :</label> <!-- Champ pour les genres -->
+                <input type="text" id="genres" name="genres" required> <!-- Champ de saisie pour les genres -->
 
-                <label for="designers">Concepteurs :</label>
-                <input type="text" id="designers" name="designers" required>
+                <label for="designers">Concepteurs :</label> <!-- Champ pour les concepteurs -->
+                <input type="text" id="designers" name="designers" required> <!-- Champ de saisie pour les concepteurs -->
 
-                <label for="developers">Développeurs :</label>
-                <input type="text" id="developers" name="developers" required>
+                <label for="developers">Développeurs :</label> <!-- Champ pour les développeurs -->
+                <input type="text" id="developers" name="developers" required> <!-- Champ de saisie pour les développeurs -->
 
-                <label for="editors">Éditeurs :</label>
-                <input type="text" id="editors" name="editors" required>
+                <label for="editors">Éditeurs :</label> <!-- Champ pour les éditeurs -->
+                <input type="text" id="editors" name="editors" required> <!-- Champ de saisie pour les éditeurs -->
 
-                <label for="date">Date de sortie</label>
-                <input type="datetime-local" id="date" name="date" required>
+                <label for="soundtrack">Bande-son :</label>
+                <input type="text" id="soundtrack" name="soundtrack" required>
+
+                <label for="gameplay">Gameplay :</label>
+                <input type="text" id="gameplay" name="gameplay" required>
+
+                <label for="graphics">Graphismes :</label>
+                <input type="text" id="graphics" name="graphics" required>
+
+                <label for="dates">Dates de sortie :</label> <!-- Champ pour la date de sortie -->
+                <input type="datetime-local" id="dates" name="dates" required> <!-- Champ de saisie pour la date de sortie -->
                 
-                <label for="image_path">Chemin de l\'image :</label>
-                <input type="file" id="image_path" name="image_path" accept="image/*" required>
+                <label for="images_path">Chemin de l\'image :</label> <!-- Champ pour le chemin de l\'image -->
+                <input type="file" id="images_path" name="images_path" accept="image/*" required> <!-- Champ de téléchargement de fichier pour l\'image -->
                 
-                <input type="submit" value="Ajouter">
+                <input type="submit" value="Ajouter"> <!-- Bouton de soumission du formulaire -->
             </form>
         </div>
-        ';
-    }
+    ';
+  }
+  
 }
+?>
