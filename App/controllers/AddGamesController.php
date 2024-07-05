@@ -31,13 +31,12 @@ class AddGamesController {
             $developers_article = $_POST["developers"];
             $editors_article = $_POST["editors"];
             $gameplay_article = $_POST["gameplay"];
-            $graphics_article = $_POST["graphics"];
-            $soundtrack_article = $_POST["soundtrack"];
+            $informations_article = $_POST["informations"];
             $dates_release = $_POST["dates"];
             $images_article = $_FILES["images_path"]; 
             $path = 'assets/images/';
 
-          $this->addGamesModels->addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $graphics_article, $soundtrack_article, $dates_release, $images_article, $path);
+          $this->addGamesModels->addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $informations_article, $dates_release, $images_article, $path);
         } 
         else {
             echo "Veuillez fournir tous les champs nécessaires.";

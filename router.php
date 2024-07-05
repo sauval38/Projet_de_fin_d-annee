@@ -5,14 +5,16 @@ error_reporting(E_ALL);
 
 require_once('vendor/autoload.php');
 
+use App\Database;
 use Controllers\RegisterController;
 use Controllers\LoginController;
 use Controllers\HomeController;
 use Controllers\AddGamesController;
-use App\Database;
 use Controllers\ButtonAdminController;
 use Controllers\ListGamesController;
 use Controllers\GamesController;
+use Controllers\ListModifyGamesController;
+use Controllers\ModifyGamesController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
@@ -38,8 +40,14 @@ switch($action) {
                     $addGamesController->addGames();
                 }
                 break;
-            case 'modifier':
-                
+            case 'modifierunjeux':
+                if ($id){
+                    $modifyGamesController = new ModifyGamesController;
+                    $modifyGamesController->modifyGames();
+                } else {
+                    $modifylistGamesController = new ListModifyGamesController;
+                    $modifylistGamesController->listModifyGames();
+                }
                 break;
             case 'supprimer':
                 
@@ -57,9 +65,7 @@ switch($action) {
         if ($id){
             $gamesController->game();
         }
-        
     break; 
-            
 
     case 'inscription':
         $registerController = new RegisterController();

@@ -368,30 +368,44 @@ h2 {
 h1{
     text-align: center;
     margin-top: 30px;
-    font-family: "Russo One, sans empatement";
+    font-family: $fonttitle;
     font-size: 3em;
     margin-bottom: 20px;
-    text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
 }
 .games-container {
-    @include flexbox(space-around, false, false, wrap);
+    @include flexbox(space-around, flex-start, false, wrap);
     margin: 20px;
     .game-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flexbox(space-between, false, column);
         background-color: $background-color_2;
         border: 2px solid $border;
         border-radius: $border_radius_2;
         padding: 20px;
         margin: 10px;
         width: calc(30% - 40px);
+        .additional-links {
+            margin-top: 10px;
+        }
+        h2 {
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
         a {
             font-family: $fonttitle;
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
             text-align: center;
             font-size: 1.2em;
-            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-            margin-top: 40px;
+            border: 2px solid $border;
+            border-radius: $border_radius_2;
+            color: $color_1;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            &:hover{
+                background-color: $background-color_1;
+                }
         }
         p {
             text-align: justify;
@@ -408,3 +422,48 @@ h1{
         }
     }
 }
+.game-details {
+    background-color: $background-color_2;
+    border: 2px solid $border;
+    border-radius: $border_radius_2;
+    padding: 20px;
+    margin: 20px auto; 
+    width: 80%; 
+    max-width: 600px; 
+    font-family: $fontpara;
+    h1 {
+        font-family: $fonttitle;
+        font-size: 3em;
+        text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .game-image {
+        @include flexbox(center);
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+            border-radius: $border_radius_1;
+          }
+      }
+      .game-info {
+        @include flexbox(false, false, column);
+        gap: 15px;
+      }
+      .info-item {
+        background-color: $background-color_1;
+        padding: 15px;
+        border-radius: $border_radius_1;
+        border: 1px solid $border;
+        width: 100%; 
+        .description-title {
+            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; 
+        }
+        p {
+            font-size: 1.2em;
+            color: $color_1;
+            margin-bottom: 10px;
+            text-align: justify;
+          }
+      }
+  }

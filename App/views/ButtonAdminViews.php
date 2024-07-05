@@ -13,7 +13,7 @@ class ButtonAdminViews { // Début de la déclaration de la classe ButtonAdminVi
         <button class="lien">Jeux</button> <!-- Bouton "Jeux" -->
         <div class="dropdown-content"> <!-- Contenu du dropdown -->
           <a href="admin/ajouterunjeux">Ajouter un jeux</a> <!-- Option pour ajouter un jeu -->
-          <a href="">Modifier un jeux</a> <!-- Option pour modifier un jeu -->
+          <a href="admin/modifierunjeux">Modifier un jeux</a> <!-- Option pour modifier un jeu -->
           <a href="">Supprimer un jeux</a> <!-- Option pour supprimer un jeu -->
         </div>
       </div>

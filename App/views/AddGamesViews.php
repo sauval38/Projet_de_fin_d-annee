@@ -16,9 +16,6 @@ class AddGamesViews { // Début de la déclaration de la classe AddGamesViews
                 <label for="descriptions">Descriptions :</label> <!-- Champ pour la description -->
                 <textarea id="descriptions" name="descriptions" required></textarea> <!-- Champ de saisie pour la description -->
 
-                <label for="story">Histoires :</label> <!-- Champ pour le contenu -->
-                <textarea id="story" name="story" required></textarea> <!-- Champ de saisie pour le contenu -->
-
                 <label for="platforms">Plates-formes :</label> <!-- Champ pour les plates-formes -->
                 <input type="text" id="platforms" name="platforms" required> <!-- Champ de saisie pour les plates-formes -->
 
@@ -37,14 +34,11 @@ class AddGamesViews { // Début de la déclaration de la classe AddGamesViews
                 <label for="editors">Éditeurs :</label> <!-- Champ pour les éditeurs -->
                 <input type="text" id="editors" name="editors" required> <!-- Champ de saisie pour les éditeurs -->
 
-                <label for="soundtrack">Bande-son :</label>
-                <input type="text" id="soundtrack" name="soundtrack" required>
+                <label for="informations">Informations supplémentaires :</label>
+                <input type="text" id="informations" name="informations" required>
 
                 <label for="gameplay">Gameplay :</label>
                 <input type="text" id="gameplay" name="gameplay" required>
-
-                <label for="graphics">Graphismes :</label>
-                <input type="text" id="graphics" name="graphics" required>
 
                 <label for="dates">Dates de sortie :</label> <!-- Champ pour la date de sortie -->
                 <input type="datetime-local" id="dates" name="dates" required> <!-- Champ de saisie pour la date de sortie -->

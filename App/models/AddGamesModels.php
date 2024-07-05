@@ -12,14 +12,14 @@ class AddGamesModels {
         $this->db = $database->getConnection();
     }
 
-    public function addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $graphics_article, $soundtrack_article, $dates_release, $images_article, $path) {
+    public function addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $informations_article, $dates_release, $images_article, $path) {
         try {
             $path = 'assets/images/';
             
             $this->db->beginTransaction();
             $img = $images_article['name'];
             
-            $sqlArticle = "INSERT INTO games (titles_article, descriptions_article, story_article, platforms_article, modes_article, genres_article, designers_article, developers_article, editors_article, gameplay_article, graphics_article, soundtrack_article, dates_release, images_article, path) VALUES (:titles_article, :descriptions_article, :story_article, :platforms_article, :modes_article, :genres_article, :designers_article, :developers_article, :editors_article, :gameplay_article, :graphics_article, :soundtrack_article, :dates_release, :images_article, :path)";
+            $sqlArticle = "INSERT INTO games (titles_article, descriptions_article, story_article, platforms_article, modes_article, genres_article, designers_article, developers_article, editors_article, gameplay_article, informations_article, dates_release, images_article, path) VALUES (:titles_article, :descriptions_article, :story_article, :platforms_article, :modes_article, :genres_article, :designers_article, :developers_article, :editors_article, :gameplay_article, :informations_article, :dates_release, :images_article, :path)";
             
             $stmtArticle = $this->db->prepare($sqlArticle);
             $stmtArticle->bindParam(':titles_article', $titles_article);
@@ -32,8 +32,7 @@ class AddGamesModels {
             $stmtArticle->bindParam(':developers_article', $developers_article);
             $stmtArticle->bindParam(':editors_article', $editors_article);
             $stmtArticle->bindParam(':gameplay_article', $gameplay_article);
-            $stmtArticle->bindParam(':graphics_article', $graphics_article);
-            $stmtArticle->bindParam(':soundtrack_article', $soundtrack_article);
+            $stmtArticle->bindParam(':informations_article', $informations_article);
             $stmtArticle->bindParam(':dates_release', $dates_release);
             $stmtArticle->bindParam(':images_article', $img);
             $stmtArticle->bindParam(':path', $path);
