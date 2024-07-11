@@ -1,13 +1,11 @@
 <?php
-namespace Views; // Définit un espace de noms pour cette classe
+namespace Views; 
 
-class ButtonAdminViews { // Début de la déclaration de la classe ButtonAdminViews
+class ButtonAdminViews { 
   
-  public function button() { // Début de la méthode publique button qui génère le code HTML des boutons d'administration
+  public function button() { 
+    echo'<div class="dropdown-container">'; 
     
-    echo'<div class="dropdown-container">'; // Début du conteneur de dropdown
-    
-    // Premier dropdown pour les jeux
     echo '
       <div class="dropdown"> <!-- Début du dropdown -->
         <button class="lien">Jeux</button> <!-- Bouton "Jeux" -->
@@ -19,7 +17,6 @@ class ButtonAdminViews { // Début de la déclaration de la classe ButtonAdminVi
       </div>
     ';
 
-    // Deuxième dropdown pour les personnages
     echo '
       <div class="dropdown"> <!-- Début du dropdown -->
         <button class="lien">Personnage</button> <!-- Bouton "Personnage" -->
@@ -31,7 +28,7 @@ class ButtonAdminViews { // Début de la déclaration de la classe ButtonAdminVi
       </div>
     ';
 
-    echo '</div>'; // Fin du conteneur de dropdown
+    echo '</div>'; 
   }
 
 }

@@ -27,3 +27,6 @@ RewriteRule ^listgames$ index.php?action=listgames [L,QSA]
 # Redirection pour l'accès à 'jeux'
 RewriteRule ^games/(\d+)$ index.php?action=games&id=$1 [L,QSA]
 
+# Redirection pour l'accès à 'histoire'
+RewriteRule ^story/(\d+)$ index.php?action=story&id=$1 [L,QSA]
+

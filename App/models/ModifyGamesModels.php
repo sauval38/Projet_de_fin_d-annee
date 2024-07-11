@@ -2,57 +2,87 @@
 namespace Models;
 
 use App\Database;
+use Exception;
 
 class ModifyGamesModels {
     protected $db;
 
     public function __construct() {
-        $this->db = new Database();
+        $database = new Database();
+        $this->db = $database->getConnection();
         }
         
         public function modify($id) {
             $sqlArticle = "SELECT * FROM games WHERE id = ?";
-            $query = $this->db->getConnection()->prepare($sqlArticle);
+            $query = $this->db->prepare($sqlArticle);
             $query->execute([$id]);
-            return $query->fetch();  
+            return $query->fetch();
         }
 
-        public function update($id, $data) {
-            $sqlUpdate = "UPDATE games SET 
-                            title_article = ?, 
-                            descriptions_article = ?, 
-                            story_article = ?, 
-                            platforms_article = ?, 
-                            modes_article = ?, 
-                            genres_article = ?, 
-                            designers_article = ?, 
-                            developers_article = ?, 
-                            editors_article = ?, 
-                            informations_article = ?, 
-                            gameplay_article = ?,  
-                            dates_article = ?, 
-                            images_path = ?
-                        WHERE id = ?";
+        public function update() {
+    try {
+        $this->db->beginTransaction();
+        
+        $sqlUpdate = "UPDATE games SET 
+            titles_article = ?, 
+            descriptions_article = ?, 
+            story_article = ?, 
+            platforms_article = ?, 
+            modes_article = ?, 
+            genres_article = ?, 
+            designers_article = ?, 
+            developers_article = ?, 
+            editors_article = ?, 
+            informations_article = ?, 
+            gameplay_article = ?,  
+            dates_release = ?, 
+            images_article = ?,
+            path = ?
+        WHERE id = ?";
 
-            $query = $this->db->getConnection()->prepare($sqlUpdate);
+        $query = $this->db->prepare($sqlUpdate);
 
-            $query->execute([
-                $data['title_article'],
-                $data['descriptions_article'],
-                $data['story_article'],
-                $data['platforms_article'],
-                $data['modes_article'],
-                $data['genres_article'],
-                $data['designers_article'],
-                $data['developers_article'],
-                $data['editors_article'],
-                $data['informations_article'],
-                $data['gameplay_article'],
-                $data['dates_article'],
-                $data['images_path'],
-                $id
-            ]);
-            return $query->rowCount(); 
+        // Gestion des fichiers uploadés
+        $images_article = $_FILES["images_path"]; 
+        $path = "assets/images/";
+        $imageName = null;
+
+        if (isset($images_article) && $images_article['error'] === UPLOAD_ERR_OK) {
+            $imageTmpPath = $images_article['tmp_name'];
+            $imageName = basename($images_article['name']);
+            $imagePath = $path . $imageName;
+            
+            if (!move_uploaded_file($imageTmpPath, $imagePath)) {
+                throw new Exception("Échec du téléchargement de l'image.");
+            }
         }
+
+        // Exécutez la requête avec les valeurs des paramètres
+        $query->execute([
+            $_POST['titles'],
+            $_POST['descriptions'],
+            $_POST['story'],
+            $_POST['platforms'],
+            $_POST['modes'],
+            $_POST['genres'],
+            $_POST['designers'],
+            $_POST['developers'],
+            $_POST['editors'],
+            $_POST['informations'],
+            $_POST['gameplay'],
+            $_POST['dates'],
+            $imageName, // Nom du fichier image
+            $path,
+            $_POST['id_game'] // ID du jeu
+        ]);
+
+        echo "Le jeu a été mis à jour avec succès.";
+        $this->db->commit();
+    } catch (Exception $e) {
+        $this->db->rollBack();
+        throw $e;
+    }
+}
+
 }
     

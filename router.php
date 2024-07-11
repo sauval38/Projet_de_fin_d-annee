@@ -15,6 +15,7 @@ use Controllers\ListGamesController;
 use Controllers\GamesController;
 use Controllers\ListModifyGamesController;
 use Controllers\ModifyGamesController;
+use Controllers\StoryController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
@@ -43,7 +44,11 @@ switch($action) {
             case 'modifierunjeux':
                 if ($id){
                     $modifyGamesController = new ModifyGamesController;
-                    $modifyGamesController->modifyGames();
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        $modifyGamesController->updateGames();
+                    } else {
+                        $modifyGamesController->modifyGames();
+                    } 
                 } else {
                     $modifylistGamesController = new ListModifyGamesController;
                     $modifylistGamesController->listModifyGames();
@@ -66,6 +71,13 @@ switch($action) {
             $gamesController->game();
         }
     break; 
+
+    case 'story';
+        $storyController = new StoryController();
+        if ($id){
+            $storyController->story();
+        }
+    break;
 
     case 'inscription':
         $registerController = new RegisterController();

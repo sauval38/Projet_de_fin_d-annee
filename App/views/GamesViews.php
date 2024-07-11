@@ -51,7 +51,7 @@ class GamesViews {
             echo '</div>'; 
             echo '</div>'; 
         } else {
-            echo '<h1>Information non trouvée</h1>';
+            echo '<h1>Informations non trouvée</h1>';
         }
     }
 }

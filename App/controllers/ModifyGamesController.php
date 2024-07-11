@@ -13,13 +13,16 @@ class ModifyGamesController {
         $this->modifyGamesModels = new ModifyGamesModels();
     }
 
-    public function ModifyGames() {
+    public function modifyGames() {
         $id = $_GET['id'] ?? null; 
         if ($id) {
         $games = $this->modifyGamesModels->modify($id);
-        $this->modifyGamesViews->update($games);
+        $this->modifyGamesViews->updateForm($games);
         } else {
             echo 'Modification non enregistrée';
         }
+    }
+    public function updateGames() {
+        $this->modifyGamesModels->update();
     }
 }

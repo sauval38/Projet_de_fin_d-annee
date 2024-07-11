@@ -16,6 +16,9 @@ class AddGamesViews { // Début de la déclaration de la classe AddGamesViews
                 <label for="descriptions">Descriptions :</label> <!-- Champ pour la description -->
                 <textarea id="descriptions" name="descriptions" required></textarea> <!-- Champ de saisie pour la description -->
 
+                <label for="story">Histoire :</label>
+                <textarea id="story" name="story" required></textarea>
+
                 <label for="platforms">Plates-formes :</label> <!-- Champ pour les plates-formes -->
                 <input type="text" id="platforms" name="platforms" required> <!-- Champ de saisie pour les plates-formes -->
 

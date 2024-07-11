@@ -419,6 +419,7 @@ h1{
             height: auto;
             border-radius: $border_radius_1;
             margin-top: 10px;
+            box-shadow: 0 0 10px $color_2;
         }
     }
 }
@@ -444,6 +445,7 @@ h1{
         img {
             max-width: 100%;
             border-radius: $border_radius_1;
+            box-shadow: 0 0 10px $color_2;
           }
       }
       .game-info {
@@ -467,3 +469,45 @@ h1{
           }
       }
   }
+  .story-game {
+    background-color: $background-color_2;
+    border: 2px solid $border;
+    border-radius: $border_radius_2;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    font-family: $fontpara;
+
+    h1 {
+        font-family: $fonttitle;
+        font-size: 3em;
+        text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .story {
+        @include flexbox(false, false, column);
+        gap: 20px;
+        
+        img {
+            max-width: 100%;
+            border-radius: $border_radius_1;
+            box-shadow: 0 0 10px $color_2;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: $color_1;
+            background-color: $background-color_1;
+            padding: 15px;
+            border-radius: $border_radius_1;
+            border: 1px solid $border;
+            text-align: justify;
+            box-shadow: 0 0 5px $color_2;
+        }
+    }
+}
+

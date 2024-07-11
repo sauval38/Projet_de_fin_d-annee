@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +17,7 @@ body {
   justify-content: space-around;
 }
 #menu a {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   text-decoration: none;
   color: rgb(0, 255, 0);
   padding: 5px 10px;
@@ -38,7 +37,7 @@ body {
   padding: 20px;
 }
 .form-container h1 {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
@@ -116,7 +115,7 @@ body {
   padding: 20px;
 }
 .form-login h1 {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
@@ -161,7 +160,7 @@ body {
 }
 
 #logo {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   text-align: center;
   font-size: 80px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
@@ -192,7 +191,7 @@ body {
      object-fit: cover;
 }
 .carousel .carousel-slides .slide .carousel-title {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -225,7 +224,7 @@ body {
 }
 
 h2 {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   text-align: center;
   font-size: 40px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
@@ -251,7 +250,7 @@ h2 {
 }
 .presentation-container .presentation .section h3 {
   font-size: 1.8em;
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   margin-bottom: 10px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
@@ -263,7 +262,7 @@ h2 {
 }
 .presentation-container .presentation .section a {
   font-size: 1.2em;
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   margin-bottom: 10px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
@@ -290,7 +289,7 @@ h2 {
   background-color: rgb(0, 255, 0);
   color: rgb(255, 255, 255);
   padding: 1rem;
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   font-size: 24px;
   border: none;
   cursor: pointer;
@@ -306,7 +305,7 @@ h2 {
 }
 .dropdown-container .dropdown .dropdown-content a {
   color: rgb(0, 0, 0);
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -324,7 +323,7 @@ h2 {
   padding: 20px;
 }
 .form-container h1 {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
@@ -399,7 +398,7 @@ h2 {
 h1 {
   text-align: center;
   margin-top: 30px;
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
@@ -431,7 +430,7 @@ h1 {
   font-size: 1.5rem;
 }
 .games-container .game-card a {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   display: block;
   margin: 5px 0;
   padding: 10px;
@@ -458,6 +457,7 @@ h1 {
   height: auto;
   border-radius: 5px;
   margin-top: 10px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
 .game-details {
@@ -471,7 +471,7 @@ h1 {
   font-family: "Exo";
 }
 .game-details h1 {
-  font-family: "Russo One, sans empatement";
+  font-family: "Raleway", sans-serif;
   font-size: 3em;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
@@ -485,6 +485,7 @@ h1 {
 .game-details .game-image img {
   max-width: 100%;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 .game-details .game-info {
   display: flex;
@@ -506,4 +507,43 @@ h1 {
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
   text-align: justify;
+}
+
+.story-game {
+  background-color: rgb(44, 62, 80);
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  font-family: "Exo";
+}
+.story-game h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.story-game .story {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.story-game .story img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
+}
+.story-game .story p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: rgb(255, 255, 255);
+  background-color: rgb(34, 34, 34);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 255, 0);
+  text-align: justify;
+  box-shadow: 0 0 5px rgb(0, 255, 0);
 }/*# sourceMappingURL=style.css.map */
