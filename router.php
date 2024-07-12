@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 
 use App\Database;
+use Controllers\AddCharacterController;
 use Controllers\RegisterController;
 use Controllers\LoginController;
 use Controllers\HomeController;
@@ -16,6 +17,7 @@ use Controllers\GamesController;
 use Controllers\ListModifyGamesController;
 use Controllers\ModifyGamesController;
 use Controllers\StoryController;
+use Controllers\CharacterController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
@@ -57,6 +59,15 @@ switch($action) {
             case 'supprimer':
                 
                 break;
+            case'ajouterunpersonnage': 
+                    $addCharacterController = new AddCharacterController;
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+                    {
+                        $addCharacterController->addCharacterImage();
+                    } else {
+                        $addCharacterController->addCharacter();
+                    }
+                break;
         }
         break;
 
@@ -78,6 +89,11 @@ switch($action) {
             $storyController->story();
         }
     break;
+    
+    case 'character';
+        $characterController = new CharacterController();
+        $characterController->character();
+    break;    
 
     case 'inscription':
         $registerController = new RegisterController();

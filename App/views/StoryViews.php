@@ -3,14 +3,25 @@
 namespace Views;
 
 class StoryViews {
+    
     public function storyForm($game) {
-        if (isset($game)) {
-        echo '<div class="story-game">';
-            echo '<h1>' . htmlspecialchars($game['titles_article']) . '</h1>';
-            echo '<div class="story">';
-            echo '<img src="' . htmlspecialchars($game['path'] . '/' . $game['images_article']) . '" alt="' . htmlspecialchars($game['titles_article']) . '">';
-            echo '<p>' . htmlspecialchars($game['story_article']) . '</p>';
-            echo '</div>';
-        }    
+        if (!isset($game)) {
+            return; 
+        }
+        
+        $title = htmlspecialchars($game['titles_article']);
+        $image = htmlspecialchars($game['path'] . '/' . $game['images_article']);
+        $story = htmlspecialchars($game['story_article']);
+        
+        ?>
+        <div class="story-game">
+            <h1><?= $title ?></h1>
+            <div class="story">
+                <img src="<?= $image ?>" alt="carousel <?= $title ?>">
+                <p><?= $story ?></p>
+            </div>
+        </div>
+        <?php
     }
 }
+?>

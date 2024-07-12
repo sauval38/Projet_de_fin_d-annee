@@ -1,8 +1,8 @@
 <?php
 namespace Models;
 
-use App\Database;
 use Exception;
+use App\Database;
 
 class AddGamesModels {
     protected $db;
@@ -11,7 +11,6 @@ class AddGamesModels {
         $database = new Database();
         $this->db = $database->getConnection();
     }
-
     public function addGameWithImage($titles_article, $descriptions_article, $story_article, $platforms_article, $modes_article, $genres_article, $designers_article, $developers_article, $editors_article, $gameplay_article, $informations_article, $dates_release, $images_article, $path) {
         try {
             $path = 'assets/images/';

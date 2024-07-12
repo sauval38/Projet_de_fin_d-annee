@@ -1,35 +1,42 @@
 <?php
-namespace Views; 
 
-class ButtonAdminViews { 
-  
-  public function button() { 
-    echo'<div class="dropdown-container">'; 
+namespace Views;
+
+class ButtonAdminViews {
+
     
-    echo '
-      <div class="dropdown"> <!-- Début du dropdown -->
-        <button class="lien">Jeux</button> <!-- Bouton "Jeux" -->
-        <div class="dropdown-content"> <!-- Contenu du dropdown -->
-          <a href="admin/ajouterunjeux">Ajouter un jeux</a> <!-- Option pour ajouter un jeu -->
-          <a href="admin/modifierunjeux">Modifier un jeux</a> <!-- Option pour modifier un jeu -->
-          <a href="">Supprimer un jeux</a> <!-- Option pour supprimer un jeu -->
+    const ADD_GAME_URL = "admin/ajouterunjeux";
+    const MODIFY_GAME_URL = "admin/modifierunjeux";
+    const DELETE_GAME_URL = "#"; 
+    const ADD_CHARACTER_URL = "admin/ajouterunpersonnage";
+    const MODIFY_CHARACTER_URL = "#"; 
+    const DELETE_CHARACTER_URL = "#"; 
+
+    public function button() {
+        ?>
+        <div class="dropdown-container">
+        
+            <div class="dropdown">
+                <button class="lien">Jeux</button>
+                <div class="dropdown-content">
+                    <a href="<?= self::ADD_GAME_URL ?>">Ajouter un jeu</a>
+                    <a href="<?= self::MODIFY_GAME_URL ?>">Modifier un jeu</a>
+                    <a href="<?= self::DELETE_GAME_URL ?>">Supprimer un jeu</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="lien">Personnage</button>
+                <div class="dropdown-content">
+                    <a href="<?= self::ADD_CHARACTER_URL ?>">Ajouter un personnage</a>
+                    <a href="<?= self::MODIFY_CHARACTER_URL ?>">Modifier un personnage</a>
+                    <a href="<?= self::DELETE_CHARACTER_URL ?>">Supprimer un personnage</a>
+                </div>
+            </div>
+
         </div>
-      </div>
-    ';
-
-    echo '
-      <div class="dropdown"> <!-- Début du dropdown -->
-        <button class="lien">Personnage</button> <!-- Bouton "Personnage" -->
-        <div class="dropdown-content"> <!-- Contenu du dropdown -->
-          <a href="">Ajouter un personnage</a> <!-- Option pour ajouter un personnage -->
-          <a href="">Modifier un personnage</a> <!-- Option pour modifier un personnage -->
-          <a href="">Supprimer un personnage</a> <!-- Option pour supprimer un personnage -->
-        </div>
-      </div>
-    ';
-
-    echo '</div>'; 
-  }
-
+        <?php
+    }
 }
+
 ?>

@@ -20,6 +20,9 @@ RewriteRule ^admin/ajouterunjeux$ index.php?action=admin&step=ajouterunjeux [L,Q
 RewriteRule ^admin/modifierunjeux$ index.php?action=admin&step=modifierunjeux [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunjeux'
 RewriteRule ^admin/modifierunjeux/(\d+)$ index.php?action=admin&step=modifierunjeux&id=$1 [L,QSA]
+# Redirection pour l'accès à 'Admin/ajouterunpersonnage'
+RewriteRule ^admin/ajouterunpersonnage$ index.php?action=admin&step=ajouterunpersonnage [L,QSA]
+
 
 # Redirection pour l'accès à 'liste jeux'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]
@@ -29,4 +32,7 @@ RewriteRule ^games/(\d+)$ index.php?action=games&id=$1 [L,QSA]
 
 # Redirection pour l'accès à 'histoire'
 RewriteRule ^story/(\d+)$ index.php?action=story&id=$1 [L,QSA]
+
+# Redirection pour l'accès à 'personnage'
+RewriteRule ^character/(\d+)$ index.php?action=character&id=$1 [L,QSA]
 

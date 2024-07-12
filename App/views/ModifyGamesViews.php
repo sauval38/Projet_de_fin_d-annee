@@ -1,60 +1,60 @@
 <?php
-namespace Views; // Définit un espace de noms pour cette classe
 
-class ModifyGamesViews { // Début de la déclaration de la classe AddGamesViews
-  
-  public function updateForm($games) { // Début de la méthode publique add qui génère le formulaire d'ajout de jeu
-    echo '
-        <div class="form-container"> <!-- Début du conteneur de formulaire -->
-            <h1 id="ajouter">Modifier un jeu</h1> <!-- Titre du formulaire -->
-            <form class="form" method="post" enctype="multipart/form-data"> <!-- Début du formulaire avec enctype pour gérer les fichiers -->
+namespace Views;
 
-                <input type="hidden" id="id_game" name="id_game" required value="' . $games['id'].'">
-                <label for="titles">Titres :</label> <!-- Champ pour le titre -->
-                <input type="text" id="titles" name="titles" required value="' . $games['titles_article'].'"> <!-- Champ de saisie pour le titre -->
-                
-                <label for="descriptions">Descriptions :</label> <!-- Champ pour la description -->
-                <textarea id="descriptions" name="descriptions" required>' . $games['descriptions_article'].'</textarea> <!-- Champ de saisie pour la description -->
+class ModifyGamesViews {
 
-                <label for="story">Histoires :</label> <!-- Champ pour le contenu -->
-                <textarea id="story" name="story" required>' . $games['story_article'].'</textarea> <!-- Champ de saisie pour le contenu -->
+    public function updateForm($games) {
+?>
+        <div class="form-container">
+            <h1 id="ajouter">Modifier un jeu</h1>
+            <form class="form" method="post" enctype="multipart/form-data">
 
-                <label for="platforms">Plates-formes :</label> <!-- Champ pour les plates-formes -->
-                <input type="text" id="platforms" name="platforms" required value="' . $games['platforms_article'].'"> <!-- Champ de saisie pour les plates-formes -->
+                <input type="hidden" id="id_game" name="id_game" value="<?= htmlspecialchars($games['id']) ?>">
 
-                <label for="modes">Modes de jeux :</label> <!-- Champ pour le mode de jeu -->
-                <input type="text" id="modes" name="modes" required value="' . $games['modes_article'].'"> <!-- Champ de saisie pour le mode de jeu -->
+                <label for="titles">Titres :</label>
+                <input type="text" id="titles" name="titles" value="<?= htmlspecialchars($games['titles_article']) ?>" required>
 
-                <label for="genres">Genres :</label> <!-- Champ pour les genres -->
-                <input type="text" id="genres" name="genres" required value="' . $games['genres_article'].'"> <!-- Champ de saisie pour les genres -->
+                <label for="descriptions">Descriptions :</label>
+                <textarea id="descriptions" name="descriptions" required><?= htmlspecialchars($games['descriptions_article']) ?></textarea>
 
-                <label for="designers">Concepteurs :</label> <!-- Champ pour les concepteurs -->
-                <input type="text" id="designers" name="designers" required value="' . $games['designers_article'].'"> <!-- Champ de saisie pour les concepteurs -->
+                <label for="story">Histoires :</label>
+                <textarea id="story" name="story" required><?= htmlspecialchars($games['story_article']) ?></textarea>
 
-                <label for="developers">Développeurs :</label> <!-- Champ pour les développeurs -->
-                <input type="text" id="developers" name="developers" required value="' . $games['developers_article'].'"> <!-- Champ de saisie pour les développeurs -->
+                <label for="platforms">Plates-formes :</label>
+                <input type="text" id="platforms" name="platforms" value="<?= htmlspecialchars($games['platforms_article']) ?>" required>
 
-                <label for="editors">Éditeurs :</label> <!-- Champ pour les éditeurs -->
-                <input type="text" id="editors" name="editors" required value="' . $games['editors_article'].'"> <!-- Champ de saisie pour les éditeurs -->
+                <label for="modes">Modes de jeux :</label>
+                <input type="text" id="modes" name="modes" value="<?= htmlspecialchars($games['modes_article']) ?>" required>
+
+                <label for="genres">Genres :</label>
+                <input type="text" id="genres" name="genres" value="<?= htmlspecialchars($games['genres_article']) ?>" required>
+
+                <label for="designers">Concepteurs :</label>
+                <input type="text" id="designers" name="designers" value="<?= htmlspecialchars($games['designers_article']) ?>" required>
+
+                <label for="developers">Développeurs :</label>
+                <input type="text" id="developers" name="developers" value="<?= htmlspecialchars($games['developers_article']) ?>" required>
+
+                <label for="editors">Éditeurs :</label>
+                <input type="text" id="editors" name="editors" value="<?= htmlspecialchars($games['editors_article']) ?>" required>
 
                 <label for="gameplay">Gameplay :</label>
-                <textarea type="text" id="gameplay" name="gameplay" required>' . $games['gameplay_article'].'</textarea>
+                <textarea id="gameplay" name="gameplay" required><?= htmlspecialchars($games['gameplay_article']) ?></textarea>
 
                 <label for="informations">Information :</label>
-                <textarea type="text" id="informations" name="informations" required>' . $games['informations_article'].'</textarea>
+                <textarea id="informations" name="informations" required><?= htmlspecialchars($games['informations_article']) ?></textarea>
 
                 <label for="dates">Dates de sortie :</label>
-                <input type="date" id="dates" name="dates" required value="' . $games['dates_release'].'">
+                <input type="date" id="dates" name="dates" value="<?= htmlspecialchars($games['dates_release']) ?>" required>
 
-                <label for="images_path">Chemin de l\'image :</label>
-                <input type="file" id="images_path" name="images_path" accept="image/*" required>
+                <label for="images_path">Chemin de l'image :</label>
+                <input type="file" id="images_path" name="images_path" accept="image/*">
                 
-                <input type="submit" value="Ajouter"> <!-- Bouton de soumission du formulaire -->
+                <input type="submit" value="Modifier">
             </form>
         </div>
-    ';
-    
-  }
-  
+<?php
+    }
 }
 ?>

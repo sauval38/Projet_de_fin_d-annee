@@ -53,7 +53,9 @@ body {
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.form-container .vertical input[type=text] {
+.form-container .vertical input[type=text],
+.form-container .vertical input[type=email],
+.form-container .vertical input[type=password] {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -63,7 +65,9 @@ body {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-container .vertical input[type=text]:focus {
+.form-container .vertical input[type=text]:focus,
+.form-container .vertical input[type=email]:focus,
+.form-container .vertical input[type=password]:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
@@ -546,4 +550,63 @@ h1 {
   border: 1px solid rgb(0, 255, 0);
   text-align: justify;
   box-shadow: 0 0 5px rgb(0, 255, 0);
+}
+
+.form-character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+.form-character h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.form-character form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.form-character form label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.form-character form input[type=text],
+.form-character form input[type=file],
+.form-character form input[type=number],
+.form-character form select {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.form-character form input[type=text]:focus,
+.form-character form input[type=file]:focus,
+.form-character form input[type=number]:focus,
+.form-character form select:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+.form-character form input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.form-character form input[type=submit]:hover {
+  background-color: rgb(44, 62, 80);
 }/*# sourceMappingURL=style.css.map */

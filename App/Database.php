@@ -1,23 +1,30 @@
 <?php
-namespace App; // Définit un espace de noms pour cette classe
 
-class Database { // Début de la déclaration de la classe Database
-    protected $cnx; // Propriété protégée pour la connexion PDO
-    protected $host = 'localhost'; // Hôte de la base de données
-    protected $db = 'final-fantasy'; // Nom de la base de données
-    protected $login = 'root'; // Nom d'utilisateur de la base de données
-    protected $pw = 'root'; // Mot de passe de la base de données
+namespace App;
 
-    public function __construct() { // Constructeur de la classe
-        // Crée une nouvelle instance de PDO pour la connexion à la base de données
-        $this->cnx = new \PDO("mysql:host=$this->host;dbname=$this->db", $this->login, $this->pw);
-        
-        // Configure le mode d'erreur pour lancer des exceptions en cas d'erreur
-        $this->cnx->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+use PDO;
+use PDOException;
+
+class Database {
+    protected $cnx;
+    protected $host = 'localhost';
+    protected $db = 'final-fantasy';
+    protected $login = 'root';
+    protected $pw = 'root';
+
+    public function __construct() {
+        try {
+            $this->cnx = new PDO("mysql:host=$this->host;dbname=$this->db;charset=utf8", $this->login, $this->pw);
+            $this->cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->cnx->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log('Connection failed: ' . $e->getMessage());
+            throw new PDOException($e->getMessage(), (int)$e->getCode());
+        }
     }
 
-    public function getConnection() { // Méthode publique pour obtenir la connexion PDO
-        return $this->cnx; // Retourne l'objet de connexion PDO
+    public function getConnection() {
+        return $this->cnx;
     }
 }
 ?>

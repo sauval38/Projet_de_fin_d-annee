@@ -1,25 +1,32 @@
 <?php
 
-namespace Views; 
+namespace Views;
 
-class ListGamesViews { 
-    public function list($games) { 
-        echo '<h1>LISTE DES JEUX</h1>'; 
-        echo '<div class="games-container">'; 
-        foreach ($games as $game) { 
-            echo '<div class="game-card">'; 
-            echo '<h2 class="game-title" data-game-id="'.$game['id'].'">' . $game['titles_article'] . '</h2>'; 
-            echo '<div class="additional-links" id="links-'.$game['id'].'" style="display:none;">';
-            echo '<a href="games/'.$game['id'].'">Informations</a>';
-            echo '<a href="story/'.$game['id'].'">Histoire</a>';
-            echo '<a href="'.$game['id'].'">Personnage</a>';
-            echo '<a href="'.$game['id'].'">Boss</a>';
-            echo '</div>';
-            echo '<p>'. $game['descriptions_article'] .'</p>'; 
-            echo '<img src="' . $game['path'] . '/' . $game['images_article'] . '">'; 
-            echo '</div>'; 
-        }
-        echo '</div>'; 
-        echo'<script src="./assets/js/games.js"></script>';
+class ListGamesViews {
+    
+    public function list($games) {
+        ?>
+        <h1>LISTE DES JEUX</h1>
+        <div class="games-container">
+            <?php foreach ($games as $game): ?>
+                <div class="game-card">
+                    <h2 class="game-title" data-game-id="<?= htmlspecialchars($game['id']) ?>">
+                        <?= htmlspecialchars($game['titles_article']) ?>
+                    </h2>
+                    <div class="additional-links" id="links-<?= htmlspecialchars($game['id']) ?>" style="display:none;">
+                        <a href="games/<?= htmlspecialchars($game['id']) ?>">Informations</a>
+                        <a href="story/<?= htmlspecialchars($game['id']) ?>">Histoire</a>
+                        <a href="character/<?= htmlspecialchars($game['id']) ?>">Personnage</a>
+                        <a href="<?= htmlspecialchars($game['id']) ?>">Boss</a>
+                    </div>
+                    <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
+                    <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <script src="./assets/js/games.js"></script>
+        <?php
     }
 }
+
+?>
