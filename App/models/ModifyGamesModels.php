@@ -13,10 +13,10 @@ class ModifyGamesModels {
     }
     
     public function modify($id) {
-        $sqlArticle = "SELECT * FROM games WHERE id = ?";
-        $query = $this->db->prepare($sqlArticle);
-        $query->execute([$id]);
-        return $query->fetch();
+        $sqlModify= "SELECT * FROM games WHERE id = ?";
+        $modify = $this->db->prepare($sqlModify);
+        $modify->execute([$id]);
+        return $modify->fetch();
     }
 
     public function update() {
@@ -40,7 +40,7 @@ class ModifyGamesModels {
                 path = ?
             WHERE id = ?";
 
-            $query = $this->db->prepare($sqlUpdate);
+            $update = $this->db->prepare($sqlUpdate);
 
             $images_article = $_FILES["images_path"]; 
             $path = "assets/images/";
@@ -56,7 +56,7 @@ class ModifyGamesModels {
                 }
             }
 
-            $query->execute([
+            $update->execute([
                 $_POST['titles'],
                 $_POST['descriptions'],
                 $_POST['story'],

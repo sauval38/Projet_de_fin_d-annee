@@ -310,7 +310,7 @@ h2 {
 			color: $color_1;
 			text-align: center;
 		}
-		input[type=text] {
+		input[type=text], input[type=number], input[type=decimal] {
 			padding: 10px;
 			border: 2px solid $color_2;
 			border-radius: $border_radius_1;
@@ -425,14 +425,20 @@ h1{
         }
     }
 }
+.game-characters {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;      
+}
+
 .game-details {
     background-color: $background-color_2;
     border: 2px solid $border;
     border-radius: $border_radius_2;
     padding: 20px;
     margin: 20px auto; 
-    width: 80%; 
-    max-width: 600px; 
+    width: 30%; 
+    max-width: 30%; 
     font-family: $fontpara;
     h1 {
         font-family: $fonttitle;
@@ -480,7 +486,6 @@ h1{
     width: 80%;
     max-width: 800px;
     font-family: $fontpara;
-
     h1 {
         font-family: $fonttitle;
         font-size: 3em;
@@ -488,17 +493,14 @@ h1{
         text-align: center;
         margin-bottom: 20px;
     }
-
     .story {
         @include flexbox(false, false, column);
         gap: 20px;
-        
         img {
             max-width: 100%;
             border-radius: $border_radius_1;
             box-shadow: 0 0 10px $color_2;
         }
-
         p {
             font-size: 1.2em;
             line-height: 1.6;

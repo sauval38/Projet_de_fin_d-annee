@@ -343,7 +343,7 @@ h2 {
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.form-container .form input[type=text] {
+.form-container .form input[type=text], .form-container .form input[type=number], .form-container .form input[type=decimal] {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -353,7 +353,7 @@ h2 {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-container .form input[type=text]:focus {
+.form-container .form input[type=text]:focus, .form-container .form input[type=number]:focus, .form-container .form input[type=decimal]:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
@@ -464,14 +464,20 @@ h1 {
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
+.game-characters {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 .game-details {
   background-color: rgb(44, 62, 80);
   border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
+  width: 30%;
+  max-width: 30%;
   font-family: "Exo";
 }
 .game-details h1 {

@@ -5,6 +5,18 @@ namespace Views;
 class GamesViews {
     public function displayGame($game) {
         if (isset($game)) {
+            // Tableau associatif pour mapper les clés aux noms des colonnes
+            $fields = [
+                'descriptions_article' => 'Description',
+                'platforms_article' => 'Platforms',
+                'modes_article' => 'Modes',
+                'genres_article' => 'Genres',
+                'designers_article' => 'Designers',
+                'developers_article' => 'Developers',
+                'editors_article' => 'Editors',
+                'gameplay_article' => 'Gameplay',
+                'informations_article' => 'Informations'
+            ];
             ?>
             <div class="game-details">
                 <h1><?= htmlspecialchars($game['titles_article']) ?></h1>
@@ -12,9 +24,9 @@ class GamesViews {
                     <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="<?= htmlspecialchars($game['titles_article']) ?>">
                 </div>
                 <div class="game-info">
-                    <?php foreach (['descriptions_article', 'platforms_article', 'modes_article', 'genres_article', 'designers_article', 'developers_article', 'editors_article', 'gameplay_article', 'informations_article'] as $field): ?>
+                    <?php foreach ($fields as $field => $label): ?>
                         <div class="info-item">
-                            <p><strong class="description-title"><?= ucfirst(str_replace("_", " ", $field)) ?>:</strong><br><?= htmlspecialchars($game[$field]) ?></p>
+                            <p><strong class="description-title"><?= htmlspecialchars($label) ?>:</strong><br><?= nl2br(htmlspecialchars($game[$field])) ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>

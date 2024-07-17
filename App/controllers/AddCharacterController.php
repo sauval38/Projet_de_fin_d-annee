@@ -27,7 +27,7 @@ class AddCharacterController {
             $limits_break_character = $_POST["limits_break"];
             $age_character = $_POST["age"];
             $armed_character = $_POST["armed"];
-            $size_character = $_POST["size"];
+            $size_character = str_replace(",",".", $_POST["size"]);
             $date_o_birth_character = $_POST["date_o_birth"];
             $place_of_birth_character = $_POST["place_of_birth"];
             $images_character = $_FILES["images_path"];

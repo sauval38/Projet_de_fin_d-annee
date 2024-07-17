@@ -30,25 +30,25 @@ class AddCharacterViews {
                 <input type="text" id="descriptions" name="descriptions" required>
 
                 <label for="jobs">Emplois :</label>
-                <input type="text" id="jobs" name="jobs" required>
+                <input type="text" id="jobs" name="jobs">
 
                 <label for="limits_break">Limits Break :</label>
-                <input type="text" id="limits_break" name="limits_break" required>
+                <input type="text" id="limits_break" name="limits_break">
 
                 <label for="age">Age :</label>
-                <input type="number" id="age" name="age" required>
+                <input type="number" id="age" name="age">
 
                 <label for="armed">Arme :</label>
-                <input type="text" id="armed" name="armed" required>
+                <input type="text" id="armed" name="armed">
 
                 <label for="size">Taille :</label>
-                <input type="number" id="size" name="size" required>
+                <input type="decimal" id="size" name="size">
 
                 <label for="place_of_birth">Lieu de naissance :</label>
-                <input type="text" id="place_of_birth" name="place_of_birth" required>
+                <input type="text" id="place_of_birth" name="place_of_birth">
 
                 <label for="date_o_birth">Date de naissance :</label>
-                <input type="datetime-local" id="date_o_birth" name="date_o_birth" required>
+                <input type="datetime-local" id="date_o_birth" name="date_o_birth">
                 
                 <label for="images_path">Chemin de l'image :</label>
                 <input type="file" id="images_path" name="images_path" accept="image/*" required>

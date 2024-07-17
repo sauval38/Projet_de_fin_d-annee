@@ -12,10 +12,10 @@ class LoginModels {
     }
 
     public function authenticate($email,$password) {
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
-        $stmt->bindParam(':email',$email);
-        $stmt->execute();
-        $user = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $sqlLogin= $this->db->prepare("SELECT * FROM users WHERE email = :email");
+        $sqlLogin->bindParam(':email',$email);
+        $sqlLogin->execute();
+        $user = $sqlLogin->fetch(\PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['id'] = $user['id'];

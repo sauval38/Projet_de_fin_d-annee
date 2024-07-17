@@ -11,9 +11,9 @@ class StoryModels {
     }
     
     public function storyViews($id) {
-        $sqlArticle = "SELECT titles_article, images_article, story_article, path FROM games WHERE id = ?";
-        $query = $this->db->getConnection()->prepare($sqlArticle);
-        $query->execute([$id]);
-        return $query->fetch();  
+        $sqlStory = "SELECT titles_article, images_article, story_article, path FROM games WHERE id = ?";
+        $story = $this->db->getConnection()->prepare($sqlStory);
+        $story->execute([$id]);
+        return $story->fetch();  
     }
 }

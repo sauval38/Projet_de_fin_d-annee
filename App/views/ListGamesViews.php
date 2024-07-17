@@ -22,10 +22,15 @@ class ListGamesViews {
                     <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
                     <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+                if (empty($game)) {
+                    echo '<h1>Information non trouvée</h1>';
+                }
+             ?>
         </div>
         <script src="./assets/js/games.js"></script>
         <?php
+        
     }
 }
 

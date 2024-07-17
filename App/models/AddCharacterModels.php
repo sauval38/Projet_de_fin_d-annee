@@ -55,6 +55,10 @@ class AddCharacterModels {
                             );
                             ";
 
+            $size_character = !empty($size_character) ? floatval($size_character) : null;
+            $age_character = !empty($age_character) ? intval($age_character) : null;
+            $date_o_birth_character = !empty($date_o_birth_character) ? $date_o_birth_character : null;                
+
             $stmtCharacter = $this->db->prepare($sqlCharacter);
             $stmtCharacter->bindParam(':games_id', $games_id);
             $stmtCharacter->bindParam(':names_character', $names_character);
@@ -64,11 +68,15 @@ class AddCharacterModels {
             $stmtCharacter->bindParam(':age_character', $age_character);
             $stmtCharacter->bindParam(':armed_character', $armed_character);
             $stmtCharacter->bindParam(':size_character', $size_character);
-            $stmtCharacter->bindParam(':date_o_birth_character', $date_o_birth_character);
+            $stmtCharacter->bindParam(':date_o_birth_character', $date_o_birth_character, PDO::PARAM_NULL);
             $stmtCharacter->bindParam(':place_of_birth_character', $place_of_birth_character);
             $stmtCharacter->bindParam(':images_character', $img);
             $stmtCharacter->bindParam(':path', $path);
+            $age_character = intval($age_character);
             $stmtCharacter->execute();
+
+            
+
 
             if (isset($images_character) && $images_character['error'] === UPLOAD_ERR_OK) {
                 $imageTmpPath = $images_character['tmp_name'];
