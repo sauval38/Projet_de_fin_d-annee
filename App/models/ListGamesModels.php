@@ -7,14 +7,15 @@ class ListGamesModels {
     protected $db;
 
     public function __construct() {
-        $this->db = new Database();
+        $database = new Database();
+        $this->db = $database->getConnection();
     }
 
     public function gameList() {
-        $sqlArticle = "SELECT * FROM games";
-        $query = $this->db->getConnection()->prepare($sqlArticle);
-        $query->execute();
-        return $query->fetchAll();
+        $sqlListGames = "SELECT * FROM games";
+        $listGames = $this->db->prepare($sqlListGames);
+        $listGames->execute();
+        return $listGames->fetchAll();
     }
 } 
    

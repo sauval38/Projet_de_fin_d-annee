@@ -8,7 +8,6 @@ class HomeController {
     public function home() {
         $homeViews = new HomeViews();
         
-        // Créez un tableau de données dynamiques à passer à la vue
         $data = [
             'slide_1_image' => './assets/images/image_d_accueil.webp',
             'slide_1_title' => 'Bienvenue dans l\'univers de Final Fantasy',
@@ -18,6 +17,6 @@ class HomeController {
             'slide_3_title' => 'Bienvenue dans l\'univers de Final Fantasy'
         ];
         
-        $homeViews->body($data); // Passez les données à la vue
+        $homeViews->body($data); 
     }
 }

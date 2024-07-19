@@ -13,7 +13,7 @@ class ModifyGamesModels {
     }
     
     public function modify($id) {
-        $sqlModify= "SELECT * FROM games WHERE id = ?";
+        $sqlModify = "SELECT * FROM games WHERE id = ?";
         $modify = $this->db->prepare($sqlModify);
         $modify->execute([$id]);
         return $modify->fetch();
@@ -22,7 +22,9 @@ class ModifyGamesModels {
     public function update() {
         try {
             $this->db->beginTransaction();
-            
+
+            $currentGame = $this->modify($_POST['id_game']);
+
             $sqlUpdate = "UPDATE games SET 
                 titles_article = ?, 
                 descriptions_article = ?, 
@@ -35,16 +37,16 @@ class ModifyGamesModels {
                 editors_article = ?, 
                 informations_article = ?, 
                 gameplay_article = ?,  
-                dates_release = ?, 
-                images_article = ?,
-                path = ?
+                dates_release = ?,
+                images_article = ?, 
+                path = ? 
             WHERE id = ?";
 
             $update = $this->db->prepare($sqlUpdate);
 
-            $images_article = $_FILES["images_path"]; 
+            $images_article = $_FILES["images_path"];
             $path = "assets/images/";
-            $imageName = null;
+            $imageName = $currentGame['images_article'];
 
             if (isset($images_article) && $images_article['error'] === UPLOAD_ERR_OK) {
                 $imageTmpPath = $images_article['tmp_name'];
@@ -71,7 +73,7 @@ class ModifyGamesModels {
                 $_POST['dates'],
                 $imageName, 
                 $path,
-                $_POST['id_game'] 
+                $_POST['id_game']
             ]);
 
             $this->db->commit();

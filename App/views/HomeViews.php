@@ -50,7 +50,7 @@ class HomeViews {
 
         ?>
         <h1 id="logo">SQUARE ENIX</h1>
-        <div class="carousel">
+        <div id="carousel">
             <div class="carousel-slides">
                 <?php foreach ($slides as $index => $slide): ?>
                     <div id="slide-<?php echo $index + 1; ?>" class="slide">

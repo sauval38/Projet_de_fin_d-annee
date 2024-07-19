@@ -28,7 +28,7 @@ body {
   background-color: rgb(34, 34, 34);
 }
 
-.form-container {
+#register {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,26 +36,26 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
-.form-container h1 {
+#register h1 {
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
-.form-container .vertical {
+#register .register-form {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-.form-container .vertical label {
+#register .register-form label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.form-container .vertical input[type=text],
-.form-container .vertical input[type=email],
-.form-container .vertical input[type=password] {
+#register .register-form input[type=text],
+#register .register-form input[type=email],
+#register .register-form input[type=password] {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -65,13 +65,13 @@ body {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-container .vertical input[type=text]:focus,
-.form-container .vertical input[type=email]:focus,
-.form-container .vertical input[type=password]:focus {
+#register .register-form input[type=text]:focus,
+#register .register-form input[type=email]:focus,
+#register .register-form input[type=password]:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-.form-container .vertical button {
+#register .register-form button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -81,23 +81,16 @@ body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.form-container .vertical button:hover {
+#register .register-form button:hover {
   background-color: rgb(44, 62, 80);
 }
 
-.welcome-message {
-  font-size: 1.5rem;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.logout-form {
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.logout-form button {
+.login button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -106,11 +99,11 @@ body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.logout-form button:hover {
+.login button:hover {
   background-color: rgb(44, 62, 80);
 }
 
-.form-login {
+.login-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,24 +111,24 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
-.form-login h1 {
+.login-form h1 {
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
-.form-login .vertical {
+.login-form .form-login {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-.form-login .vertical label {
+.login-form .form-login label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.form-login .vertical input {
+.login-form .form-login input {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -145,11 +138,11 @@ body {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-login .vertical input:focus {
+.login-form .form-login input:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-.form-login .vertical button {
+.login-form .form-login button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -159,7 +152,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.form-login .vertical button:hover {
+.login-form .form-login button:hover {
   background-color: rgb(44, 62, 80);
 }
 
@@ -171,30 +164,30 @@ body {
   margin-top: 30px;
 }
 
-.carousel {
+#carousel {
   position: relative;
   width: 80%;
   margin: auto;
   overflow: hidden;
 }
-.carousel .carousel-slides {
+#carousel .carousel-slides {
   margin-top: 30px;
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-.carousel .carousel-slides .slide {
+#carousel .carousel-slides .slide {
   position: relative;
   min-width: 100%;
   box-sizing: border-box;
 }
-.carousel .carousel-slides .slide img {
+#carousel .carousel-slides .slide img {
   width: 100%;
   display: block;
   max-height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.carousel .carousel-slides .slide .carousel-title {
+#carousel .carousel-slides .slide .carousel-title {
   font-family: "Raleway", sans-serif;
   position: absolute;
   bottom: 0;
@@ -207,7 +200,7 @@ body {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   background: rgba(0, 0, 0, 0.7);
 }
-.carousel .carousel-button {
+#carousel .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -217,13 +210,13 @@ body {
   padding: 10px;
   cursor: pointer;
 }
-.carousel .carousel-button-prev {
+#carousel .carousel-button-prev {
   left: 10px;
 }
-.carousel .carousel-button-next {
+#carousel .carousel-button-next {
   right: 10px;
 }
-.carousel .carousel-button:focus {
+#carousel .carousel-button:focus {
   outline: none;
 }
 
@@ -318,7 +311,7 @@ h2 {
   background-color: rgb(44, 62, 80);
 }
 
-.form-container {
+#modification {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,24 +319,24 @@ h2 {
   min-height: 100vh;
   padding: 20px;
 }
-.form-container h1 {
+#modification h1 {
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
-.form-container .form {
+#modification .form-modification-games {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-.form-container .form label {
+#modification .form-modification-games label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.form-container .form input[type=text], .form-container .form input[type=number], .form-container .form input[type=decimal] {
+#modification .form-modification-games input[type=text], #modification .form-modification-games input[type=number], #modification .form-modification-games input[type=decimal] {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -353,11 +346,11 @@ h2 {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-container .form input[type=text]:focus, .form-container .form input[type=number]:focus, .form-container .form input[type=decimal]:focus {
+#modification .form-modification-games input[type=text]:focus, #modification .form-modification-games input[type=number]:focus, #modification .form-modification-games input[type=decimal]:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-.form-container .form textarea {
+#modification .form-modification-games textarea {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -367,11 +360,11 @@ h2 {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-container .form textarea:focus {
+#modification .form-modification-games textarea:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-.form-container .form input[type=file] {
+#modification .form-modification-games input[type=file] {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -381,11 +374,11 @@ h2 {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.form-container .form input[type=file]:focus {
+#modification .form-modification-games input[type=file]:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-.form-container .form input[type=submit] {
+#modification .form-modification-games input[type=submit] {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -395,7 +388,7 @@ h2 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.form-container .form input[type=submit]:hover {
+#modification .form-modification-games input[type=submit]:hover {
   background-color: rgb(44, 62, 80);
 }
 
@@ -408,14 +401,14 @@ h1 {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 
-.games-container {
+#list-modify-games {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 20px;
 }
-.games-container .game-card {
+#list-modify-games .modify-games {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -426,14 +419,11 @@ h1 {
   margin: 10px;
   width: calc(30% - 40px);
 }
-.games-container .game-card .additional-links {
-  margin-top: 10px;
-}
-.games-container .game-card h2 {
+#list-modify-games .modify-games h2 {
   cursor: pointer;
   font-size: 1.5rem;
 }
-.games-container .game-card a {
+#list-modify-games .modify-games a {
   font-family: "Raleway", sans-serif;
   display: block;
   margin: 5px 0;
@@ -446,17 +436,17 @@ h1 {
   text-decoration: none;
   transition: background-color 0.3s;
 }
-.games-container .game-card a:hover {
+#list-modify-games .modify-games a:hover {
   background-color: rgb(34, 34, 34);
 }
-.games-container .game-card p {
-  text-align: justify;
+#list-modify-games .modify-games p {
+  text-align: center;
   font-family: "Exo";
   padding-top: 10px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
 }
-.games-container .game-card img {
+#list-modify-games .modify-games img {
   width: 100%;
   height: auto;
   border-radius: 5px;
@@ -464,89 +454,250 @@ h1 {
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
-.game-characters {
+#list-games {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: flex-start;
   flex-wrap: wrap;
+  margin: 20px;
+}
+#list-games .list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(44, 62, 80);
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: calc(30% - 40px);
+}
+#list-games .list h2 {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+#list-games .list .additional-links {
+  margin-top: 10px;
+}
+#list-games .list a {
+  font-family: "Raleway", sans-serif;
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+#list-games .list a:hover {
+  background-color: rgb(34, 34, 34);
+}
+#list-games .list p {
+  text-align: center;
+  font-family: "Exo";
+  padding-top: 10px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+#list-games .list img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
-.game-details {
+#game-character-detail {
   background-color: rgb(44, 62, 80);
   border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
-  width: 30%;
-  max-width: 30%;
+  width: 90%;
+  max-width: 90%;
   font-family: "Exo";
 }
-.game-details h1 {
+#game-character-detail h1 {
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
   margin-bottom: 20px;
 }
-.game-details .game-image {
+#game-character-detail .game-character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+#game-character-detail .game-character-block {
+  padding: 20px;
+  background-color: rgb(34, 34, 34);
+  border: 1px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#game-character-detail .game-character-image {
+  width: 100%;
+  height: 200px;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
-.game-details .game-image img {
+#game-character-detail .game-character-image img {
   max-width: 100%;
+  max-height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(0, 255, 0);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.game-details .game-info {
+#game-character-detail .game-character-info {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
-.game-details .info-item {
+#game-character-detail .game-character-item {
   background-color: rgb(34, 34, 34);
   padding: 15px;
   border-radius: 5px;
   border: 1px solid rgb(0, 255, 0);
   width: 100%;
 }
-.game-details .info-item .description-title {
+#game-character-detail .game-character-item .description-title {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
-.game-details .info-item p {
+#game-character-detail .game-character-item p {
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
-  text-align: justify;
+  text-align: center;
+}
+#game-character-detail .close-button {
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: rgb(0, 255, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+#game-character-detail .close-button:hover {
+  color: #009900;
 }
 
-.story-game {
+#games-detail {
   background-color: rgb(44, 62, 80);
   border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   font-family: "Exo";
 }
-.story-game h1 {
+#games-detail h1 {
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
   margin-bottom: 20px;
 }
-.story-game .story {
+#games-detail .games-image {
+  width: 100%;
+  height: 300px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+#games-detail .games-image img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
+}
+#games-detail .games-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+#games-detail .games-item {
+  background-color: rgb(34, 34, 34);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 255, 0);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+#games-detail .games-item .description-title {
+  font-size: 1.2em;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  margin-bottom: 10px;
+  display: block;
+}
+#games-detail .games-item p {
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-bottom: 0;
+}
+#games-detail .games-item:last-child {
+  grid-column: span 2;
+}
+#games-detail .close-button {
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: rgb(0, 255, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+#games-detail .close-button:hover {
+  color: #009900;
+}
+
+#story-game {
+  background-color: rgb(44, 62, 80);
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 60%;
+  font-family: "Exo";
+}
+#story-game h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  text-align: center;
+  margin-bottom: 20px;
+}
+#story-game .story {
+  display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 }
-.story-game .story img {
-  max-width: 100%;
+#story-game .story img {
+  max-width: 75%;
+  width: 50%;
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
-.story-game .story p {
+#story-game .story p {
   font-size: 1.2em;
   line-height: 1.6;
   color: rgb(255, 255, 255);
@@ -554,8 +705,19 @@ h1 {
   padding: 15px;
   border-radius: 5px;
   border: 1px solid rgb(0, 255, 0);
-  text-align: justify;
+  text-align: center;
   box-shadow: 0 0 5px rgb(0, 255, 0);
+}
+#story-game .close-button {
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: rgb(0, 255, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+#story-game .close-button:hover {
+  color: #009900;
 }
 
 .form-character {
@@ -567,6 +729,7 @@ h1 {
   padding: 20px;
 }
 .form-character h1 {
+  text-align: center;
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
@@ -614,5 +777,157 @@ h1 {
   transition: all 0.2s ease-in-out;
 }
 .form-character form input[type=submit]:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#form-games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+#form-games h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+#form-games .form-add-games {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+#form-games .form-add-games label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#form-games .form-add-games textarea {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+#form-games .form-add-games textarea:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+#form-games .form-add-games input[type=text],
+#form-games .form-add-games input[type=file],
+#form-games .form-add-games input[type=number] {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+#form-games .form-add-games input[type=text]:focus,
+#form-games .form-add-games input[type=file]:focus,
+#form-games .form-add-games input[type=number]:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+#form-games .form-add-games input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#form-games .form-add-games input[type=submit]:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+#form-character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+#form-character h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+#form-character .form-add-character {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+#form-character .form-add-character label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#form-character .form-add-character textarea {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+#form-character .form-add-character textarea:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+#form-character .form-add-character input[type=text],
+#form-character .form-add-character input[type=file],
+#form-character .form-add-character input[type=number],
+#form-character .form-add-character input[type=decimal] {
+  padding: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+#form-character .form-add-character input[type=text]:focus,
+#form-character .form-add-character input[type=file]:focus,
+#form-character .form-add-character input[type=number]:focus,
+#form-character .form-add-character input[type=decimal]:focus {
+  outline: none;
+  border-color: rgb(44, 62, 80);
+}
+#form-character .form-add-character input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#form-character .form-add-character input[type=submit]:hover {
   background-color: rgb(44, 62, 80);
 }/*# sourceMappingURL=style.css.map */

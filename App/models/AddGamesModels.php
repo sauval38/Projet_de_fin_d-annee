@@ -17,25 +17,26 @@ class AddGamesModels {
             
             $this->db->beginTransaction();
             $img = $images_article['name'];
+            $storyArticleWithLineBreaks = nl2br($story_article);
             
-            $sqlArticle = "INSERT INTO games (titles_article, descriptions_article, story_article, platforms_article, modes_article, genres_article, designers_article, developers_article, editors_article, gameplay_article, informations_article, dates_release, images_article, path) VALUES (:titles_article, :descriptions_article, :story_article, :platforms_article, :modes_article, :genres_article, :designers_article, :developers_article, :editors_article, :gameplay_article, :informations_article, :dates_release, :images_article, :path)";
+            $sqlAddGames = "INSERT INTO games (titles_article, descriptions_article, story_article, platforms_article, modes_article, genres_article, designers_article, developers_article, editors_article, gameplay_article, informations_article, dates_release, images_article, path) VALUES (:titles_article, :descriptions_article, :story_article, :platforms_article, :modes_article, :genres_article, :designers_article, :developers_article, :editors_article, :gameplay_article, :informations_article, :dates_release, :images_article, :path)";
             
-            $stmtArticle = $this->db->prepare($sqlArticle);
-            $stmtArticle->bindParam(':titles_article', $titles_article);
-            $stmtArticle->bindParam(':descriptions_article', $descriptions_article);
-            $stmtArticle->bindParam(':story_article', $story_article);
-            $stmtArticle->bindParam(':platforms_article', $platforms_article);
-            $stmtArticle->bindParam(':modes_article', $modes_article);
-            $stmtArticle->bindParam(':genres_article', $genres_article);
-            $stmtArticle->bindParam(':designers_article', $designers_article);
-            $stmtArticle->bindParam(':developers_article', $developers_article);
-            $stmtArticle->bindParam(':editors_article', $editors_article);
-            $stmtArticle->bindParam(':gameplay_article', $gameplay_article);
-            $stmtArticle->bindParam(':informations_article', $informations_article);
-            $stmtArticle->bindParam(':dates_release', $dates_release);
-            $stmtArticle->bindParam(':images_article', $img);
-            $stmtArticle->bindParam(':path', $path);
-            $stmtArticle->execute();
+            $addGames = $this->db->prepare($sqlAddGames);
+            $addGames->bindParam(':titles_article', $titles_article);
+            $addGames->bindParam(':descriptions_article', $descriptions_article);
+            $addGames->bindParam(':story_article', $storyArticleWithLineBreaks);
+            $addGames->bindParam(':platforms_article', $platforms_article);
+            $addGames->bindParam(':modes_article', $modes_article);
+            $addGames->bindParam(':genres_article', $genres_article);
+            $addGames->bindParam(':designers_article', $designers_article);
+            $addGames->bindParam(':developers_article', $developers_article);
+            $addGames->bindParam(':editors_article', $editors_article);
+            $addGames->bindParam(':gameplay_article', $gameplay_article);
+            $addGames->bindParam(':informations_article', $informations_article);
+            $addGames->bindParam(':dates_release', $dates_release);
+            $addGames->bindParam(':images_article', $img);
+            $addGames->bindParam(':path', $path);
+            $addGames->execute();
 
             
             if (isset($images_article) && $images_article['error'] === UPLOAD_ERR_OK) {

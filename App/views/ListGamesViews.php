@@ -7,9 +7,9 @@ class ListGamesViews {
     public function list($games) {
         ?>
         <h1>LISTE DES JEUX</h1>
-        <div class="games-container">
+        <div id="list-games">
             <?php foreach ($games as $game): ?>
-                <div class="game-card">
+                <div class="list">
                     <h2 class="game-title" data-game-id="<?= htmlspecialchars($game['id']) ?>">
                         <?= htmlspecialchars($game['titles_article']) ?>
                     </h2>

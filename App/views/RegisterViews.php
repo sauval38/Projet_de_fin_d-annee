@@ -6,10 +6,9 @@ class RegisterViews {
     
     public function initForm() {
         ?>
-        <div class="form-container">
+        <div id="register">
             <h1>Créer un compte</h1>
-
-            <form class="vertical" action="inscription" method="post">
+            <form class="register-form" action="inscription" method="post">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" name="username" id="username" value="<?= isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '' ?>" required>
 
@@ -20,7 +19,7 @@ class RegisterViews {
                 <input type="password" name="password" id="password" required>
 
                 <button type="submit">Envoyer</button>
-            </form>z
+            </form>
         </div>
         <?php
     }

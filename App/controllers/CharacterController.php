@@ -21,8 +21,5 @@ class CharacterController {
         } else {
             echo 'Personnage de jeu non fourni';
         }
-        //  if (!$game) {
-        //     echo 'Test';
-        // }
     }
 }

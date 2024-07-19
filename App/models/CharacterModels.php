@@ -8,7 +8,8 @@ class CharacterModels {
     protected $db;
 
     public function __construct() {
-        $this->db = new Database();
+        $database = new Database();
+        $this->db = $database->getConnection();
     }
 
     public function listCharacter($id) {
@@ -35,9 +36,9 @@ class CharacterModels {
                             g.id = ?";
                            
                             
-        $query = $this->db->getConnection()->prepare($sqlCharacter);
-        $query->execute([$id]);
-        return  $query->fetchAll(); 
+        $character = $this->db->prepare($sqlCharacter);
+        $character->execute([$id]);
+        return  $character->fetchAll(); 
 
     }
 }

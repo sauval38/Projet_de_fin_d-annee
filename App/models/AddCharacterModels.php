@@ -13,9 +13,9 @@ class AddCharacterModels {
         $this->db = $database->getConnection();
     }
     public function getTitles() {
-        $stmt = $this->db->prepare('SELECT id, titles_article FROM games');
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $sqlTitles = $this->db->prepare('SELECT id, titles_article FROM games');
+        $sqlTitles->execute();
+        return $sqlTitles->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function addCharacterWithImage($games_id, $names_character, $descriptions_character, $jobs_character, $limits_break_character, $age_character, $armed_character, $size_character, $date_o_birth_character, $place_of_birth_character, $images_character, $path) {
@@ -59,21 +59,21 @@ class AddCharacterModels {
             $age_character = !empty($age_character) ? intval($age_character) : null;
             $date_o_birth_character = !empty($date_o_birth_character) ? $date_o_birth_character : null;                
 
-            $stmtCharacter = $this->db->prepare($sqlCharacter);
-            $stmtCharacter->bindParam(':games_id', $games_id);
-            $stmtCharacter->bindParam(':names_character', $names_character);
-            $stmtCharacter->bindParam(':descriptions_character', $descriptions_character);
-            $stmtCharacter->bindParam(':jobs_character', $jobs_character);
-            $stmtCharacter->bindParam(':limits_break_character', $limits_break_character);
-            $stmtCharacter->bindParam(':age_character', $age_character);
-            $stmtCharacter->bindParam(':armed_character', $armed_character);
-            $stmtCharacter->bindParam(':size_character', $size_character);
-            $stmtCharacter->bindParam(':date_o_birth_character', $date_o_birth_character, PDO::PARAM_NULL);
-            $stmtCharacter->bindParam(':place_of_birth_character', $place_of_birth_character);
-            $stmtCharacter->bindParam(':images_character', $img);
-            $stmtCharacter->bindParam(':path', $path);
+            $character = $this->db->prepare($sqlCharacter);
+            $character->bindParam(':games_id', $games_id);
+            $character->bindParam(':names_character', $names_character);
+            $character->bindParam(':descriptions_character', $descriptions_character);
+            $character->bindParam(':jobs_character', $jobs_character);
+            $character->bindParam(':limits_break_character', $limits_break_character);
+            $character->bindParam(':age_character', $age_character);
+            $character->bindParam(':armed_character', $armed_character);
+            $character->bindParam(':size_character', $size_character);
+            $character->bindParam(':date_o_birth_character', $date_o_birth_character, PDO::PARAM_NULL);
+            $character->bindParam(':place_of_birth_character', $place_of_birth_character);
+            $character->bindParam(':images_character', $img);
+            $character->bindParam(':path', $path);
             $age_character = intval($age_character);
-            $stmtCharacter->execute();
+            $character->execute();
 
             
 

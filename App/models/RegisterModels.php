@@ -6,7 +6,8 @@ class RegisterModels {
     protected $db; 
 
     public function __construct() { 
-        $this->db = new Database(); 
+        $database = new Database();
+        $this->db = $database->getConnection();
     }
 
     public function createUser() { 
@@ -18,9 +19,7 @@ class RegisterModels {
             $active = 1; 
 
             try {
-                $pdo = $this->db->getConnection()->prepare("INSERT INTO users (username,email,password,last_connection,active) VALUES (?,?,?,?,?)");
-                
-                
+                $pdo = $this->db->prepare("INSERT INTO users (username,email,password,last_connection,active) VALUES (?,?,?,?,?)");
                 $pdo->execute([$username, $email, $password, $last, $active]);
                 
                 echo "<h1>Utilisateur créé avec succès</h1>"; 

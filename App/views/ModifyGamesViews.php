@@ -6,9 +6,9 @@ class ModifyGamesViews {
 
     public function updateForm($games) {
 ?>
-        <div class="form-container">
-            <h1 id="ajouter">Modifier un jeu</h1>
-            <form class="form" method="post" enctype="multipart/form-data">
+        <div id="modification">
+            <h1>Modifier un jeu</h1>
+            <form class="form-modification-games" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" id="id_game" name="id_game" value="<?= htmlspecialchars($games['id']) ?>">
 

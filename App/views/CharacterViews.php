@@ -6,50 +6,55 @@ class CharacterViews {
     public function characterViews($game) {
         if (isset($game) && is_array($game) && !empty($game)) { 
             ?>
-                <h1><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
-                <div class="game-characters">
-                        <?php 
-                        $fields = [
-                            'names_character' => 'Name',
-                            'descriptions_character' => 'Description',
-                            'jobs_character' => 'Job',
-                            'limits_break_character' => 'Limit Break',
-                            'age_character' => 'Age',
-                            'armed_character' => 'Armed',
-                            'size_character' => 'Size',
-                            'date_o_birth_character' => 'Date of Birth',
-                            'place_of_birth_character' => 'Place of Birth'
-                        ];
-                        foreach ($game as $item): 
-                            ?>
-                            <div class="game-details">
-                                <div class="game-info">
-                                    <div class="game-image">
-                                        <?php if (isset($item['path']) && isset($item['images_character'])): ?>
-                                            <img src="<?= htmlspecialchars($item['path'] . '/' . htmlspecialchars($item['images_character'])) ?>" alt="<?= htmlspecialchars($item['titles_article']) ?>">
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="info-item">
-                                    <?php 
-                                    foreach ($fields as $key => $label) {
-                                        // Vérification et affichage des détails
-                                        if (!empty($item[$key])) {
-                                            echo '<p><strong class="description-title">' . htmlspecialchars($label) . ':</strong><br>' . nl2br(htmlspecialchars($item[$key])) . '</p>';
-                                        }                            
-                                    } 
-                                    ?>
-                                </div>
-                            </div>
-                            </div>
-                        <?php 
-                        endforeach;
+            <h1><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
+            <div id="game-character-detail">
+            <a href="listgames" class="close-button">&times;</a>
+                <div class="game-character-grid">
+                    <?php 
+                    $fields = [
+                        'names_character' => 'Name',
+                        'descriptions_character' => 'Description',
+                        'jobs_character' => 'Job',
+                        'limits_break_character' => 'Limit Break',
+                        'age_character' => 'Age',
+                        'armed_character' => 'Armed',
+                        'size_character' => 'Size',
+                        'date_o_birth_character' => 'Date of Birth',
+                        'place_of_birth_character' => 'Place of Birth'
+                    ];
+                    foreach ($game as $item): 
                         ?>
+                        <div class="game-character-block">
+                            <div class="game-character-image">
+                                <?php if (isset($item['path']) && isset($item['images_character'])): ?>
+                                    <img src="<?= htmlspecialchars($item['path'] . '/' . $item['images_character']) ?>" alt="character<?= htmlspecialchars($item['titles_article']) ?>">
+                                <?php endif; ?>
+                            </div>
+                            <div class="game-character-info">
+                                <?php 
+                                foreach ($fields as $key => $label) {
+                                    if (!empty($item[$key])) {
+                                        ?>
+                                        <div class="game-character-item">
+                                            <p><strong class="description-title"><?= htmlspecialchars($label) ?>:</strong><br><?= nl2br(htmlspecialchars($item[$key])) ?></p>
+                                        </div>
+                                        <?php
+                                    }
+                                } 
+                                ?>
+                            </div>
+                        </div>
+                    <?php 
+                    endforeach;
+                    ?>
                 </div>
             </div>
             <?php
         } else {
-            echo '<h1>Informations non trouvées</h1>';
+            ?>
+            <h1>Informations non trouvées</h1>
+            <?php
         }
     }
 }
-?>  
+?>

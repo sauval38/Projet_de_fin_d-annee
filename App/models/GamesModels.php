@@ -7,13 +7,14 @@ class GamesModels {
     protected $db;
 
     public function __construct() {
-        $this->db = new Database();
+        $database = new Database();
+        $this->db = $database->getConnection();
     }
     
     public function games($id) {
-        $sqlArticle = "SELECT * FROM games WHERE id = ?";
-        $query = $this->db->getConnection()->prepare($sqlArticle);
-        $query->execute([$id]);
-        return $query->fetch();  
+        $sqlGames = "SELECT * FROM games WHERE id = ?";
+        $games = $this->db->prepare($sqlGames);
+        $games->execute([$id]);
+        return $games->fetch();  
     }
 }

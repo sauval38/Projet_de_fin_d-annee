@@ -7,13 +7,14 @@ class ListModifyGamesModels {
     protected $db;
 
     public function __construct() {
-        $this->db = new Database();
+        $database = new Database();
+        $this->db = $database->getConnection();
     }
 
     public function listModifyGame() {
-        $sqlArticle = "SELECT * FROM games";
-        $query = $this->db->getConnection()->prepare($sqlArticle);
-        $query->execute();
-        return $query->fetchAll();
+        $sqlListModify = "SELECT * FROM games";
+        $listModify = $this->db->prepare($sqlListModify);
+        $listModify->execute();
+        return $listModify->fetchAll();
     }
 } 

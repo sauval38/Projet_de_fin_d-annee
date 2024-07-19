@@ -8,18 +8,18 @@ class AddGamesViews {
 
     public function add() {
         ?>
-        <div class="form-container">
+        <div id="form-games">
             <h1 id="ajouter">Ajouter un jeu</h1>
-            <form class="form" action="<?= htmlspecialchars(self::ADD_GAME_URL) ?>" method="post" enctype="multipart/form-data">
+            <form class="form-add-games" action="<?= htmlspecialchars(self::ADD_GAME_URL) ?>" method="post" enctype="multipart/form-data">
                 
                 <label for="titles">Titres :</label>
                 <input type="text" id="titles" name="titles" value="<?= isset($_POST['titles']) ? htmlspecialchars($_POST['titles']) : '' ?>" required>
                 
                 <label for="descriptions">Descriptions :</label>
-                <textarea id="descriptions" name="descriptions" required><?= isset($_POST['descriptions']) ? htmlspecialchars($_POST['descriptions']) : '' ?></textarea>
+                <textarea type="text" id="descriptions" name="descriptions" required><?= isset($_POST['descriptions']) ? htmlspecialchars($_POST['descriptions']) : '' ?></textarea>
                 
                 <label for="story">Histoire :</label>
-                <textarea id="story" name="story" required><?= isset($_POST['story']) ? htmlspecialchars($_POST['story']) : '' ?></textarea>
+                <textarea type="text" id="story" name="story" required><?= isset($_POST['story']) ? htmlspecialchars($_POST['story']) : '' ?></textarea>
                 
                 <label for="platforms">Plates-formes :</label>
                 <input type="text" id="platforms" name="platforms" value="<?= isset($_POST['platforms']) ? htmlspecialchars($_POST['platforms']) : '' ?>" required>
