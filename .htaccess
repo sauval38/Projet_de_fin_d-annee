@@ -20,6 +20,8 @@ RewriteRule ^admin/ajouterunjeux$ index.php?action=admin&step=ajouterunjeux [L,Q
 RewriteRule ^admin/modifierunjeux$ index.php?action=admin&step=modifierunjeux [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunjeux'
 RewriteRule ^admin/modifierunjeux/(\d+)$ index.php?action=admin&step=modifierunjeux&id=$1 [L,QSA]
+# Redirection pour l'accès à 'Admin/supprimerunjeux'
+RewriteRule ^admin/supprimerunjeux$ index.php?action=admin&step=supprimerunjeux [L,QSA]
 # Redirection pour l'accès à 'Admin/ajouterunpersonnage'
 RewriteRule ^admin/ajouterunpersonnage$ index.php?action=admin&step=ajouterunpersonnage [L,QSA]
 

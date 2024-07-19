@@ -18,6 +18,7 @@ use Controllers\ListModifyGamesController;
 use Controllers\ModifyGamesController;
 use Controllers\StoryController;
 use Controllers\CharacterController;
+use Controllers\DeleteGamesController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
@@ -56,8 +57,9 @@ switch($action) {
                     $modifylistGamesController->listModifyGames();
                 }
                 break;
-            case 'supprimer':
-                
+            case 'supprimerunjeux':
+                    $deleteGamesController = new DeleteGamesController;
+                    $deleteGamesController->gamesDelete();
                 break;
             case'ajouterunpersonnage': 
                     $addCharacterController = new AddCharacterController;

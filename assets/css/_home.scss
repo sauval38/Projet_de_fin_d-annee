@@ -1,0 +1,103 @@
+#logo {
+    font-family: $fonttitle;
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+    margin-top: 30px;
+}
+#carousel {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    .carousel-slides {
+        margin-top: 30px;
+        @include flexbox();
+        transition: transform 0.5s ease-in-out;
+        .slide {
+            position: relative;
+            min-width: 100%;
+            box-sizing: border-box;
+            img {
+                width: 100%;
+                display: block;
+                max-height: 500px;
+                object-fit: cover;
+            }
+            .carousel-title {
+                font-family: $fonttitle;
+                position: absolute;
+                bottom: 0; 
+                width: 100%;
+                text-align: center;
+                font-size: 24px;
+                color: $color_1;
+                z-index: 50;
+                padding: 1rem 0;
+                text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+                background: $background_1;
+              }
+        }
+    }
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $background_2;
+        border: none;
+        color: $color_1;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .carousel-button-prev {
+        left: 10px;
+      }
+      .carousel-button-next {
+        right: 10px;
+      }
+      .carousel-button:focus {
+        outline: none;
+      }  
+}
+h2 {
+    font-family: $fonttitle;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+    margin-top: 40px;
+  } 
+.presentation-container {
+    @include flexbox(center);
+    margin: 0 auto;
+    margin-top: 30px;
+    .presentation {
+        width: 60%;
+        margin: 20px auto;
+        .section {
+            border: 2px solid $color_2;
+            border-radius: $border_radius_2;
+            padding: 20px;
+            background-color: $background-color_2;
+            margin-bottom: 20px;
+            h3 {
+            font-size: 1.8em;
+            font-family: $fonttitle;
+            margin-bottom: 10px;
+            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+            }
+            p {
+            font-family: $fontpara;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            }
+            a {
+            font-size: 1.2em;
+            font-family: $fonttitle;
+            margin-bottom: 10px;
+            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+            text-align: center;
+            }
+        }
+    }        
+} 

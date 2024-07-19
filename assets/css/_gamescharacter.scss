@@ -1,0 +1,80 @@
+#game-character-detail {
+    background-color: $background-color_2;
+    border: 2px solid $border;
+    border-radius: $border_radius_2;
+    padding: 20px;
+    margin: 20px auto; 
+    width: 90%; 
+    max-width: 90%; 
+    font-family: $fontpara;
+    h1 {
+        font-family: $fonttitle;
+        font-size: 3em;
+        text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .game-character-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px; 
+    }
+    .game-character-block {
+        padding: 20px;
+        background-color: $background-color_1;
+        border: 1px solid $border;
+        border-radius: $border_radius_2;
+        box-shadow: 0 0 10px $color_2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .game-character-image {
+        width: 100%;
+        height: 200px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: $border_radius_1;
+            box-shadow: 0 0 10px $color_2;
+            object-fit: cover; 
+        }
+    }
+    .game-character-info {
+        @include flexbox(false, false, column);
+        gap: 15px;
+        width: 100%;
+    }
+    .game-character-item {
+        background-color: $background-color_1;
+        padding: 15px;
+        border-radius: $border_radius_1;
+        border: 1px solid $border;
+        width: 100%; 
+        .description-title {
+            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; 
+        }
+        p {
+            font-family: $fontpara;
+            font-size: 1.2em;
+            color: $color_1;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+    .close-button {
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: $color-2;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: darken($color-2, 20%);
+        }
+    }
+}

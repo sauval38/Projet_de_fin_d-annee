@@ -8,7 +8,7 @@ class AddCharacterViews {
 
     public function addCharacterViews($titles) {
         ?>
-        <div id="form-character">
+        <div id="add-character">
             <h1 id="ajouter">Ajouter un personnage</h1>
             <form class="form-add-character" method="post" action="<?= self::ADD_CHARACTER_URL ?>" enctype="multipart/form-data">
                 

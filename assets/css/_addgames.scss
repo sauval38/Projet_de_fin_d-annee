@@ -1,0 +1,71 @@
+h1 {
+    font-family: $fonttitle;
+    font-size: 3em;
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#form-games {
+    @include flexbox(center, center, column);
+	min-height: 100vh;
+	padding: 20px;
+    h1 {
+        font-family: $fonttitle;
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+    }
+    .form-add-games {
+        @include flexbox(false, false, column);
+		width: 300px;
+        label {
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            color: $color_1;
+            text-align: center;
+        }
+        textarea {
+            padding: 10px;
+            border: 2px solid $color_2;
+            border-radius: $border_radius_1;
+            background-color: $background-color_1;
+            color: $color_1;
+            font-size: 1em;
+            margin-bottom: 15px;
+            transition: all 0.2s ease-in-out;
+            &:focus {
+                outline: none;
+                border-color: $border-color_1;
+            }    
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid $color_2;
+            border-radius: $border_radius_1;
+            background-color: $background-color_1;
+            color: $color_1;
+            font-size: 1em;
+            margin-bottom: 15px;
+            transition: all 0.2s ease-in-out;
+            &:focus {
+                outline: none;
+                border-color: $border-color_1;
+            }
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: $border_radius_1;
+            background-color: $background-color_4;
+            color: $color_4;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                background-color: $background-color_2;
+            }
+        }
+    }
+}

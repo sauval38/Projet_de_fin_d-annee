@@ -1,0 +1,16 @@
+#menu {
+    background-color: $background-color_2;
+    padding: 10px;
+    @include flexbox(space-around);
+        a{
+        font-family: $fonttitle;
+        text-decoration: none;
+        color: $color_2;
+        padding: 5px 10px;
+        border-radius: $border_radius_1;
+        transition: background-color 0.3s;
+        &:hover{
+            background-color: $background-color_1;
+            }
+        }
+}

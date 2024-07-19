@@ -420,6 +420,7 @@ h1 {
   width: calc(30% - 40px);
 }
 #list-modify-games .modify-games h2 {
+  font-family: "Raleway", sans-serif;
   cursor: pointer;
   font-size: 1.5rem;
 }
@@ -473,6 +474,7 @@ h1 {
   width: calc(30% - 40px);
 }
 #list-games .list h2 {
+  font-family: "Raleway", sans-serif;
   cursor: pointer;
   font-size: 1.5rem;
 }
@@ -575,6 +577,7 @@ h1 {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 #game-character-detail .game-character-item p {
+  font-family: "Exo";
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
@@ -648,6 +651,7 @@ h1 {
   display: block;
 }
 #games-detail .games-item p {
+  font-family: "Exo";
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -698,6 +702,7 @@ h1 {
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 #story-game .story p {
+  font-family: "Exo";
   font-size: 1.2em;
   line-height: 1.6;
   color: rgb(255, 255, 255);
@@ -718,66 +723,6 @@ h1 {
 }
 #story-game .close-button:hover {
   color: #009900;
-}
-
-.form-character {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 20px;
-}
-.form-character h1 {
-  text-align: center;
-  font-family: "Raleway", sans-serif;
-  font-size: 3em;
-  margin-bottom: 20px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-}
-.form-character form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-.form-character form label {
-  margin-bottom: 5px;
-  font-size: 1.2em;
-  color: rgb(255, 255, 255);
-  text-align: center;
-}
-.form-character form input[type=text],
-.form-character form input[type=file],
-.form-character form input[type=number],
-.form-character form select {
-  padding: 10px;
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 5px;
-  background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
-  font-size: 1em;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-}
-.form-character form input[type=text]:focus,
-.form-character form input[type=file]:focus,
-.form-character form input[type=number]:focus,
-.form-character form select:focus {
-  outline: none;
-  border-color: rgb(44, 62, 80);
-}
-.form-character form input[type=submit] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(0, 255, 0);
-  color: rgb(0, 0, 0);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-.form-character form input[type=submit]:hover {
-  background-color: rgb(44, 62, 80);
 }
 
 h1 {
@@ -859,7 +804,7 @@ h1 {
   background-color: rgb(44, 62, 80);
 }
 
-#form-character {
+#add-character {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -867,24 +812,24 @@ h1 {
   min-height: 100vh;
   padding: 20px;
 }
-#form-character h1 {
+#add-character h1 {
   font-family: "Raleway", sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
-#form-character .form-add-character {
+#add-character .form-add-character {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-#form-character .form-add-character label {
+#add-character .form-add-character label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
 }
-#form-character .form-add-character textarea {
+#add-character .form-add-character textarea {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -894,14 +839,14 @@ h1 {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-#form-character .form-add-character textarea:focus {
+#add-character .form-add-character textarea:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-#form-character .form-add-character input[type=text],
-#form-character .form-add-character input[type=file],
-#form-character .form-add-character input[type=number],
-#form-character .form-add-character input[type=decimal] {
+#add-character .form-add-character input[type=text],
+#add-character .form-add-character input[type=file],
+#add-character .form-add-character input[type=number],
+#add-character .form-add-character input[type=decimal] {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
   border-radius: 5px;
@@ -911,14 +856,14 @@ h1 {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-#form-character .form-add-character input[type=text]:focus,
-#form-character .form-add-character input[type=file]:focus,
-#form-character .form-add-character input[type=number]:focus,
-#form-character .form-add-character input[type=decimal]:focus {
+#add-character .form-add-character input[type=text]:focus,
+#add-character .form-add-character input[type=file]:focus,
+#add-character .form-add-character input[type=number]:focus,
+#add-character .form-add-character input[type=decimal]:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
 }
-#form-character .form-add-character input[type=submit] {
+#add-character .form-add-character input[type=submit] {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -928,6 +873,6 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-#form-character .form-add-character input[type=submit]:hover {
+#add-character .form-add-character input[type=submit]:hover {
   background-color: rgb(44, 62, 80);
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=index.css.map */

@@ -7,7 +7,7 @@ class ButtonAdminViews {
     
     const ADD_GAME_URL = "admin/ajouterunjeux";
     const MODIFY_GAME_URL = "admin/modifierunjeux";
-    const DELETE_GAME_URL = "#"; 
+    const DELETE_GAME_URL = "admin/supprimerunjeux"; 
     const ADD_CHARACTER_URL = "admin/ajouterunpersonnage";
     const MODIFY_CHARACTER_URL = "#"; 
     const DELETE_CHARACTER_URL = "#"; 
