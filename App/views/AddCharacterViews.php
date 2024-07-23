@@ -4,7 +4,7 @@ namespace Views;
 
 class AddCharacterViews {
 
-    const ADD_CHARACTER_URL = "admin/ajouterunpersonnage";
+    const ADD_CHARACTER_URL = "admin/addCharacter";
 
     public function addCharacterViews($titles) {
         ?>

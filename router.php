@@ -18,7 +18,7 @@ use Controllers\ListModifyGamesController;
 use Controllers\ModifyGamesController;
 use Controllers\StoryController;
 use Controllers\CharacterController;
-use Controllers\DeleteGamesController;
+use Controllers\ListDeleteGamesController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
@@ -35,7 +35,7 @@ switch($action) {
         $buttonAdminController = new ButtonAdminController();
         $buttonAdminController->boutton();
         switch ($step) {
-            case 'ajouterunjeux':
+            case 'addGames':
                 $addGamesController = new AddGamesController();
                 if ($_SERVER['REQUEST_METHOD'] === 'POST')   
                 { 
@@ -44,7 +44,7 @@ switch($action) {
                     $addGamesController->addGames();
                 }
                 break;
-            case 'modifierunjeux':
+            case 'modifyGames':
                 if ($id){
                     $modifyGamesController = new ModifyGamesController;
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -57,11 +57,17 @@ switch($action) {
                     $modifylistGamesController->listModifyGames();
                 }
                 break;
-            case 'supprimerunjeux':
-                    $deleteGamesController = new DeleteGamesController;
-                    $deleteGamesController->gamesDelete();
-                break;
-            case'ajouterunpersonnage': 
+                case 'deleteGames':
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
+                        $gameId = $_POST['game_id'];
+                        $listDeleteGamesController = new ListDeleteGamesController();
+                        $listDeleteGamesController->deleteGame($gameId);
+                    } else {
+                        $listDeleteGamesController = new ListDeleteGamesController();
+                        $listDeleteGamesController->listGamesDelete();
+                    }
+                    break;
+            case'addCharacter': 
                     $addCharacterController = new AddCharacterController;
                     if ($_SERVER['REQUEST_METHOD'] === 'POST')
                     {

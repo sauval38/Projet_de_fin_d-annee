@@ -5,10 +5,10 @@ namespace Views;
 class ButtonAdminViews {
 
     
-    const ADD_GAME_URL = "admin/ajouterunjeux";
-    const MODIFY_GAME_URL = "admin/modifierunjeux";
-    const DELETE_GAME_URL = "admin/supprimerunjeux"; 
-    const ADD_CHARACTER_URL = "admin/ajouterunpersonnage";
+    const ADD_GAME_URL = "admin/addGames";
+    const MODIFY_GAME_URL = "admin/modifyGames";
+    const DELETE_GAME_URL = "admin/deleteGames"; 
+    const ADD_CHARACTER_URL = "admin/addCharacter";
     const MODIFY_CHARACTER_URL = "#"; 
     const DELETE_CHARACTER_URL = "#"; 
 

@@ -4,13 +4,11 @@ namespace Views;
 
 class AddGamesViews {
 
-    const ADD_GAME_URL = "admin/ajouterunjeux";
-
     public function add() {
         ?>
         <div id="form-games">
             <h1 id="ajouter">Ajouter un jeu</h1>
-            <form class="form-add-games" action="<?= htmlspecialchars(self::ADD_GAME_URL) ?>" method="post" enctype="multipart/form-data">
+            <form class="form-add-games" method="post" enctype="multipart/form-data">
                 
                 <label for="titles">Titres :</label>
                 <input type="text" id="titles" name="titles" value="<?= isset($_POST['titles']) ? htmlspecialchars($_POST['titles']) : '' ?>" required>

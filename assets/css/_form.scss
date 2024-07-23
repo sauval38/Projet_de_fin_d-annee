@@ -1,14 +1,15 @@
-#modification {
-	@include flexbox(center, center, column);
+#add-character, #form-games, #modification {
+    @include flexbox(center, center, column);
 	min-height: 100vh;
 	padding: 20px;
 	h1 {
 		font-family: $fonttitle;
 		font-size: 3em;
 		margin-bottom: 20px;
+		text-align: center;
 		text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
 	}
-	.form-modification-games {
+	form {
 		@include flexbox(false, false, column);
 		width: 300px;
 		label {
@@ -17,7 +18,10 @@
 			color: $color_1;
 			text-align: center;
 		}
-		input[type=text], input[type=number], input[type=decimal] {
+		input[type=text], input[type=number], input[type=decimal], 
+        input[type=datetime-local],
+        input[type=date],
+        select {
 			padding: 10px;
 			border: 2px solid $color_2;
 			border-radius: $border_radius_1;

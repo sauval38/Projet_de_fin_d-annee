@@ -15,16 +15,15 @@ RewriteRule ^logout$ index.php?action=logout [L,QSA]
 # Redirection pour l'accès à 'Admin'
 RewriteRule ^admin$ index.php?action=admin [L,QSA]
 # Redirection pour l'accès à 'Admin/ajouterunjeux'
-RewriteRule ^admin/ajouterunjeux$ index.php?action=admin&step=ajouterunjeux [L,QSA]
+RewriteRule ^admin/addGames$ index.php?action=admin&step=addGames [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunjeux'
-RewriteRule ^admin/modifierunjeux$ index.php?action=admin&step=modifierunjeux [L,QSA]
+RewriteRule ^admin/modifyGames$ index.php?action=admin&step=modifyGames [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunjeux'
-RewriteRule ^admin/modifierunjeux/(\d+)$ index.php?action=admin&step=modifierunjeux&id=$1 [L,QSA]
+RewriteRule ^admin/modifyGames/(\d+)$ index.php?action=admin&step=modifyGames&id=$1 [L,QSA]
 # Redirection pour l'accès à 'Admin/supprimerunjeux'
-RewriteRule ^admin/supprimerunjeux$ index.php?action=admin&step=supprimerunjeux [L,QSA]
+RewriteRule ^admin/deleteGames$ index.php?action=admin&step=deleteGames [L,QSA]
 # Redirection pour l'accès à 'Admin/ajouterunpersonnage'
-RewriteRule ^admin/ajouterunpersonnage$ index.php?action=admin&step=ajouterunpersonnage [L,QSA]
-
+RewriteRule ^admin/addCharacter$ index.php?action=admin&step=addCharacter [L,QSA]
 
 # Redirection pour l'accès à 'liste jeux'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]

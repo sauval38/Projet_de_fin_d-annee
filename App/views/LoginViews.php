@@ -14,7 +14,7 @@ class LoginViews {
         } else {
             ?>
             <div class="login-form">
-                <h1>Connecte-toi</h1>
+                <h1 >Connecte-toi</h1>
                 <form class="form-login" method="POST" action="login">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
