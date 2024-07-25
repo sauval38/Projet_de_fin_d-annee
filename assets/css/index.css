@@ -17,7 +17,7 @@ body {
   justify-content: space-around;
 }
 #menu a {
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   text-decoration: none;
   color: rgb(0, 255, 0);
   padding: 5px 10px;
@@ -221,10 +221,10 @@ body {
 }
 
 h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
   font-size: 40px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   margin-top: 40px;
 }
 
@@ -247,7 +247,7 @@ h2 {
 }
 .presentation-container .presentation .section h3 {
   font-size: 1.8em;
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   margin-bottom: 10px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
@@ -259,7 +259,7 @@ h2 {
 }
 .presentation-container .presentation .section a {
   font-size: 1.2em;
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   margin-bottom: 10px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
@@ -286,7 +286,7 @@ h2 {
   background-color: rgb(0, 255, 0);
   color: rgb(255, 255, 255);
   padding: 1rem;
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   font-size: 24px;
   border: none;
   cursor: pointer;
@@ -302,7 +302,7 @@ h2 {
 }
 .dropdown-container .dropdown .dropdown-content a {
   color: rgb(0, 0, 0);
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -420,14 +420,14 @@ h1 {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 
-#list-modify-games {
+#list-character {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 25px;
 }
-#list-modify-games .modify-games {
+#list-character .list {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -436,15 +436,15 @@ h1 {
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  width: calc(30% - 40px);
+  width: calc(25% - 40px);
 }
-#list-modify-games .modify-games h2 {
-  font-family: "Raleway", sans-serif;
+#list-character .list h2 {
+  font-family: "Exo";
   cursor: pointer;
   font-size: 1.5rem;
 }
-#list-modify-games .modify-games a {
-  font-family: "Raleway", sans-serif;
+#list-character .list a {
+  font-family: "Exo";
   display: block;
   margin: 5px 0;
   padding: 10px;
@@ -456,17 +456,143 @@ h1 {
   text-decoration: none;
   transition: background-color 0.3s;
 }
-#list-modify-games .modify-games a:hover {
+#list-character .list a:hover {
   background-color: rgb(34, 34, 34);
 }
-#list-modify-games .modify-games p {
+#list-character .list p {
   text-align: center;
   font-family: "Exo";
   padding-top: 10px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
 }
-#list-modify-games .modify-games img {
+#list-character .list img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+
+#list-modify-games {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+#list-modify-games .list-games {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(44, 62, 80);
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: calc(30% - 40px);
+}
+#list-modify-games .list-games h2 {
+  font-family: "Exo";
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+#list-modify-games .list-games a {
+  font-family: "Exo";
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  border: 2px solid rgb(0, 255, 0);
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+#list-modify-games .list-games a:hover {
+  background-color: rgb(34, 34, 34);
+}
+#list-modify-games .list-games p {
+  text-align: center;
+  font-family: "Exo";
+  padding-top: 10px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+#list-modify-games .list-games img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Raleway", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+
+#list-modify-character {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+#list-modify-character .list-character {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(44, 62, 80);
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: calc(30% - 40px);
+}
+#list-modify-character .list-character h2 {
+  font-family: "Exo";
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+#list-modify-character .list-character a {
+  font-family: "Exo";
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+#list-modify-character .list-character a:hover {
+  background-color: rgb(34, 34, 34);
+}
+#list-modify-character .list-character p {
+  text-align: center;
+  font-family: "Exo";
+  padding-top: 10px;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+#list-modify-character .list-character img {
   width: 100%;
   height: auto;
   border-radius: 5px;
@@ -502,9 +628,14 @@ h1 {
   width: calc(30% - 40px);
 }
 #list-delete .list h2 {
-  font-family: "Raleway", sans-serif;
-  cursor: pointer;
-  font-size: 1.5rem;
+  font-family: "Exo";
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 10px;
 }
 #list-delete .list p {
   text-align: center;
@@ -558,7 +689,7 @@ h1 {
   width: calc(30% - 40px);
 }
 #list-games .list h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   cursor: pointer;
   font-size: 1.5rem;
 }
@@ -566,7 +697,7 @@ h1 {
   margin-top: 10px;
 }
 #list-games .list a {
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo";
   display: block;
   margin: 5px 0;
   padding: 10px;

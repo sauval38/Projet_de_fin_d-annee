@@ -5,7 +5,7 @@ namespace Views;
 class ModifyGamesViews {
 
     public function updateForm($games) {
-?>
+        ?>
         <div id="modification">
             <h1>Modifier un jeu</h1>
             <form class="form-modification-games" method="post" enctype="multipart/form-data">

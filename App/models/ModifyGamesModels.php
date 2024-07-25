@@ -1,4 +1,5 @@
 <?php
+
 namespace Models;
 
 use App\Database;
@@ -13,10 +14,10 @@ class ModifyGamesModels {
     }
     
     public function modify($id) {
-        $sqlModify = "SELECT * FROM games WHERE id = ?";
-        $modify = $this->db->prepare($sqlModify);
-        $modify->execute([$id]);
-        return $modify->fetch();
+        $sqlModifyGames = "SELECT * FROM games WHERE id = ?";
+        $modifyGames = $this->db->prepare($sqlModifyGames);
+        $modifyGames->execute([$id]);
+        return $modifyGames->fetch();
     }
 
     public function update() {

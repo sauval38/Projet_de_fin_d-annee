@@ -3,7 +3,7 @@
     padding: 10px;
     @include flexbox(space-around);
         a{
-        font-family: $fonttitle;
+        font-family: $fontpara;
         text-decoration: none;
         color: $color_2;
         padding: 5px 10px;

@@ -4,13 +4,11 @@ namespace Views;
 
 class AddCharacterViews {
 
-    const ADD_CHARACTER_URL = "admin/addCharacter";
-
     public function addCharacterViews($titles) {
         ?>
         <div id="add-character">
             <h1 id="ajouter">Ajouter un personnage</h1>
-            <form class="form-add-character" method="post" action="<?= self::ADD_CHARACTER_URL ?>" enctype="multipart/form-data">
+            <form class="form-add-character" method="post" enctype="multipart/form-data">
                 
                 <label for="titles">Choisir le jeu :</label>
                 <select name="titles" id="titles">

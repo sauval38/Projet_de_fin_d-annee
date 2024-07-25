@@ -2,7 +2,7 @@
 
 namespace Views;
 
-class ListDeleteGamesViews {
+class DeleteGamesViews {
 
     public function listDeleteGames($games) {
         ?>
@@ -15,10 +15,10 @@ class ListDeleteGamesViews {
                             <?= htmlspecialchars($game['titles_article']) ?>
                         </h2>
                         <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
-                        <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
+                        <img src="<?= ($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
                         
                         <div class="button-container">
-                            <form method="POST" action="index.php?action=admin&step=deleteGames">
+                            <form method="POST">
                                 <input type="hidden" name="game_id" value="<?= htmlspecialchars($game['id']) ?>">
                                 <button type="submit" name="delete" value="1">Supprimer</button>
                             </form>

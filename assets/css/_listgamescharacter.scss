@@ -6,10 +6,10 @@ h1{
     margin-bottom: 20px;
     text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
 }
-#list-modify-games {
+#list-modify-character {
     @include flexbox(space-around, flex-start, false, wrap);
     margin: 20px;
-    .list-games {
+    .list-character {
         @include flexbox(space-between, false, column);
         background-color: $background-color_2;
         border: 2px solid $border;
@@ -30,10 +30,10 @@ h1{
             text-align: center;
             font-size: 1.2em;
             border: 2px solid $border;
-            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
             border-radius: $border_radius_2;
             color: $color_1;
             text-decoration: none;
+            transition: background-color 0.3s;
             &:hover{
                 background-color: $background-color_1;
                 }

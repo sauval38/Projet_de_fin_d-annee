@@ -16,6 +16,6 @@ class ListModifyGamesController {
 
     public function listModifyGames() {
         $games = $this->listModifyGamesModels->listModifyGame();
-        $this->listModifyGamesViews->listModify($games);
+        $this->listModifyGamesViews->listModifyGames($games);
     }
 }  

@@ -12,9 +12,9 @@ class ListModifyGamesModels {
     }
 
     public function listModifyGame() {
-        $sqlListModify = "SELECT * FROM games";
-        $listModify = $this->db->prepare($sqlListModify);
-        $listModify->execute();
-        return $listModify->fetchAll();
+        $sqlListModifyGames = "SELECT * FROM games";
+        $listModifyGames = $this->db->prepare($sqlListModifyGames);
+        $listModifyGames->execute();
+        return $listModifyGames->fetchAll();
     }
 } 

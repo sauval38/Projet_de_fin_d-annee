@@ -9,7 +9,7 @@ class ButtonAdminViews {
     const MODIFY_GAME_URL = "admin/modifyGames";
     const DELETE_GAME_URL = "admin/deleteGames"; 
     const ADD_CHARACTER_URL = "admin/addCharacter";
-    const MODIFY_CHARACTER_URL = "#"; 
+    const MODIFY_CHARACTER_URL = "admin/modifyCharacter"; 
     const DELETE_CHARACTER_URL = "#"; 
 
     public function button() {

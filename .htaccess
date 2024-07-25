@@ -24,6 +24,12 @@ RewriteRule ^admin/modifyGames/(\d+)$ index.php?action=admin&step=modifyGames&id
 RewriteRule ^admin/deleteGames$ index.php?action=admin&step=deleteGames [L,QSA]
 # Redirection pour l'accès à 'Admin/ajouterunpersonnage'
 RewriteRule ^admin/addCharacter$ index.php?action=admin&step=addCharacter [L,QSA]
+# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+RewriteRule ^admin/modifyCharacter$ index.php?action=admin&step=modifyCharacter [L,QSA]
+# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+RewriteRule ^admin/modifyCharacter/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1 [L,QSA]
+# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+RewriteRule ^admin/modifyCharacter/(\d+)/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1&characterId=$2 [L,QSA]
 
 # Redirection pour l'accès à 'liste jeux'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]

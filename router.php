@@ -7,23 +7,27 @@ require_once('vendor/autoload.php');
 
 use App\Database;
 use Controllers\AddCharacterController;
-use Controllers\RegisterController;
-use Controllers\LoginController;
-use Controllers\HomeController;
 use Controllers\AddGamesController;
 use Controllers\ButtonAdminController;
-use Controllers\ListGamesController;
-use Controllers\GamesController;
-use Controllers\ListModifyGamesController;
-use Controllers\ModifyGamesController;
-use Controllers\StoryController;
 use Controllers\CharacterController;
-use Controllers\ListDeleteGamesController;
+use Controllers\DeleteGamesController;
+use Controllers\GamesController;
+use Controllers\HomeController;
+use Controllers\ListCharacterController;
+use Controllers\ListGamesController;
+use Controllers\ListModifyCharacterController;
+use Controllers\ListModifyGamesController;
+use Controllers\LoginController;
+use Controllers\ModifyCharacterController;
+use Controllers\ModifyGamesController;
+use Controllers\RegisterController;
+use Controllers\StoryController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
 $action = $_REQUEST['action'] ?? null;
 $step = $_REQUEST['step'] ?? null;
+$characterId = $_REQUEST['characterId'] ?? null;
 
 switch($action) {
     default:
@@ -60,14 +64,14 @@ switch($action) {
                 case 'deleteGames':
                     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
                         $gameId = $_POST['game_id'];
-                        $listDeleteGamesController = new ListDeleteGamesController();
-                        $listDeleteGamesController->deleteGame($gameId);
+                        $deleteGamesController = new DeleteGamesController();
+                        $deleteGamesController->deleteGame($gameId);
                     } else {
-                        $listDeleteGamesController = new ListDeleteGamesController();
-                        $listDeleteGamesController->listGamesDelete();
+                        $deleteGamesController = new DeleteGamesController();
+                        $deleteGamesController->listGamesDelete();
                     }
                     break;
-            case'addCharacter': 
+                case'addCharacter': 
                     $addCharacterController = new AddCharacterController;
                     if ($_SERVER['REQUEST_METHOD'] === 'POST')
                     {
@@ -76,6 +80,24 @@ switch($action) {
                         $addCharacterController->addCharacter();
                     }
                 break;
+                case'modifyCharacter':
+                    if ($id && $characterId) {
+                        $modifyCharacterController = new modifyCharacterController;
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                            $modifyCharacterController->updateGames();
+                        } else {
+                            $modifyCharacterController->modifyCharacter($characterId);
+                        }
+                    } else if ($id) {
+                        $listCharacterController = new ListCharacterController;
+                        $listCharacterController->listModifyCharacter($id);
+                    } else {
+                        $modifylistCharacterController = new ListModifyCharacterController;
+                        $modifylistCharacterController->listModifyCharacter();
+                    }
+                    
+
+                    break;
         }
         break;
 

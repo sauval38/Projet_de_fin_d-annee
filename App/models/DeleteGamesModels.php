@@ -3,7 +3,7 @@ namespace Models;
 
 use App\Database;
 
-class ListDeleteGamesModels {
+class DeleteGamesModels {
     protected $db;
 
     public function __construct() {
