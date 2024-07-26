@@ -6,7 +6,7 @@ class AddGamesViews {
 
     public function add() {
         ?>
-        <div id="form-games">
+        <div id="add-games">
             <h1 id="ajouter">Ajouter un jeu</h1>
             <form class="form-add-games" method="post" enctype="multipart/form-data">
                 

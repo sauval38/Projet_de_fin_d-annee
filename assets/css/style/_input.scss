@@ -1,0 +1,32 @@
+input[type=text], input[type=number], input[type=decimal], 
+        input[type=datetime-local],
+        input[type=date],
+		input[type=email],
+		input[type=password],
+        select, textarea {
+			padding: 10px;
+			border: 2px solid $border;
+			border-radius: $border_radius_1;
+			background-color: $background-color_1;
+			color: $color_1;
+			font-size: 1em;
+			margin-bottom: 15px;
+			transition: all 0.2s ease-in-out;
+			&:focus {
+				outline: none;
+				border-color: $border-color_1;
+			}
+		}
+input[type=submit] {
+			padding: 10px 20px;
+			border: none;
+			border-radius: $border_radius_1;
+			background-color: $background-color_4;
+			color: $color_4;
+			font-size: 1.2rem;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				background-color: $background-color_2;
+			}
+		}        

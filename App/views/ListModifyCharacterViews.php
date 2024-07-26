@@ -6,10 +6,10 @@ class ListModifyCharacterViews {
 
     public function listModifyCharacter($games) {
         ?>
-        <h1>LISTE DES JEUX</h1>
-        <div id="list-modify-character">
+        <h1>LISTE DES PERSONNAGES</h1>
+        <div id="list-modify-character-admin">
             <?php foreach ($games as $game): ?>
-                <div class="list-character">
+                <div class="list">
                     <a href="admin/modifyCharacter/<?= htmlspecialchars($game['id']) ?>">
                         <?= htmlspecialchars($game['titles_article']) ?>
                     </a>

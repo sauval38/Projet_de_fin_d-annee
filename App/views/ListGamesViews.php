@@ -13,6 +13,7 @@ class ListGamesViews {
                     <h2 class="game-title" data-game-id="<?= htmlspecialchars($game['id']) ?>">
                         <?= htmlspecialchars($game['titles_article']) ?>
                     </h2>
+                    <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
                     <div class="additional-links" id="links-<?= htmlspecialchars($game['id']) ?>" style="display:none;">
                         <a href="games/<?= htmlspecialchars($game['id']) ?>">Informations</a>
                         <a href="story/<?= htmlspecialchars($game['id']) ?>">Histoire</a>
@@ -20,7 +21,6 @@ class ListGamesViews {
                         <a href="<?= htmlspecialchars($game['id']) ?>">Boss</a>
                     </div>
                     <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
-                    <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
                 </div>
             <?php endforeach;
                 if (empty($game)) {

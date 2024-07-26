@@ -30,6 +30,10 @@ RewriteRule ^admin/modifyCharacter$ index.php?action=admin&step=modifyCharacter 
 RewriteRule ^admin/modifyCharacter/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1 [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunpersonnage'
 RewriteRule ^admin/modifyCharacter/(\d+)/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1&characterId=$2 [L,QSA]
+# Redirection pour l'accès à 'Admin/supprimerunpersonnage'
+RewriteRule ^admin/deleteCharacter$ index.php?action=admin&step=deleteCharacter [L,QSA]
+# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+RewriteRule ^admin/deleteCharacter/(\d+)$ index.php?action=admin&step=deleteCharacter&gameId=$1 [L,QSA]
 
 # Redirection pour l'accès à 'liste jeux'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]

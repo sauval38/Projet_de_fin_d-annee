@@ -1,0 +1,15 @@
+#add-character, #add-games, #modification {
+    @include flexbox(center, center, column);
+	min-height: 100vh;
+	padding: 20px;
+	form {
+		@include flexbox(false, false, column);
+		width: 300px;
+		label {
+			margin-bottom: 5px;
+			font-size: 1.2em;
+			color: $color_1;
+			text-align: center;
+		}
+	}
+}

@@ -7,13 +7,6 @@
     width: 80%;
     max-width: 60%;
     font-family: $fontpara;
-    h1 {
-        font-family: $fonttitle;
-        font-size: 3em;
-        text-shadow: 0 0 3px $color-2, 0 0 5px $color-2;
-        text-align: center;
-        margin-bottom: 20px;
-    }
     .story {
         @include flexbox(false, center, column);
         gap: 20px;
@@ -22,18 +15,6 @@
             width: 50%;
             border-radius: $border-radius-1;
             box-shadow: 0 0 10px $color-2;
-        }
-        p {
-            font-family: $fontpara;
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: $color-1;
-            background-color: $background-color-1;
-            padding: 15px;
-            border-radius: $border-radius-1;
-            border: 1px solid $border;
-            text-align: center;
-            box-shadow: 0 0 5px $color-2;
         }
     }
     .close-button {

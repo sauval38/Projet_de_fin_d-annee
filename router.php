@@ -10,10 +10,12 @@ use Controllers\AddCharacterController;
 use Controllers\AddGamesController;
 use Controllers\ButtonAdminController;
 use Controllers\CharacterController;
+use Controllers\DeleteCharacterController;
 use Controllers\DeleteGamesController;
 use Controllers\GamesController;
 use Controllers\HomeController;
 use Controllers\ListCharacterController;
+use Controllers\ListDeleteCharacterController;
 use Controllers\ListGamesController;
 use Controllers\ListModifyCharacterController;
 use Controllers\ListModifyGamesController;
@@ -25,6 +27,7 @@ use Controllers\StoryController;
 
 $pdo = new Database;
 $id = $_REQUEST['id'] ?? null;
+$game_id = $_REQUEST['gameId'] ?? null;
 $action = $_REQUEST['action'] ?? null;
 $step = $_REQUEST['step'] ?? null;
 $characterId = $_REQUEST['characterId'] ?? null;
@@ -95,9 +98,20 @@ switch($action) {
                         $modifylistCharacterController = new ListModifyCharacterController;
                         $modifylistCharacterController->listModifyCharacter();
                     }
-                    
-
                     break;
+                    case 'deleteCharacter':
+                        if ($game_id) {
+                            $deleteCharacterController = new DeleteCharacterController();
+                            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                $deleteCharacterController->deleteCharacter();
+                            } else {
+                                $deleteCharacterController->listCharacterDelete($game_id);
+                            }
+                        } else {
+                            $listDeleteCharacterController = new ListDeleteCharacterController();
+                            $listDeleteCharacterController->listDeleteCharacter();
+                        }
+                        break;
         }
         break;
 

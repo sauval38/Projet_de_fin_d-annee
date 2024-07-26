@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+    margin-top: 30px;
+    font-family: $fonttitle;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+}
+p {
+    font-family: $fontpara;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: $color-1;
+    margin-top: 10px;
+    background-color: $background-color-1;
+    padding: 15px;
+    border-radius: $border-radius-1;
+    border: 1px solid $border;
+    text-align: center;
+    box-shadow: 0 0 5px $color-2;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: $border_radius_1;
+    background-color: $background-color_4;
+    color: $color_4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $background-color_2;
+    }
+}

@@ -1,12 +1,5 @@
-h1{
-    text-align: center;
-    margin-top: 30px;
-    font-family: $fonttitle;
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-}
-#list-delete {
+
+#delete {
     @include flexbox(space-around, flex-start, false, wrap);
     margin: 20px;
     .list {
@@ -27,13 +20,6 @@ h1{
             border: 2px solid $border;
             border-radius: $border_radius_2;
         }
-        p {
-            text-align: center;
-            font-family: $fontpara;
-            padding-top: 10px;
-            font-size: 1.2em;
-            color: $color_1;
-        }
         img {
             width: 100%;
             height: auto;
@@ -45,20 +31,7 @@ h1{
             display: flex;
             justify-content: center; 
             margin-top: 20px; 
-            button {
-                padding: 10px 20px;
-                border: none;
-                border-radius: $border_radius_1;
-                background-color: $background-color_4;
-                color: $color_4;
-                font-size: 1.2rem;
-                cursor: pointer;
-                transition: all 0.2s ease-in-out;
-
-                &:hover {
-                    background-color: $background-color_2;
-                }
-            }
+            
         }
     }
 }

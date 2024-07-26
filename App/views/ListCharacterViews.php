@@ -7,7 +7,7 @@ class ListCharacterViews {
     public function listCharacter($characters) {
         ?>
         <h1>LISTE DES PERSONNAGES</h1>
-        <div id="list-character">
+        <div id="list-character-admin">
             <?php foreach ($characters as $character): ?>
                 <div class="list">
                     <a href="admin/modifyCharacter/<?= htmlspecialchars($character['games_id']) ?>/<?= htmlspecialchars($character['id']) ?>">
