@@ -6,8 +6,10 @@ error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 
 use App\Database;
+use Controllers\AddBossController;
 use Controllers\AddCharacterController;
 use Controllers\AddGamesController;
+use Controllers\BossController;
 use Controllers\ButtonAdminController;
 use Controllers\CharacterController;
 use Controllers\DeleteCharacterController;
@@ -17,6 +19,7 @@ use Controllers\HomeController;
 use Controllers\ListCharacterController;
 use Controllers\ListDeleteCharacterController;
 use Controllers\ListGamesController;
+use Controllers\ListModifyBossController;
 use Controllers\ListModifyCharacterController;
 use Controllers\ListModifyGamesController;
 use Controllers\LoginController;
@@ -55,9 +58,9 @@ switch($action) {
                 if ($id){
                     $modifyGamesController = new ModifyGamesController;
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        $modifyGamesController->updateGames();
+                        $modifyGamesController->updateGamesController();
                     } else {
-                        $modifyGamesController->modifyGames();
+                        $modifyGamesController->modifyGamesController();
                     } 
                 } else {
                     $modifylistGamesController = new ListModifyGamesController;
@@ -112,6 +115,29 @@ switch($action) {
                             $listDeleteCharacterController->listDeleteCharacter();
                         }
                         break;
+                    case 'addBoss':
+                        $addBossController = new AddBossController();
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST')   
+                            { 
+                                $addBossController->addBossImage();
+                            } else {
+                                $addBossController->addBoss();
+                            }
+                        break; 
+
+                    case 'modifyBoss':
+                        if ($id){
+                            $modifyGamesController = new ModifyGamesController;
+                            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                $modifyGamesController->updateGamesController();
+                            } else {
+                                $modifyGamesController->modifyGamesController();
+                            } 
+                            } else {
+                                $modifylistBossController = new ListModifyBossController;
+                                $modifylistBossController->listModifyBoss();
+                            } 
+                        break;                        
         }
         break;
 
@@ -130,21 +156,26 @@ switch($action) {
     case 'story';
         $storyController = new StoryController();
         if ($id){
-            $storyController->story();
+            $storyController->storyController();
         }
     break;
     
     case 'character';
         $characterController = new CharacterController();
         $characterController->character();
-    break;    
+    break;  
+    
+    case 'boss';
+        $bossController = new BossController();
+        $bossController->boss();
+    break;
 
-    case 'inscription':
+    case 'register':
         $registerController = new RegisterController();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $registerController->userSave();
+            $registerController->userSaveController();
         } else {
-            $registerController->registerViews();
+            $registerController->registerController();
         }
         break;
 

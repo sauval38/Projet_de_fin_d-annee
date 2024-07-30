@@ -10,7 +10,7 @@ class RegisterModels {
         $this->db = $database->getConnection();
     }
 
-    public function createUser() { 
+    public function createUserModels() { 
         if ($_POST) { 
             $username = $_POST['username'];
             $email = $_POST['email'];

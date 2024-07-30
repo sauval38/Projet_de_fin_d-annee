@@ -7,13 +7,13 @@ class LoginViews {
     public function render() {
         if (isset($_SESSION['id'])) {
             ?>
-            <form class="login" method="POST" action="?action=logout">
+            <form id="login" method="POST" action="?action=logout">
                 <button type="submit">Logout</button>
             </form>
             <?php
         } else {
             ?>
-            <div class="login-form">
+            <div id="login-form">
                 <h1 >Connecte-toi</h1>
                 <form class="form-login" method="POST" action="login">
                     <label for="email">Email:</label>

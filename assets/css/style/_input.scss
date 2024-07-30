@@ -1,8 +1,11 @@
-input[type=text], input[type=number], input[type=decimal], 
+		input[type=text], 
+		input[type=number], 
+		input[type=decimal], 
         input[type=datetime-local],
         input[type=date],
 		input[type=email],
 		input[type=password],
+		input[type=file],
         select, textarea {
 			padding: 10px;
 			border: 2px solid $border;

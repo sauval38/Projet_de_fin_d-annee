@@ -1,5 +1,5 @@
 
-#delete {
+#delete-games, #delete-character {
     @include flexbox(space-around, flex-start, false, wrap);
     margin: 20px;
     .list {

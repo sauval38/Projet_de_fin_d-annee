@@ -2,37 +2,37 @@
 
 namespace Views;
 
-class CharacterViews {
-    public function characterViews($game) {
-        if (isset($game) && is_array($game) && !empty($game)) { 
+class BossViews {
+    public function bossViews($game) {
+        if (isset($game) && is_array($game) && !empty($game)) {
             ?>
             <h1><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
-            <div id="game-character-detail">
-            <a href="listgames" class="close-button">&times;</a>
+            <div id="game-boss-detail">
+                <a href="listgames" class="close-button">&times;</a>
                 <div class="game-character-grid">
                     <?php 
-                    $character = [
-                        'names_character' => 'Name',
-                        'descriptions_character' => 'Description',
-                        'jobs_character' => 'Job',
-                        'limits_break_character' => 'Limit Break',
-                        'age_character' => 'Age',
-                        'armed_character' => 'Armed',
-                        'size_character' => 'Size',
-                        'date_o_birth_character' => 'Date of Birth',
-                        'place_of_birth_character' => 'Place of Birth'
+                    $boss = [
+                        'names_boss' => 'Name',
+                        'descriptions_boss' => 'Descriptions',
+                        'HP_boss' => 'HP',
+                        'MP_boss' => 'MP',
+                        'loots_boss' => 'Butins',
+                        'weakness_boss' => 'Weakness',
+                        'location_boss' => 'Location',
+                        'gils_boss' => 'Gils',
+                        'experiences_boss' => 'Experiences',
                     ];
                     foreach ($game as $item): 
                         ?>
                         <div class="game-character-block">
                             <div class="game-character-image">
-                                <?php if (isset($item['path']) && isset($item['images_character'])): ?>
-                                    <img src="<?= htmlspecialchars($item['path'] . '/' . $item['images_character']) ?>" alt="character<?= htmlspecialchars($item['titles_article']) ?>">
+                                <?php if (isset($item['path']) && isset($item['images_boss'])): ?>
+                                    <img src="<?= htmlspecialchars($item['path'] . '/' . $item['images_boss']) ?>" alt="boss<?= htmlspecialchars($item['titles_article']) ?>">
                                 <?php endif; ?>
                             </div>
                             <div class="game-character-info">
                                 <?php 
-                                foreach ($character as $key => $label) {
+                                foreach ($boss as $key => $label) {
                                     if (!empty($item[$key])) {
                                         ?>
                                         <div class="game-character-item">
@@ -58,3 +58,4 @@ class CharacterViews {
     }
 }
 ?>
+  

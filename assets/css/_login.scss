@@ -1,8 +1,8 @@
-.login {
+#login {
     @include flexbox(false, false, column);
     align-items: center;
   }
-.login-form {
+#login-form {
     @include flexbox(center, center, column);
     min-height: 100vh;
     padding: 20px;

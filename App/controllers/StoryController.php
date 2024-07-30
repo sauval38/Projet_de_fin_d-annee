@@ -13,11 +13,11 @@ class StoryController {
         $this->storyModels = new StoryModels();
     }
 
-    public function story() {
+    public function storyController() {
         $id = $_GET['id'] ?? null; 
         if ($id) {
-            $game = $this->storyModels->storyViews($id);
-            $this->storyViews->storyForm($game);
+            $story = $this->storyModels->storyModels($id);
+            $this->storyViews->storyView($story);
         } else {
             echo 'ID de jeu non fourni';
         }

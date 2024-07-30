@@ -18,7 +18,7 @@ class ListGamesViews {
                         <a href="games/<?= htmlspecialchars($game['id']) ?>">Informations</a>
                         <a href="story/<?= htmlspecialchars($game['id']) ?>">Histoire</a>
                         <a href="character/<?= htmlspecialchars($game['id']) ?>">Personnage</a>
-                        <a href="<?= htmlspecialchars($game['id']) ?>">Boss</a>
+                        <a href="boss/<?= htmlspecialchars($game['id']) ?>">Boss</a>
                     </div>
                     <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
                 </div>

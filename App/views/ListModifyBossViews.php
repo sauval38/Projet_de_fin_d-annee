@@ -2,15 +2,15 @@
 
 namespace Views;
 
-class ListModifyCharacterViews {
-
-    public function listModifyCharacter($games) {
+class ListModifyBossViews {
+     
+    public function listModifyBoss($games) {
         ?>
         <h1>LISTE DES JEUX</h1>
-        <div id="list-modify-character-admin">
-            <?php foreach ($games as $game): ?>
+        <div id="list-modify-boss-admin">
+        <?php foreach ($games as $game): ?>
                 <div class="list">
-                    <a href="admin/modifyCharacter/<?= htmlspecialchars($game['id']) ?>">
+                    <a href="admin/modifyBoss/<?= htmlspecialchars($game['id']) ?>">
                         <?= htmlspecialchars($game['titles_article']) ?>
                     </a>
                     <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
@@ -23,3 +23,4 @@ class ListModifyCharacterViews {
 }
 
 ?>
+    

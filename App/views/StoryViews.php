@@ -4,14 +4,14 @@ namespace Views;
 
 class StoryViews {
     
-    public function storyForm($game) {
-        if (!isset($game)) {
+    public function storyView($story) {
+        if (!isset($story)) {
             return; 
         }
         
-        $title = htmlspecialchars($game['titles_article']);
-        $image = htmlspecialchars($game['path'] . '/' . $game['images_article']);
-        $story = ($game['story_article']); 
+        $title = htmlspecialchars($story['titles_article']);
+        $image = htmlspecialchars($story['path'] . '/' . $story['images_article']);
+        $story = ($story['story_article']); 
         
         ?>
         <div id="story-game">

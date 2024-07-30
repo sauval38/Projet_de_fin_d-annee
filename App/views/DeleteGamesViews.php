@@ -7,7 +7,7 @@ class DeleteGamesViews {
     public function listDeleteGames($games) {
         ?>
         <h1>LISTE DES JEUX</h1>
-        <div id="delete">
+        <div id="delete-games">
             <?php if (!empty($games)): ?>
                 <?php foreach ($games as $game): ?>
                     <div class="list">

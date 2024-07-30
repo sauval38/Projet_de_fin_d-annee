@@ -47,11 +47,26 @@ button:hover {
   background-color: rgb(44, 62, 80);
 }
 
-input[type=text], input[type=number], input[type=decimal],
+.close-button {
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: rgb(0, 255, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-button:hover {
+  color: #009900;
+}
+
+input[type=text],
+input[type=number],
+input[type=decimal],
 input[type=datetime-local],
 input[type=date],
 input[type=email],
 input[type=password],
+input[type=file],
 select, textarea {
   padding: 10px;
   border: 2px solid rgb(0, 255, 0);
@@ -62,11 +77,14 @@ select, textarea {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-input[type=text]:focus, input[type=number]:focus, input[type=decimal]:focus,
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=decimal]:focus,
 input[type=datetime-local]:focus,
 input[type=date]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
+input[type=file]:focus,
 select:focus, textarea:focus {
   outline: none;
   border-color: rgb(44, 62, 80);
@@ -124,13 +142,13 @@ input[type=submit]:hover {
   text-align: center;
 }
 
-.login {
+#login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login-form {
+#login-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,12 +156,12 @@ input[type=submit]:hover {
   min-height: 100vh;
   padding: 20px;
 }
-.login-form .form-login {
+#login-form .form-login {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-.login-form .form-login label {
+#login-form .form-login label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
@@ -299,7 +317,7 @@ h2 {
   background-color: rgb(44, 62, 80);
 }
 
-#add-character, #add-games, #modification {
+#add-character, #add-games, #add-boss, #modify-character, #modify-games {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,26 +325,28 @@ h2 {
   min-height: 100vh;
   padding: 20px;
 }
-#add-character form, #add-games form, #modification form {
+#add-character form, #add-games form, #add-boss form, #modify-character form, #modify-games form {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-#add-character form label, #add-games form label, #modification form label {
+#add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
 }
 
-#list-character-admin, #list-delete-character-admin, #list-modify-character-admin, #list-modify-games-admin {
+#list-character-admin, #list-delete-character-admin, #list-modify-character-admin, #list-modify-games-admin,
+#list-modify-boss-admin {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 20px;
 }
-#list-character-admin .list, #list-delete-character-admin .list, #list-modify-character-admin .list, #list-modify-games-admin .list {
+#list-character-admin .list, #list-delete-character-admin .list, #list-modify-character-admin .list, #list-modify-games-admin .list,
+#list-modify-boss-admin .list {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -337,12 +357,14 @@ h2 {
   margin: 10px;
   width: calc(30% - 40px);
 }
-#list-character-admin .list h2, #list-delete-character-admin .list h2, #list-modify-character-admin .list h2, #list-modify-games-admin .list h2 {
+#list-character-admin .list h2, #list-delete-character-admin .list h2, #list-modify-character-admin .list h2, #list-modify-games-admin .list h2,
+#list-modify-boss-admin .list h2 {
   font-family: "Exo";
   cursor: pointer;
   font-size: 1.5rem;
 }
-#list-character-admin .list a, #list-delete-character-admin .list a, #list-modify-character-admin .list a, #list-modify-games-admin .list a {
+#list-character-admin .list a, #list-delete-character-admin .list a, #list-modify-character-admin .list a, #list-modify-games-admin .list a,
+#list-modify-boss-admin .list a {
   font-family: "Exo";
   display: block;
   margin: 5px 0;
@@ -356,10 +378,12 @@ h2 {
   text-decoration: none;
   transition: background-color 0.3s;
 }
-#list-character-admin .list a:hover, #list-delete-character-admin .list a:hover, #list-modify-character-admin .list a:hover, #list-modify-games-admin .list a:hover {
+#list-character-admin .list a:hover, #list-delete-character-admin .list a:hover, #list-modify-character-admin .list a:hover, #list-modify-games-admin .list a:hover,
+#list-modify-boss-admin .list a:hover {
   background-color: rgb(34, 34, 34);
 }
-#list-character-admin .list img, #list-delete-character-admin .list img, #list-modify-character-admin .list img, #list-modify-games-admin .list img {
+#list-character-admin .list img, #list-delete-character-admin .list img, #list-modify-character-admin .list img, #list-modify-games-admin .list img,
+#list-modify-boss-admin .list img {
   width: 100%;
   height: auto;
   border-radius: 5px;
@@ -367,14 +391,14 @@ h2 {
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
-#delete {
+#delete-games, #delete-character {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 20px;
 }
-#delete .list {
+#delete-games .list, #delete-character .list {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -385,7 +409,7 @@ h2 {
   margin: 10px;
   width: calc(30% - 40px);
 }
-#delete .list h2 {
+#delete-games .list h2, #delete-character .list h2 {
   font-family: "Exo";
   display: block;
   margin: 5px 0;
@@ -395,14 +419,14 @@ h2 {
   border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
 }
-#delete .list img {
+#delete-games .list img, #delete-character .list img {
   width: 100%;
   height: auto;
   border-radius: 5px;
   margin-top: 10px;
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
-#delete .list .button-container {
+#delete-games .list .button-container, #delete-character .list .button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -455,9 +479,10 @@ h2 {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
-#game-character-detail {
+#game-character-detail, #game-boss-detail {
   background-color: rgb(44, 62, 80);
   border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
@@ -467,12 +492,12 @@ h2 {
   max-width: 90%;
   font-family: "Exo";
 }
-#game-character-detail .game-character-grid {
+#game-character-detail .game-character-grid, #game-boss-detail .game-character-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
 }
-#game-character-detail .game-character-block {
+#game-character-detail .game-character-block, #game-boss-detail .game-character-block {
   padding: 20px;
   background-color: rgb(34, 34, 34);
   border: 1px solid rgb(0, 255, 0);
@@ -482,7 +507,7 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
-#game-character-detail .game-character-image {
+#game-character-detail .game-character-image, #game-boss-detail .game-character-image {
   width: 100%;
   height: 200px;
   display: flex;
@@ -490,7 +515,7 @@ h2 {
   align-items: center;
   margin-bottom: 20px;
 }
-#game-character-detail .game-character-image img {
+#game-character-detail .game-character-image img, #game-boss-detail .game-character-image img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 5px;
@@ -498,32 +523,21 @@ h2 {
   -o-object-fit: cover;
      object-fit: cover;
 }
-#game-character-detail .game-character-info {
+#game-character-detail .game-character-info, #game-boss-detail .game-character-info {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 100%;
 }
-#game-character-detail .game-character-item {
+#game-character-detail .game-character-item, #game-boss-detail .game-character-item {
   background-color: rgb(34, 34, 34);
   padding: 15px;
   border-radius: 5px;
   border: 1px solid rgb(0, 255, 0);
   width: 100%;
 }
-#game-character-detail .game-character-item .description-title {
+#game-character-detail .game-character-item .description-title, #game-boss-detail .game-character-item .description-title {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-}
-#game-character-detail .close-button {
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  color: rgb(0, 255, 0);
-  text-decoration: none;
-  cursor: pointer;
-}
-#game-character-detail .close-button:hover {
-  color: #009900;
 }
 
 #games-detail {
@@ -577,17 +591,6 @@ h2 {
 }
 #games-detail .games-item:last-child {
   grid-column: span 2;
-}
-#games-detail .close-button {
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  color: rgb(0, 255, 0);
-  text-decoration: none;
-  cursor: pointer;
-}
-#games-detail .close-button:hover {
-  color: #009900;
 }
 
 #story-game {

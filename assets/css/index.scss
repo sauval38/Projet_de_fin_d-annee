@@ -1,19 +1,19 @@
-@import "./variables";
-@import "./mixins";
-@import "./settings";
-@import "./globalstyle";
-@import "./input";
+@import "./style/variables";
+@import "./style/mixins";
+@import "./style/settings";
+@import "./style/globalstyle";
+@import "./style/input";
 
 @import "./menu";
 @import "./register";
 @import "./login";
 @import "./home";
 @import "./dropdown";
-@import "./form";
-@import "./listadmin.scss";
-@import "./delete";
+@import "./form/form";
+@import "./admin/listadmin";
+@import "./delete/delete";
 @import "./listgames.scss";
-@import "./gamescharacter";
+@import "./details/gamesdetail";
 @import "./gamesdetail";
 @import "./storygames";
 

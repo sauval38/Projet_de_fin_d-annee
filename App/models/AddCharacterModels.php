@@ -52,8 +52,7 @@ class AddCharacterModels {
                                 :place_of_birth_character,
                                 :images_character,
                                 :path
-                            );
-                            ";
+                            )";
 
             $size_character = !empty($size_character) ? floatval($size_character) : null;
             $age_character = !empty($age_character) ? intval($age_character) : null;
@@ -72,11 +71,7 @@ class AddCharacterModels {
             $character->bindParam(':place_of_birth_character', $place_of_birth_character);
             $character->bindParam(':images_character', $img);
             $character->bindParam(':path', $path);
-            $age_character = intval($age_character);
             $character->execute();
-
-            
-
 
             if (isset($images_character) && $images_character['error'] === UPLOAD_ERR_OK) {
                 $imageTmpPath = $images_character['tmp_name'];

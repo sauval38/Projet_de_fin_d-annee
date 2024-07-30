@@ -11,7 +11,7 @@ class StoryModels {
         $this->db = $database->getConnection();
     }
     
-    public function storyViews($id) {
+    public function storyModels($id) {
         $sqlStory = "SELECT titles_article, images_article, story_article, path FROM games WHERE id = ?";
         $story = $this->db->prepare($sqlStory);
         $story->execute([$id]);

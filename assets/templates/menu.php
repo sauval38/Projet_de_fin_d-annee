@@ -9,7 +9,7 @@ echo'
                         <a href="logout">Se deconnecter</a></li>';
 
         } else {
-                echo '<a href="inscription">Inscription</a></li>
+                echo '<a href="register">Inscription</a></li>
                 <a href="login">Connexion</a></li>';     
         }
         echo '</nav>';

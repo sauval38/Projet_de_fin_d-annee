@@ -1,4 +1,4 @@
-#game-character-detail {
+#game-character-detail, #game-boss-detail {
     background-color: $background-color_2;
     border: 2px solid $border;
     border-radius: $border_radius_2;
@@ -50,17 +50,6 @@
         width: 100%; 
         .description-title {
             text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; 
-        }
-    }
-    .close-button {
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        color: $color-2;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
-            color: darken($color-2, 20%);
         }
     }
 }

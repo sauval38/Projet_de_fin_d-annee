@@ -4,7 +4,7 @@ namespace Views;
 
 class RegisterViews {
     
-    public function initForm() {
+    public function registerFormView() {
         ?>
         <div id="register">
             <h1>Créer un compte</h1>

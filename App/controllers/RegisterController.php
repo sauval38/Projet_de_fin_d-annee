@@ -12,10 +12,10 @@ class RegisterController {
         $this->registerModels = new RegisterModels();
         $this->registerViews = new RegisterViews();
     }
-    public function registerViews() {
-        $this->registerViews->initForm();
+    public function registerController() {
+        $this->registerViews->registerFormView();
     }
-    public function userSave() {
-        $this->registerModels->createUser();
+    public function userSaveController() {
+        $this->registerModels->createUserModels();
     }
 }

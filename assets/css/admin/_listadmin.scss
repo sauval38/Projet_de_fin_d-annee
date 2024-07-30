@@ -1,4 +1,5 @@
-#list-character-admin, #list-delete-character-admin, #list-modify-character-admin, #list-modify-games-admin {
+#list-character-admin, #list-delete-character-admin, #list-modify-character-admin, #list-modify-games-admin,
+#list-modify-boss-admin {
     @include flexbox(space-around, flex-start, false, wrap);
     margin: 20px;
     .list {

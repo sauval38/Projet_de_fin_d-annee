@@ -6,9 +6,9 @@ class ModifyCharacterViews {
 
     function updateForm($character) {
         ?>
-        <div id="modification">
+        <div id="modify-character">
             <h1>Modifier un personnage</h1>
-            <form class="form-modification-character" method="post" enctype="multipart/form-data">
+            <form class="form-modify-character" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" id="id_character" name="id_character" value="<?= htmlspecialchars($character['id']) ?>">
                 

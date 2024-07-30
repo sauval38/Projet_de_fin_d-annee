@@ -4,7 +4,7 @@ RewriteEngine On
 RewriteRule ^$ index.php?action=accueil [L,QSA]
 
 # Redirection pour l'accès à 'inscription'
-RewriteRule ^inscription$ index.php?action=inscription [L,QSA]
+RewriteRule ^register$ index.php?action=register [L,QSA]
 
 # Redirection pour l'accès à 'login'
 RewriteRule ^login$ index.php?action=login [L,QSA]
@@ -14,26 +14,39 @@ RewriteRule ^logout$ index.php?action=logout [L,QSA]
 
 # Redirection pour l'accès à 'Admin'
 RewriteRule ^admin$ index.php?action=admin [L,QSA]
+
 # Redirection pour l'accès à 'Admin/ajouterunjeux'
 RewriteRule ^admin/addGames$ index.php?action=admin&step=addGames [L,QSA]
+
 # Redirection pour l'accès à 'Admin/modifierunjeux'
 RewriteRule ^admin/modifyGames$ index.php?action=admin&step=modifyGames [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunjeux'
 RewriteRule ^admin/modifyGames/(\d+)$ index.php?action=admin&step=modifyGames&id=$1 [L,QSA]
+
 # Redirection pour l'accès à 'Admin/supprimerunjeux'
 RewriteRule ^admin/deleteGames$ index.php?action=admin&step=deleteGames [L,QSA]
+
 # Redirection pour l'accès à 'Admin/ajouterunpersonnage'
 RewriteRule ^admin/addCharacter$ index.php?action=admin&step=addCharacter [L,QSA]
+
 # Redirection pour l'accès à 'Admin/modifierunpersonnage'
 RewriteRule ^admin/modifyCharacter$ index.php?action=admin&step=modifyCharacter [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunpersonnage'
 RewriteRule ^admin/modifyCharacter/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1 [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunpersonnage'
 RewriteRule ^admin/modifyCharacter/(\d+)/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1&characterId=$2 [L,QSA]
+
 # Redirection pour l'accès à 'Admin/supprimerunpersonnage'
+
 RewriteRule ^admin/deleteCharacter$ index.php?action=admin&step=deleteCharacter [L,QSA]
 # Redirection pour l'accès à 'Admin/modifierunpersonnage'
 RewriteRule ^admin/deleteCharacter/(\d+)$ index.php?action=admin&step=deleteCharacter&gameId=$1 [L,QSA]
+
+# Redirection pour l'accès à 'Admin/ajouterunboss'
+RewriteRule ^admin/addBoss$ index.php?action=admin&step=addBoss [L,QSA]
+
+# Redirection pour l'accès à 'Admin/modifierunboss'
+RewriteRule ^admin/modifyBoss$ index.php?action=admin&step=modifyBoss [L,QSA]
 
 # Redirection pour l'accès à 'liste jeux'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]
@@ -46,4 +59,7 @@ RewriteRule ^story/(\d+)$ index.php?action=story&id=$1 [L,QSA]
 
 # Redirection pour l'accès à 'personnage'
 RewriteRule ^character/(\d+)$ index.php?action=character&id=$1 [L,QSA]
+
+# Redirection pour l'accès à 'personnage'
+RewriteRule ^boss/(\d+)$ index.php?action=boss&id=$1 [L,QSA]
 

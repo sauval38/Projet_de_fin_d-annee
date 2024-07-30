@@ -13,18 +13,18 @@ class ModifyGamesModels {
         $this->db = $database->getConnection();
     }
     
-    public function modify($id) {
+    public function modifyGamesModels($id) {
         $sqlModifyGames = "SELECT * FROM games WHERE id = ?";
         $modifyGames = $this->db->prepare($sqlModifyGames);
         $modifyGames->execute([$id]);
         return $modifyGames->fetch();
     }
 
-    public function update() {
+    public function updateModels() {
         try {
             $this->db->beginTransaction();
 
-            $currentGame = $this->modify($_POST['id_game']);
+            $currentGame = $this->modifyGamesModels($_POST['id_game']);
 
             $sqlUpdate = "UPDATE games SET 
                 titles_article = ?, 

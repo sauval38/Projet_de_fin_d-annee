@@ -48,15 +48,4 @@
     .games-item:last-child {
         grid-column: span 2; 
     }
-    .close-button {
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        color: $color-2;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
-            color: darken($color-2, 20%);
-        }
-    }
 }
