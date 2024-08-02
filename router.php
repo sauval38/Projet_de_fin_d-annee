@@ -9,6 +9,7 @@ use App\Database;
 use Controllers\AddBossController;
 use Controllers\AddCharacterController;
 use Controllers\AddGamesController;
+use Controllers\AdminBoardController;
 use Controllers\BossController;
 use Controllers\ButtonAdminController;
 use Controllers\CharacterController;
@@ -50,6 +51,14 @@ switch($action) {
         if ($_SESSION['role'] === 'admin') {
             $buttonAdminController = new ButtonAdminController();
             $buttonAdminController->boutton();
+            $adminBoardController = new AdminBoardController();
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST')   
+                    {
+                        $adminBoardController->updateRole();
+                        echo 'role mis a jour';
+                    }
+                    $adminBoardController->getUser();
+                break;
             switch ($step) {
                 case 'addGames':
                     $addGamesController = new AddGamesController();

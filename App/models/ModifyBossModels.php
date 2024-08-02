@@ -49,7 +49,8 @@ class ModifyBossModels {
 
             $images_boss = $_FILES["images_path"] ?? null;
             $path = "assets/images/";
-            $imageName = $currentGame['images_character'] ?? '';
+            $imageName = $currentBoss['images_boss'] ?? '';
+            var_dump($imageName);
 
             if ($images_boss && $images_boss['error'] === UPLOAD_ERR_OK) {
                 $imageTmpPath = $images_boss['tmp_name'];
