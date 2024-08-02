@@ -12,17 +12,21 @@ use Controllers\AddGamesController;
 use Controllers\BossController;
 use Controllers\ButtonAdminController;
 use Controllers\CharacterController;
+use Controllers\DeleteBossController;
 use Controllers\DeleteCharacterController;
 use Controllers\DeleteGamesController;
 use Controllers\GamesController;
 use Controllers\HomeController;
+use Controllers\ListBossController;
 use Controllers\ListCharacterController;
 use Controllers\ListDeleteCharacterController;
+use Controllers\ListDeleteBossController;
 use Controllers\ListGamesController;
 use Controllers\ListModifyBossController;
 use Controllers\ListModifyCharacterController;
 use Controllers\ListModifyGamesController;
 use Controllers\LoginController;
+use Controllers\ModifyBossController;
 use Controllers\ModifyCharacterController;
 use Controllers\ModifyGamesController;
 use Controllers\RegisterController;
@@ -34,6 +38,7 @@ $game_id = $_REQUEST['gameId'] ?? null;
 $action = $_REQUEST['action'] ?? null;
 $step = $_REQUEST['step'] ?? null;
 $characterId = $_REQUEST['characterId'] ?? null;
+$bossId = $_REQUEST['bossId'] ?? null;
 
 switch($action) {
     default:
@@ -126,18 +131,34 @@ switch($action) {
                         break; 
 
                     case 'modifyBoss':
-                        if ($id){
-                            $modifyGamesController = new ModifyGamesController;
+                        if ($id && $bossId){
+                            $modifyBossController = new ModifyBossController;
                             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                                $modifyGamesController->updateGamesController();
+                                $modifyBossController->updateBossController();
                             } else {
-                                $modifyGamesController->modifyGamesController();
+                                $modifyBossController->modifyBossController($bossId);
                             } 
+                            } else if ($id) {
+                                $listBossController = new ListBossController;
+                                $listBossController->listModifyBoss($id);
                             } else {
                                 $modifylistBossController = new ListModifyBossController;
                                 $modifylistBossController->listModifyBoss();
                             } 
-                        break;                        
+                        break; 
+                        case 'deleteBoss':
+                            if ($game_id) {
+                                $deleteBossController = new DeleteBossController();
+                                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                    $deleteBossController->deleteBoss();
+                                } else {
+                                    $deleteBossController->listBossDelete($game_id);
+                                }
+                            } else {
+                                $listDeleteBossController = new ListDeleteBossController();
+                                $listDeleteBossController->listBossCharacter();
+                            }
+                            break;                           
         }
         break;
 

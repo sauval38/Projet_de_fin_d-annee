@@ -122,6 +122,54 @@ input[type=submit]:hover {
   background-color: rgb(34, 34, 34);
 }
 
+footer {
+  background-color: rgb(44, 62, 80);
+  color: rgb(255, 255, 255);
+  font-family: "Exo";
+  padding: 20px 0;
+}
+footer #footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+footer #footer-container .footer-section {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  margin: 0 5px;
+}
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+footer .social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Exo";
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+footer .social-icons a:hover {
+  background-color: rgb(44, 62, 80);
+}
+footer .social-icons a img {
+  width: 20px;
+  height: auto;
+}
+footer .social-icons a span {
+  font-size: 0.9em;
+}
+
 #register {
   display: flex;
   justify-content: center;
@@ -267,7 +315,6 @@ h2 {
   font-size: 1.2em;
   font-family: "Exo";
   margin-bottom: 10px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
 }
 
@@ -317,7 +364,7 @@ h2 {
   background-color: rgb(44, 62, 80);
 }
 
-#add-character, #add-games, #add-boss, #modify-character, #modify-games {
+#add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -325,19 +372,23 @@ h2 {
   min-height: 100vh;
   padding: 20px;
 }
-#add-character form, #add-games form, #add-boss form, #modify-character form, #modify-games form {
+#add-character form, #add-games form, #add-boss form, #modify-character form, #modify-games form, #modify-boss form {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-#add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label {
+#add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label, #modify-boss form label {
   margin-bottom: 5px;
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-align: center;
 }
 
-#list-character-admin, #list-delete-character-admin, #list-modify-character-admin, #list-modify-games-admin,
+#list-character-admin,
+#list-boss-admin,
+#list-delete-character-admin,
+#list-delete-boss-admin,
+#list-modify-character-admin, #list-modify-games-admin,
 #list-modify-boss-admin {
   display: flex;
   justify-content: space-around;
@@ -345,7 +396,11 @@ h2 {
   flex-wrap: wrap;
   margin: 20px;
 }
-#list-character-admin .list, #list-delete-character-admin .list, #list-modify-character-admin .list, #list-modify-games-admin .list,
+#list-character-admin .list,
+#list-boss-admin .list,
+#list-delete-character-admin .list,
+#list-delete-boss-admin .list,
+#list-modify-character-admin .list, #list-modify-games-admin .list,
 #list-modify-boss-admin .list {
   display: flex;
   justify-content: space-between;
@@ -357,13 +412,21 @@ h2 {
   margin: 10px;
   width: calc(30% - 40px);
 }
-#list-character-admin .list h2, #list-delete-character-admin .list h2, #list-modify-character-admin .list h2, #list-modify-games-admin .list h2,
+#list-character-admin .list h2,
+#list-boss-admin .list h2,
+#list-delete-character-admin .list h2,
+#list-delete-boss-admin .list h2,
+#list-modify-character-admin .list h2, #list-modify-games-admin .list h2,
 #list-modify-boss-admin .list h2 {
   font-family: "Exo";
   cursor: pointer;
   font-size: 1.5rem;
 }
-#list-character-admin .list a, #list-delete-character-admin .list a, #list-modify-character-admin .list a, #list-modify-games-admin .list a,
+#list-character-admin .list a,
+#list-boss-admin .list a,
+#list-delete-character-admin .list a,
+#list-delete-boss-admin .list a,
+#list-modify-character-admin .list a, #list-modify-games-admin .list a,
 #list-modify-boss-admin .list a {
   font-family: "Exo";
   display: block;
@@ -378,11 +441,19 @@ h2 {
   text-decoration: none;
   transition: background-color 0.3s;
 }
-#list-character-admin .list a:hover, #list-delete-character-admin .list a:hover, #list-modify-character-admin .list a:hover, #list-modify-games-admin .list a:hover,
+#list-character-admin .list a:hover,
+#list-boss-admin .list a:hover,
+#list-delete-character-admin .list a:hover,
+#list-delete-boss-admin .list a:hover,
+#list-modify-character-admin .list a:hover, #list-modify-games-admin .list a:hover,
 #list-modify-boss-admin .list a:hover {
   background-color: rgb(34, 34, 34);
 }
-#list-character-admin .list img, #list-delete-character-admin .list img, #list-modify-character-admin .list img, #list-modify-games-admin .list img,
+#list-character-admin .list img,
+#list-boss-admin .list img,
+#list-delete-character-admin .list img,
+#list-delete-boss-admin .list img,
+#list-modify-character-admin .list img, #list-modify-games-admin .list img,
 #list-modify-boss-admin .list img {
   width: 100%;
   height: auto;
@@ -391,14 +462,14 @@ h2 {
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
-#delete-games, #delete-character {
+#delete-games, #delete-character, #delete-boss {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 20px;
 }
-#delete-games .list, #delete-character .list {
+#delete-games .list, #delete-character .list, #delete-boss .list {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -409,7 +480,7 @@ h2 {
   margin: 10px;
   width: calc(30% - 40px);
 }
-#delete-games .list h2, #delete-character .list h2 {
+#delete-games .list h2, #delete-character .list h2, #delete-boss .list h2 {
   font-family: "Exo";
   display: block;
   margin: 5px 0;
@@ -419,14 +490,14 @@ h2 {
   border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
 }
-#delete-games .list img, #delete-character .list img {
+#delete-games .list img, #delete-character .list img, #delete-boss .list img {
   width: 100%;
   height: auto;
   border-radius: 5px;
   margin-top: 10px;
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
-#delete-games .list .button-container, #delete-character .list .button-container {
+#delete-games .list .button-container, #delete-character .list .button-container, #delete-boss .list .button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;

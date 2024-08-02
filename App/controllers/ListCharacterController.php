@@ -20,7 +20,7 @@ class ListCharacterController {
             $characters = $this->listCharacterModels->listModify($id);
             $this->listCharacterViews->listCharacter($characters);
         } else {
-            echo 'PROUT';
+            echo 'Affichage inexistant';
         }
     }
 }

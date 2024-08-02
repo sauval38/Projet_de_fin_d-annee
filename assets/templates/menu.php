@@ -1,16 +1,11 @@
-<?php
-echo'
 <nav id="menu">
-   
-        <a href="">Accueil</a></li>
-        <a href="listgames">Jeux</a></li>';
-        if(isset($_SESSION['id'])){
-                echo '<a href="admin">Admin</a></li>
-                        <a href="logout">Se deconnecter</a></li>';
-
-        } else {
-                echo '<a href="register">Inscription</a></li>
-                <a href="login">Connexion</a></li>';     
-        }
-        echo '</nav>';
-
+    <a href="">Accueil</a>
+    <a href="listgames">Jeux</a>
+    <?php if (isset($_SESSION['id'])): ?>
+        <a href="admin">Admin</a>
+        <a href="logout">Se déconnecter</a>
+    <?php else: ?>
+        <a href="register">Inscription</a>
+        <a href="login">Connexion</a>
+    <?php endif; ?>
+</nav>

@@ -13,7 +13,7 @@ class ButtonAdminViews {
     const DELETE_CHARACTER_URL = "admin/deleteCharacter";
     const ADD_BOSS_URL = "admin/addBoss";
     const MODIFY_BOSS_URL = "admin/modifyBoss"; 
-    const DELETE_BOSS_URL = "#"; 
+    const DELETE_BOSS_URL = "admin/deleteBoss"; 
 
     public function button() {
         ?>

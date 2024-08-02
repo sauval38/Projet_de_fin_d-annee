@@ -14,8 +14,8 @@ class DeleteGamesViews {
                         <h2 class="delete-title">
                             <?= htmlspecialchars($game['titles_article']) ?>
                         </h2>
-                        <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
                         <img src="<?= ($game['path'] . '/' . $game['images_article']) ?>" alt="image<?= htmlspecialchars($game['titles_article']) ?>">
+                        <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
                         
                         <div class="button-container">
                             <form method="POST">

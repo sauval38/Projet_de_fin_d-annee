@@ -37,9 +37,8 @@ RewriteRule ^admin/modifyCharacter/(\d+)$ index.php?action=admin&step=modifyChar
 RewriteRule ^admin/modifyCharacter/(\d+)/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1&characterId=$2 [L,QSA]
 
 # Redirection pour l'accès à 'Admin/supprimerunpersonnage'
-
 RewriteRule ^admin/deleteCharacter$ index.php?action=admin&step=deleteCharacter [L,QSA]
-# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+# Redirection pour l'accès à 'Admin/supprimerunpersonnage'
 RewriteRule ^admin/deleteCharacter/(\d+)$ index.php?action=admin&step=deleteCharacter&gameId=$1 [L,QSA]
 
 # Redirection pour l'accès à 'Admin/ajouterunboss'
@@ -47,6 +46,15 @@ RewriteRule ^admin/addBoss$ index.php?action=admin&step=addBoss [L,QSA]
 
 # Redirection pour l'accès à 'Admin/modifierunboss'
 RewriteRule ^admin/modifyBoss$ index.php?action=admin&step=modifyBoss [L,QSA]
+# Redirection pour l'accès à 'Admin/modifierunboss'
+RewriteRule ^admin/modifyBoss/(\d+)$ index.php?action=admin&step=modifyBoss&id=$1 [L,QSA]
+# Redirection pour l'accès à 'Admin/modifierunboss'
+RewriteRule ^admin/modifyBoss/(\d+)/(\d+)$ index.php?action=admin&step=modifyBoss&id=$1&bossId=$2 [L,QSA]
+
+# Redirection pour l'accès à 'Admin/supprimerunboss'
+RewriteRule ^admin/deleteBoss$ index.php?action=admin&step=deleteBoss [L,QSA]
+# Redirection pour l'accès à 'Admin/supprimerunboss'
+RewriteRule ^admin/deleteBoss/(\d+)$ index.php?action=admin&step=deleteBoss&gameId=$1 [L,QSA]
 
 # Redirection pour l'accès à 'liste jeux'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]

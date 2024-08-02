@@ -34,7 +34,7 @@ class AddBossViews {
                 <input type="number" id="MP" name="MP">
 
                 <label for="loots">
-                butins :</label>
+                Butins :</label>
                 <input type="text" id="loots" name="loots">
 
                 <label for="weakness">

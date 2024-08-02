@@ -13,8 +13,8 @@ class ListModifyCharacterViews {
                     <a href="admin/modifyCharacter/<?= htmlspecialchars($game['id']) ?>">
                         <?= htmlspecialchars($game['titles_article']) ?>
                     </a>
-                    <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
                     <img src="<?= htmlspecialchars($game['path'] . '/' . $game['images_article']) ?>" alt="games<?= htmlspecialchars($game['titles_article']) ?>">
+                    <p><?= htmlspecialchars($game['descriptions_article']) ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

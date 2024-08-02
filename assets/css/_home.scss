@@ -74,23 +74,22 @@ h2 {
         width: 60%;
         margin: 20px auto;
         .section {
-            border: 2px solid $color_2;
-            border-radius: $border_radius_2;
-            padding: 20px;
-            background-color: $background-color_2;
-            margin-bottom: 20px;
+              border: 2px solid $color_2;
+              border-radius: $border_radius_2;
+              padding: 20px;
+              background-color: $background-color_2;
+              margin-bottom: 20px;
             h3 {
-            font-size: 1.8em;
-            font-family: $fontpara;
-            margin-bottom: 10px;
-            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+              font-size: 1.8em;
+              font-family: $fontpara;
+              margin-bottom: 10px;
+              text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
             }
             a {
-            font-size: 1.2em;
-            font-family: $fontpara;
-            margin-bottom: 10px;
-            text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-            text-align: center;
+              font-size: 1.2em;
+              font-family: $fontpara;
+              margin-bottom: 10px;
+              text-align: center;
             }
         }
     }        

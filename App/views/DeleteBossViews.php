@@ -2,22 +2,22 @@
 
 namespace Views;
 
-class DeleteCharacterViews {
+class DeleteBossViews {
 
-    public function listDeleteGames($games) {
+    public function listDeleteBoss($games) {
         ?>
-        <h1>LISTE DES PERSONNAGES</h1>
-        <div id="delete-character">
+        <h1>LISTE DES BOSS</h1>
+        <div id="delete-boss">
             <?php if (!empty($games)): ?>
                 <?php foreach ($games as $game): ?>
                     <div class="list">
                         <h2 class="delete-title">
-                            <?= htmlspecialchars($game['names_character']) ?>
+                            <?= htmlspecialchars($game['name_boss']) ?>
                         </h2>
-                        <img src="<?= ($game['path'] . '/' . $game['images_character']) ?>" alt="image<?= htmlspecialchars($game['names_character']) ?>">
+                        <img src="<?= ($game['path'] . '/' . $game['images_boss']) ?>" alt="boss<?= htmlspecialchars($game['name_boss']) ?>">
                         <div class="button-container">
                             <form method="POST">
-                                <input type="hidden" name="character_id" value="<?= htmlspecialchars($game['id']) ?>">
+                                <input type="hidden" name="boss_id" value="<?= htmlspecialchars($game['id']) ?>">
                                 <button type="submit" name="delete">Supprimer</button>
                             </form>
                         </div>
