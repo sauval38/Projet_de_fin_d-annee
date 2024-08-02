@@ -47,118 +47,122 @@ switch($action) {
         break;
         
     case 'admin':
-        $buttonAdminController = new ButtonAdminController();
-        $buttonAdminController->boutton();
-        switch ($step) {
-            case 'addGames':
-                $addGamesController = new AddGamesController();
-                if ($_SERVER['REQUEST_METHOD'] === 'POST')   
-                { 
-                    $addGamesController->addGame();
-                } else {
-                    $addGamesController->addGames();
-                }
-                break;
-            case 'modifyGames':
-                if ($id){
-                    $modifyGamesController = new ModifyGamesController;
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        $modifyGamesController->updateGamesController();
+        if ($_SESSION['role'] === 'admin') {
+            $buttonAdminController = new ButtonAdminController();
+            $buttonAdminController->boutton();
+            switch ($step) {
+                case 'addGames':
+                    $addGamesController = new AddGamesController();
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST')   
+                    { 
+                        $addGamesController->addGame();
                     } else {
-                        $modifyGamesController->modifyGamesController();
-                    } 
-                } else {
-                    $modifylistGamesController = new ListModifyGamesController;
-                    $modifylistGamesController->listModifyGames();
-                }
-                break;
-                case 'deleteGames':
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
-                        $gameId = $_POST['game_id'];
-                        $deleteGamesController = new DeleteGamesController();
-                        $deleteGamesController->deleteGame($gameId);
-                    } else {
-                        $deleteGamesController = new DeleteGamesController();
-                        $deleteGamesController->listGamesDelete();
+                        $addGamesController->addGames();
                     }
                     break;
-                case'addCharacter': 
-                    $addCharacterController = new AddCharacterController;
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST')
-                    {
-                        $addCharacterController->addCharacterImage();
-                    } else {
-                        $addCharacterController->addCharacter();
-                    }
-                break;
-                case'modifyCharacter':
-                    if ($id && $characterId) {
-                        $modifyCharacterController = new modifyCharacterController;
+                case 'modifyGames':
+                    if ($id){
+                        $modifyGamesController = new ModifyGamesController;
                         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                            $modifyCharacterController->updateGames();
+                            $modifyGamesController->updateGamesController();
                         } else {
-                            $modifyCharacterController->modifyCharacter($characterId);
-                        }
-                    } else if ($id) {
-                        $listCharacterController = new ListCharacterController;
-                        $listCharacterController->listModifyCharacter($id);
+                            $modifyGamesController->modifyGamesController();
+                        } 
                     } else {
-                        $modifylistCharacterController = new ListModifyCharacterController;
-                        $modifylistCharacterController->listModifyCharacter();
+                        $modifylistGamesController = new ListModifyGamesController;
+                        $modifylistGamesController->listModifyGames();
                     }
                     break;
-                    case 'deleteCharacter':
-                        if ($game_id) {
-                            $deleteCharacterController = new DeleteCharacterController();
-                            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                                $deleteCharacterController->deleteCharacter();
-                            } else {
-                                $deleteCharacterController->listCharacterDelete($game_id);
-                            }
+                    case 'deleteGames':
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
+                            $gameId = $_POST['game_id'];
+                            $deleteGamesController = new DeleteGamesController();
+                            $deleteGamesController->deleteGame($gameId);
                         } else {
-                            $listDeleteCharacterController = new ListDeleteCharacterController();
-                            $listDeleteCharacterController->listDeleteCharacter();
+                            $deleteGamesController = new DeleteGamesController();
+                            $deleteGamesController->listGamesDelete();
                         }
                         break;
-                    case 'addBoss':
-                        $addBossController = new AddBossController();
-                        if ($_SERVER['REQUEST_METHOD'] === 'POST')   
-                            { 
-                                $addBossController->addBossImage();
-                            } else {
-                                $addBossController->addBoss();
-                            }
-                        break; 
-
-                    case 'modifyBoss':
-                        if ($id && $bossId){
-                            $modifyBossController = new ModifyBossController;
+                    case'addCharacter': 
+                        $addCharacterController = new AddCharacterController;
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST')
+                        {
+                            $addCharacterController->addCharacterImage();
+                        } else {
+                            $addCharacterController->addCharacter();
+                        }
+                    break;
+                    case'modifyCharacter':
+                        if ($id && $characterId) {
+                            $modifyCharacterController = new modifyCharacterController;
                             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                                $modifyBossController->updateBossController();
+                                $modifyCharacterController->updateGames();
                             } else {
-                                $modifyBossController->modifyBossController($bossId);
-                            } 
-                            } else if ($id) {
-                                $listBossController = new ListBossController;
-                                $listBossController->listModifyBoss($id);
-                            } else {
-                                $modifylistBossController = new ListModifyBossController;
-                                $modifylistBossController->listModifyBoss();
-                            } 
-                        break; 
-                        case 'deleteBoss':
+                                $modifyCharacterController->modifyCharacter($characterId);
+                            }
+                        } else if ($id) {
+                            $listCharacterController = new ListCharacterController;
+                            $listCharacterController->listModifyCharacter($id);
+                        } else {
+                            $modifylistCharacterController = new ListModifyCharacterController;
+                            $modifylistCharacterController->listModifyCharacter();
+                        }
+                        break;
+                        case 'deleteCharacter':
                             if ($game_id) {
-                                $deleteBossController = new DeleteBossController();
+                                $deleteCharacterController = new DeleteCharacterController();
                                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                                    $deleteBossController->deleteBoss();
+                                    $deleteCharacterController->deleteCharacter();
                                 } else {
-                                    $deleteBossController->listBossDelete($game_id);
+                                    $deleteCharacterController->listCharacterDelete($game_id);
                                 }
                             } else {
-                                $listDeleteBossController = new ListDeleteBossController();
-                                $listDeleteBossController->listBossCharacter();
+                                $listDeleteCharacterController = new ListDeleteCharacterController();
+                                $listDeleteCharacterController->listDeleteCharacter();
                             }
-                            break;                           
+                            break;
+                        case 'addBoss':
+                            $addBossController = new AddBossController();
+                            if ($_SERVER['REQUEST_METHOD'] === 'POST')   
+                                { 
+                                    $addBossController->addBossImage();
+                                } else {
+                                    $addBossController->addBoss();
+                                }
+                            break; 
+
+                        case 'modifyBoss':
+                            if ($id && $bossId){
+                                $modifyBossController = new ModifyBossController;
+                                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                    $modifyBossController->updateBossController();
+                                } else {
+                                    $modifyBossController->modifyBossController($bossId);
+                                } 
+                                } else if ($id) {
+                                    $listBossController = new ListBossController;
+                                    $listBossController->listModifyBoss($id);
+                                } else {
+                                    $modifylistBossController = new ListModifyBossController;
+                                    $modifylistBossController->listModifyBoss();
+                                } 
+                            break; 
+                            case 'deleteBoss':
+                                if ($game_id) {
+                                    $deleteBossController = new DeleteBossController();
+                                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                        $deleteBossController->deleteBoss();
+                                    } else {
+                                        $deleteBossController->listBossDelete($game_id);
+                                    }
+                                } else {
+                                    $listDeleteBossController = new ListDeleteBossController();
+                                    $listDeleteBossController->listBossCharacter();
+                                }
+                                break;                           
+            }
+        } else {
+            header('Location: ./');
         }
         break;
 

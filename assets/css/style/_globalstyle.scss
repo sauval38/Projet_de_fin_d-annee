@@ -19,6 +19,13 @@ p {
     text-align: center;
     box-shadow: 0 0 5px $color-2;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: $color-2
+}
 button {
     padding: 10px 20px;
     border: none;

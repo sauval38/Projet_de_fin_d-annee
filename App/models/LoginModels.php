@@ -20,6 +20,7 @@ class LoginModels {
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['pseudo'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
             return true;
         } else {
             return false;
