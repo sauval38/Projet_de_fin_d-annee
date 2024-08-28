@@ -1,5 +1,5 @@
 {
-    "name": "jenni/entrainement",
+    "name": "jenny/entrainement",
     "type": "string",
     "autoload": {
         "psr-4": {

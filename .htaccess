@@ -68,6 +68,9 @@ RewriteRule ^story/(\d+)$ index.php?action=story&id=$1 [L,QSA]
 # Redirection pour l'accès à 'personnage'
 RewriteRule ^character/(\d+)$ index.php?action=character&id=$1 [L,QSA]
 
-# Redirection pour l'accès à 'personnage'
+# Redirection pour l'accès à 'boss'
 RewriteRule ^boss/(\d+)$ index.php?action=boss&id=$1 [L,QSA]
+
+# Redirection pour l'accès à 'mentions legales'
+RewriteRule ^legalNotices$ index.php?action=legalNotices [L,QSA]
 

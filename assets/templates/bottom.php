@@ -5,7 +5,7 @@
         <nav id="footer-container">
             <div class="footer-section">
                     <a class="footer-para">&copy; 2024 GamingSite. Tous droits réservés.</a>
-                    <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
+                    <a href="legalNotices">Mentions légales</a> | <a href="/">Politique de confidentialité</a>
             </div>
             <div class="social-icons">
                 <a href="https://www.facebook.com/groups/206718632861663" target="_blank">

@@ -21,7 +21,7 @@ h1 {
 }
 
 p {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   font-size: 1.2em;
   line-height: 1.6;
   color: rgb(255, 255, 255);
@@ -121,7 +121,7 @@ input[type=submit]:hover {
   justify-content: space-around;
 }
 #menu a {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   text-decoration: none;
   color: rgb(0, 255, 0);
   padding: 5px 10px;
@@ -179,6 +179,80 @@ footer #footer-container .social-icons a img {
 }
 footer #footer-container .social-icons a span {
   font-size: 14px;
+}
+
+#role {
+  margin: 100px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  background-color: rgb(44, 62, 80);
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+#role #filterInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid rgb(0, 255, 0);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+#role #filterInput:focus {
+  border-color: rgb(0, 255, 0);
+}
+#role #usersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(44, 62, 80);
+  font-family: "Raleway", sans-serif;
+  border: 1;
+}
+#role #usersTable th, #role #usersTable td {
+  padding: 12px 15px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+#role #usersTable th {
+  background-color: rgb(34, 34, 34);
+  color: rgb(0, 255, 0);
+  border: 1px solid rgb(0, 255, 0);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#role #usersTable tr, #role #usersTable td {
+  border: 1px solid rgb(0, 255, 0);
+}
+#role #usersTable tr:nth-child(even), #role #usersTable td:nth-child(even) {
+  background-color: rgb(44, 62, 80);
+}
+#role #usersTable select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid rgb(0, 255, 0);
+  border-radius: 4px;
+  background-color: rgb(34, 34, 34);
+  cursor: pointer;
+}
+#role input[type=submit] {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: rgb(0, 255, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in-out;
+}
+#role input[type=submit]:hover {
+  background-color: rgb(34, 34, 34);
 }
 
 #register {
@@ -292,7 +366,7 @@ footer #footer-container .social-icons a span {
 }
 
 h2 {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-align: center;
   font-size: 40px;
@@ -318,13 +392,13 @@ h2 {
 }
 .presentation-container .presentation .section h3 {
   font-size: 1.8em;
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   margin-bottom: 10px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 .presentation-container .presentation .section a {
   font-size: 1.2em;
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -350,7 +424,7 @@ h2 {
   background-color: rgb(0, 255, 0);
   color: rgb(255, 255, 255);
   padding: 1rem;
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   font-size: 24px;
   border: none;
   cursor: pointer;
@@ -366,7 +440,7 @@ h2 {
 }
 .dropdown-container .dropdown .dropdown-content a {
   color: rgb(0, 0, 0);
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -429,7 +503,7 @@ h2 {
 #list-delete-boss-admin .list h2,
 #list-modify-character-admin .list h2, #list-modify-games-admin .list h2,
 #list-modify-boss-admin .list h2 {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   cursor: pointer;
   font-size: 1.5rem;
 }
@@ -439,7 +513,7 @@ h2 {
 #list-delete-boss-admin .list a,
 #list-modify-character-admin .list a, #list-modify-games-admin .list a,
 #list-modify-boss-admin .list a {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   display: block;
   margin: 5px 0;
   padding: 10px;
@@ -492,7 +566,7 @@ h2 {
   width: calc(30% - 40px);
 }
 #delete-games .list h2, #delete-character .list h2, #delete-boss .list h2 {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   display: block;
   margin: 5px 0;
   padding: 10px;
@@ -533,7 +607,7 @@ h2 {
   width: calc(30% - 40px);
 }
 #list-games .list h2 {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   margin-bottom: 60px;
   cursor: pointer;
   font-size: 1.5rem;
@@ -542,7 +616,7 @@ h2 {
   margin-top: 10px;
 }
 #list-games .list a {
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
   display: block;
   margin: 5px 0;
   padding: 10px;
@@ -572,7 +646,7 @@ h2 {
   margin: 20px auto;
   width: 90%;
   max-width: 90%;
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
 }
 #game-character-detail .game-character-grid, #game-boss-detail .game-character-grid {
   display: grid;
@@ -630,7 +704,7 @@ h2 {
   margin: 20px auto;
   width: 80%;
   max-width: 60%;
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
 }
 #games-detail .games-image {
   width: 100%;
@@ -683,7 +757,7 @@ h2 {
   margin: 20px auto;
   width: 80%;
   max-width: 60%;
-  font-family: "Exo";
+  font-family: "Exo", sans-serif;
 }
 #story-game .story {
   display: flex;
