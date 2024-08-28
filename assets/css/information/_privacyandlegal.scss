@@ -1,0 +1,21 @@
+#information {
+    color: $color_1;
+    background-color: $background-color_2;
+    padding: 20px;
+    border-radius: $border_radius_1;
+    border: 1px solid $border-color_1;
+    margin: 20px auto;
+    max-width: 800px;
+}
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: $color_2;
+}

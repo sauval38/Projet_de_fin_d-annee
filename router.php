@@ -31,6 +31,7 @@ use Controllers\LoginController;
 use Controllers\ModifyBossController;
 use Controllers\ModifyCharacterController;
 use Controllers\ModifyGamesController;
+use Controllers\PrivacyPolicyController;
 use Controllers\RegisterController;
 use Controllers\StoryController;
 
@@ -231,5 +232,10 @@ switch($action) {
     case 'legalNotices':
         $legalNoticesController = new LegalNoticesController();
         $legalNoticesController->notice();
-        break;    
+        break;
+        
+    case 'privacyPolicy':
+        $privacyPolicyController = new PrivacyPolicyController();
+        $privacyPolicyController->privacy();
+        break;     
 }

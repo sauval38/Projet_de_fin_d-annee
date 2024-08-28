@@ -74,3 +74,5 @@ RewriteRule ^boss/(\d+)$ index.php?action=boss&id=$1 [L,QSA]
 # Redirection pour l'accès à 'mentions legales'
 RewriteRule ^legalNotices$ index.php?action=legalNotices [L,QSA]
 
+# Redirection pour l'accès à 'politique de confidentialité'
+RewriteRule ^privacyPolicy$ index.php?action=privacyPolicy [L,QSA]

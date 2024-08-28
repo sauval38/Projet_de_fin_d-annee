@@ -131,6 +131,79 @@ input[type=submit]:hover {
 #menu a:hover {
   background-color: rgb(34, 34, 34);
 }
+#menu #menu-toggle {
+  display: none;
+}
+#menu .menu-icon {
+  display: none;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+#menu .menu-icon span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(0, 255, 0);
+  transition: all 0.3s ease-in-out;
+}
+#menu .menu-icon span:nth-child(1) {
+  top: 0;
+}
+#menu .menu-icon span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#menu .menu-icon span:nth-child(3) {
+  bottom: 0;
+}
+#menu .menu-items {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+#menu .menu-items a {
+  margin: 0 5px;
+}
+@media (max-width: 768px) {
+  #menu {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #menu .menu-icon {
+    display: block;
+  }
+  #menu .menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  #menu .menu-items a {
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid rgb(34, 34, 34);
+  }
+  #menu #menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+  }
+  #menu #menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu #menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 50%;
+  }
+  #menu #menu-toggle:checked + .menu-icon + .menu-items {
+    display: flex;
+  }
+}
 
 footer {
   background-color: #2c3e50;
@@ -403,6 +476,41 @@ h2 {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  #logo {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+  #carousel {
+    width: 95%;
+  }
+  #carousel .carousel-slides .slide .carousel-title {
+    font-size: 18px;
+    padding: 0.5rem 0;
+  }
+  #carousel .carousel-button {
+    padding: 8px;
+  }
+  h2 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .presentation-container {
+    width: 90%;
+  }
+  .presentation-container .presentation {
+    width: 100%;
+  }
+  .presentation-container .presentation .section {
+    padding: 10px;
+  }
+  .presentation-container .presentation .section h3 {
+    font-size: 1.5em;
+  }
+  .presentation-container .presentation .section a {
+    font-size: 1em;
+  }
+}
 .dropdown-container {
   display: flex;
   justify-content: space-around;
@@ -781,4 +889,27 @@ h2 {
 }
 #story-game .close-button:hover {
   color: #009900;
+}
+
+#information {
+  color: rgb(255, 255, 255);
+  background-color: rgb(44, 62, 80);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(44, 62, 80);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+strong {
+  color: rgb(0, 255, 0);
 }/*# sourceMappingURL=index.css.map */

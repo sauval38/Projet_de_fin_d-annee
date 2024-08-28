@@ -94,3 +94,44 @@ h2 {
         }
     }        
 } 
+
+
+@media (max-width: 768px) {
+  #logo {
+      font-size: 50px; 
+      margin-top: 20px; 
+  }
+  #carousel {
+      width: 95%; 
+      .carousel-slides {
+          .slide {
+              .carousel-title {
+                  font-size: 18px; 
+                  padding: 0.5rem 0; 
+              }
+          }
+      }
+      .carousel-button {
+          padding: 8px;
+      }
+  }
+  h2 {
+      font-size: 30px; 
+      margin-top: 20px;
+  }
+  .presentation-container {
+      width: 90%; 
+      .presentation {
+          width: 100%; 
+          .section {
+              padding: 10px; 
+              h3 {
+                  font-size: 1.5em; 
+              }
+              a {
+                  font-size: 1em; 
+              }
+          }
+      }
+  }
+}
