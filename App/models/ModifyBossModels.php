@@ -23,14 +23,14 @@ class ModifyBossModels {
     public function update() {
         try {
             $this->db->beginTransaction();
-
+    
             $bossId = $_POST['id_boss'] ?? null;
             if (!$bossId) {
                 throw new Exception("L'ID du boss n'est pas fourni.");
             }
-
+    
             $currentBoss = $this->modify($bossId);
-
+    
             $sqlBoss = "UPDATE boss SET 
                 name_boss = ?,
                 descriptions_boss = ?,
@@ -44,14 +44,13 @@ class ModifyBossModels {
                 images_boss = ?,
                 path = ?
             WHERE id = ?";
-
+    
             $update = $this->db->prepare($sqlBoss);
-
+    
             $images_boss = $_FILES["images_path"] ?? null;
             $path = "assets/images/";
             $imageName = $currentBoss['images_boss'] ?? '';
-            var_dump($imageName);
-
+    
             if ($images_boss && $images_boss['error'] === UPLOAD_ERR_OK) {
                 $imageTmpPath = $images_boss['tmp_name'];
                 $imageName = basename($images_boss['name']);
@@ -61,16 +60,17 @@ class ModifyBossModels {
                     throw new Exception("Échec du téléchargement de l'image.");
                 }
             }
-
+    
+            $HP = isset($_POST['HP']) && is_numeric($_POST['HP']) ? (int) $_POST['HP'] : null;
+            $MP = isset($_POST['MP']) && is_numeric($_POST['MP']) ? (int) $_POST['MP'] : null;
             $gils = isset($_POST['gils']) && is_numeric($_POST['gils']) ? (int) $_POST['gils'] : null;
-
             $experiences = isset($_POST['experiences']) && is_numeric($_POST['experiences']) ? (int) $_POST['experiences'] : null;
-
+    
             $update->execute([
                 $_POST['name'],
                 $_POST['descriptions'],
-                $_POST['HP'],
-                $_POST['MP'],
+                $HP,
+                $MP,
                 $_POST['loots'],
                 $_POST['weakness'],
                 $_POST['location'],
@@ -80,7 +80,7 @@ class ModifyBossModels {
                 $path,
                 $bossId
             ]);
-
+    
             $this->db->commit();
             echo "Le boss a été mis à jour avec succès.";
         } catch (Exception $e) {
@@ -88,4 +88,4 @@ class ModifyBossModels {
             throw $e;
         }
     }
-}
+}    

@@ -1,5 +1,3 @@
-</body>
-</html>
 
 <footer>
         <nav id="footer-container">
@@ -21,5 +19,6 @@
                     <span>Instagram</span>
                 </a>
             </nav>
-        </nav>
     </footer>
+</body>
+</html>

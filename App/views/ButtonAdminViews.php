@@ -38,7 +38,7 @@ class ButtonAdminViews {
             </div>
         
             <div class="dropdown">
-                <button class="lien">Personnage</button>
+                <button class="lien">Perso</button>
                 <div class="dropdown-content">
                     <a href="<?= self::ADD_CHARACTER_URL ?>">Ajouter un personnage</a>
                     <a href="<?= self::MODIFY_CHARACTER_URL ?>">Modifier un personnage</a>

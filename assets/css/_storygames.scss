@@ -29,3 +29,24 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    #story-game {
+        width: 95%; 
+        max-width: 100%; 
+        padding: 10px; 
+        margin: 10px auto;
+    }
+    .story {
+        gap: 15px;
+        img {
+            max-width: 100%; 
+            width: auto; 
+        }
+    }
+    .close-button {
+        top: 5px; 
+        right: 5px;
+        font-size: 20px; 
+    }
+}

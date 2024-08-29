@@ -7,4 +7,7 @@ body {
     background-color: $background-color_1;
     color: $color_1;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }

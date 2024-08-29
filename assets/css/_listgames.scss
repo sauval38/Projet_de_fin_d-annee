@@ -42,3 +42,30 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .list {
+        gap: 15px;
+        margin: 10px;
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        padding: 15px;
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        img {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        a {
+            font-size: 1.1em;
+            padding: 8px;
+        }
+    }
+}
+
+

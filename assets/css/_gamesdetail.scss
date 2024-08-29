@@ -36,8 +36,7 @@
         border: 1px solid $border;
         transition: transform 0.3s ease;
         box-shadow: 0 0 5px $color-2;
-        display: flex;
-        flex-direction: column;
+        @include flexbox(false, false, column);
         .description-title {
             font-size: 1.2em;
             text-shadow: 0 0 3px $color-2, 0 0 5px $color-2;
@@ -45,7 +44,33 @@
             display: block;
         }
     }
+
     .games-item:last-child {
-        grid-column: span 2; 
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    #games-detail {
+        width: 95%; 
+        max-width: 100%; 
+        padding: 10px;
+        margin: 10px auto;
+    }
+    .games-image {
+        height: 200px; 
+        margin-bottom: 10px;
+    }
+    .games-info {
+        display: block !important; 
+        gap: 10px; 
+    }
+    .games-item {
+        padding: 15px;
+        font-size: 0.9em; 
+        margin-bottom: 10px; 
+    }
+    .games-item:last-child {
+        margin-bottom: 0; 
     }
 }

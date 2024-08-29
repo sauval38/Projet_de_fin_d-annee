@@ -1,6 +1,5 @@
 .dropdown-container {
     @include flexbox(space-around);
-    margin: 20px;
     width: 100%;
     .dropdown {
         width: 100%;

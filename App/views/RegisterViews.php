@@ -8,7 +8,7 @@ class RegisterViews {
         ?>
         <div id="register">
             <h1>Créer un compte</h1>
-            <form class="register-form" action="inscription" method="post">
+            <form class="register-form" action="register" method="post">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" name="username" id="username" value="<?= isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '' ?>" required>
 
