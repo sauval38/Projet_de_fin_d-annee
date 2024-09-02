@@ -1,21 +1,23 @@
+/* Styles pour la section d'information */
 #information {
-    color: $color_1;
-    background-color: $background-color_2;
-    padding: 20px;
-    border-radius: $border_radius_1;
-    border: 1px solid $border-color_1;
-    margin: 20px auto;
-    max-width: 800px;
+    color: $color_1; /* Définit la couleur du texte à $color_1 */
+    background-color: $background-color_2; /* Définit la couleur de fond à $background-color_2 */
+    padding: 20px; /* Ajoute un espace intérieur de 20px tout autour */
+    border-radius: $border_radius_1; /* Applique des coins arrondis avec un rayon défini */
+    border: 1px solid $border-color_1; /* Ajoute une bordure solide de 1px avec la couleur $border-color_1 */
+    margin: 20px auto; /* Ajoute un espace de 20px au-dessus et en dessous et centre horizontalement */
+    max-width: 800px; /* Définit la largeur maximale de l'élément à 800px */
 }
+/* Styles pour les listes non ordonnées */
 ul {
-    margin: 10px 0;
-    padding-left: 20px;
+    margin: 10px 0; /* Ajoute un espace de 10px au-dessus et en dessous de la liste */
+    padding-left: 20px; /* Ajoute un espace intérieur de 20px sur le côté gauche */
 }
-
+/* Styles pour les éléments de liste */
 li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Ajoute un espace de 10px en dessous de chaque élément de liste */
 }
-
+/* Styles pour les éléments de texte en gras */
 strong {
-    color: $color_2;
+    color: $color_2; /* Définit la couleur du texte en gras à $color_2 */
 }

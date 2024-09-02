@@ -1,24 +1,32 @@
+// Importation des polices Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
 
-$fonttitle: "Raleway", sans-serif;
-$fontpara: 'Exo', sans-serif;
+// Définition des familles de polices
+$fonttitle: "Raleway", sans-serif;  // Police pour les titres
+$fontpara: 'Exo', sans-serif;       // Police pour le texte des paragraphes
 
-$color_1: rgb(255, 255, 255);
-$color_2: rgb(0, 255, 0);
-$color_3: rgb(44, 62, 80);
-$color_4: rgb(0, 0, 0);
+// Définition des couleurs
+$color_1: rgb(255, 255, 255);       // Blanc
+$color_2: rgb(0, 255, 0);           // Vert lumineux
+$color_3: rgb(44, 62, 80);          // Couleur de texte sombre
+$color_4: rgb(0, 0, 0);             // Noir
 
-$background_1: rgba(0, 0, 0, .7);
-$background_2: rgba(0, 0, 0, 0.5);
+// Définition des couleurs de fond avec transparence
+$background_1: rgba(0, 0, 0, .7);  // Fond semi-transparent noir
+$background_2: rgba(0, 0, 0, 0.5); // Fond plus transparent noir
 
-$background-color_1: rgb(34, 34, 34);
-$background-color_2: rgb(44, 62, 80);
-$background-color_3: rgb(255, 255, 255);
-$background-color_4: rgb(0, 255, 0);
+// Définition des couleurs de fond
+$background-color_1: rgb(34, 34, 34); // Fond sombre
+$background-color_2: rgb(44, 62, 80); // Fond gris-bleu
+$background-color_3: rgb(255, 255, 255); // Fond blanc
+$background-color_4: rgb(0, 255, 0); // Fond vert lumineux
 
-$border: rgb(0, 255, 0);
+// Définition des couleurs de bordure
+$border: rgb(0, 255, 0); // Bordure verte lumineuse
 
-$border_radius_1: 5px;
-$border_radius_2: 10px;
+// Définition des rayons de bordure pour les coins arrondis
+$border_radius_1: 5px;  // Rayon de bordure pour les coins légèrement arrondis
+$border_radius_2: 10px; // Rayon de bordure pour les coins plus arrondis
 
-$border-color_1: rgb(44, 62, 80);
+// Couleur de bordure spécifique pour certains éléments
+$border-color_1: rgb(44, 62, 80); // Bordure de couleur gris-bleu

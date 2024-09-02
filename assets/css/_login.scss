@@ -1,18 +1,30 @@
 #login {
+    // Utilise un modèle de boîte flexible (flexbox) avec les éléments enfants alignés en colonne (verticalement).
     @include flexbox(false, false, column);
+
+    // Centre les éléments enfants horizontalement.
     align-items: center;
-  }
+}
 #login-form {
+    // Utilise un modèle de boîte flexible (flexbox) pour centrer le formulaire horizontalement et verticalement.
     @include flexbox(center, center, column);
+    // Définit la hauteur minimale à 100% de la hauteur de la fenêtre (viewport), assurant que le formulaire occupe tout l'espace disponible.
     min-height: 100vh;
+    // Applique une marge interne de 20px au formulaire pour ajouter de l'espace autour du contenu.
     padding: 20px;
     .form-login {
+        // Utilise un modèle de boîte flexible (flexbox) pour organiser les éléments du formulaire en colonne.
         @include flexbox(false, false, column);
+        // Définit une largeur fixe de 300px pour le formulaire, ce qui limite sa taille sur les grands écrans.
         width: 300px;
         label {
+            // Ajoute une marge inférieure de 5px pour espacer le label des champs de saisie.
             margin-bottom: 5px;
+            // Définit la taille de la police à 1.2em, ce qui rend les labels plus visibles et lisibles.
             font-size: 1.2em;
+            // Applique une couleur au texte des labels, cette couleur est définie dans une variable SCSS ($color_1).
             color: $color_1;
+            // Centre le texte des labels horizontalement.
             text-align: center;
         }
     }

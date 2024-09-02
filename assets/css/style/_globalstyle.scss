@@ -1,53 +1,59 @@
-h1{
-    text-align: center;
-    margin-top: 30px;
-    font-family: $fonttitle;
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
+/* Styles pour les titres de niveau 1 (h1) */
+h1 {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 30px; /* Ajoute un espace de 30px au-dessus du titre */
+    font-family: $fonttitle; /* Utilise la police spécifiée pour les titres */
+    font-size: 3em; /* Définit la taille de la police à 3 fois la taille de base */
+    margin-bottom: 20px; /* Ajoute un espace de 20px en dessous du titre */
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; /* Ajoute une ombre au texte pour un effet de profondeur */
 }
+/* Styles pour les paragraphes */
 p {
-    font-family: $fontpara;
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: $color-1;
-    margin-top: 10px;
-    background-color: $background-color-1;
-    padding: 15px;
-    border-radius: $border-radius-1;
-    border: 1px solid $border;
-    text-align: center;
-    box-shadow: 0 0 5px $color-2;
+    font-family: $fontpara; /* Utilise la police spécifiée pour les paragraphes */
+    font-size: 1.2em; /* Définit la taille de la police à 1.2 fois la taille de base */
+    line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
+    color: $color_1; /* Définit la couleur du texte */
+    margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
+    background-color: $background-color_1; /* Définit la couleur de fond du paragraphe */
+    padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
+    border-radius: $border-radius-1; /* Applique des coins arrondis */
+    border: 1px solid $border; /* Ajoute une bordure solide de 1px */
+    text-align: center; /* Centre le texte à l’intérieur du paragraphe */
+    box-shadow: 0 0 5px $color_2; /* Ajoute une ombre portée pour donner de la profondeur */
 }
+/* Styles pour les liens */
 a {
-    text-decoration: none;
-    color: white;
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    color: white; /* Définit la couleur du texte des liens */
 }
+/* Styles pour les liens au survol */
 a:hover {
-    color: $color-2
+    color: $color_2; /* Change la couleur du texte des liens au survol */
 }
+/* Styles pour les boutons */
 button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: $border_radius_1;
-    background-color: $background-color_4;
-    color: $color_4;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    padding: 10px 20px; /* Ajoute un espace intérieur de 10px en haut/bas et 20px sur les côtés */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: $border_radius_1; /* Applique des coins arrondis */
+    background-color: $background-color_4; /* Définit la couleur de fond du bouton */
+    color: $color_4; /* Définit la couleur du texte du bouton */
+    font-size: 1.2rem; /* Définit la taille de la police à 1.2 fois la taille de la police racine */
+    cursor: pointer; /* Change le curseur en une main pointant lorsqu’il est survolé */
+    transition: all 0.2s ease-in-out; /* Ajoute une transition douce pour tous les changements de style */
 
     &:hover {
-        background-color: $background-color_2;
+        background-color: $background-color_2; /* Change la couleur de fond du bouton lorsqu'il est survolé */
     }
 }
+/* Styles pour les boutons de fermeture */
 .close-button {
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: $color-2;
-    text-decoration: none;
-    cursor: pointer;
+    top: 10px; /* Positionne le bouton à 10px du haut */
+    right: 10px; /* Positionne le bouton à 10px de la droite */
+    font-size: 24px; /* Définit la taille de la police pour le bouton de fermeture */
+    color: $color_2; /* Définit la couleur du texte du bouton */
+    text-decoration: none; /* Supprime toute décoration de texte (comme le soulignement) */
+    cursor: pointer; /* Change le curseur en une main pointant lorsqu'il est survolé */
     &:hover {
-        color: darken($color-2, 20%);
+        color: darken($color_2, 20%); /* Assombrit la couleur du bouton de fermeture lorsqu'il est survolé */
     }
 }

@@ -1,18 +1,23 @@
-@mixin flexbox($jc:false, $ai:false, $fd:false, $fw:false, $fg:false){
-    display: flex;
-    @if $jc{
-        justify-content: $jc;
+@mixin flexbox($jc:false, $ai:false, $fd:false, $fw:false, $fg:false) {
+    display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+
+    @if $jc { /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+        justify-content: $jc; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
     }
-    @if $ai{
-        align-items: $ai;
+
+    @if $ai { /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+        align-items: $ai; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
     }
-    @if $fd{
-        flex-direction: $fd;
+
+    @if $fd { /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+        flex-direction: $fd; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
     }
-    @if $fw{
-        flex-wrap: $fw;
+
+    @if $fw { /* Vérifie si la variable $fw a une valeur (n'est pas false) */
+        flex-wrap: $fw; /* Applique la valeur de $fw à la propriété flex-wrap pour contrôler si les éléments doivent être déplacés sur plusieurs lignes */
     }
-    @if $fg{
-        flex-grow: $fg;
-    }    
-} 
+
+    @if $fg { /* Vérifie si la variable $fg a une valeur (n'est pas false) */
+        flex-grow: $fg; /* Applique la valeur de $fg à la propriété flex-grow pour définir la capacité des éléments à croître pour remplir l'espace disponible */
+    }
+}

@@ -1,71 +1,112 @@
 #list-games {
+    // Utilise Flexbox pour disposer les éléments enfants en lignes, avec un espace uniforme autour des éléments, les éléments alignés au début sur l'axe transversal, sans alignement sur l'axe principal, et permet le retour à la ligne des éléments si nécessaire (wrap).
     @include flexbox(space-around, flex-start, false, wrap);
+    // Applique une marge de 20px autour du conteneur.
     margin: 20px;
     .list {
+        // Utilise Flexbox pour organiser les éléments enfants en colonne, avec un espace uniforme entre les éléments sur l'axe principal et sans alignement sur l'axe transversal.
         @include flexbox(space-between, false, column);
+        // Définit la couleur de fond du conteneur des jeux à partir d'une variable.
         background-color: $background-color_2;
+        // Ajoute une bordure de 2px solide, utilisant une couleur définie dans une variable.
         border: 2px solid $border;
+        // Applique un rayon de bordure pour arrondir les coins, la valeur est définie dans une variable.
         border-radius: $border_radius_2;
+        // Ajoute une marge interne de 20px autour du contenu à l'intérieur du conteneur.
         padding: 20px;
+        // Ajoute une marge externe de 20px autour du conteneur des jeux.
         margin: 20px;
+        // Définit la largeur du conteneur des jeux à 30% de la largeur du parent moins 40px pour tenir compte des marges.
         width: calc(30% - 40px);
         h2 {
+            // Définit la police des titres à partir d'une variable.
             font-family: $fontpara;
+            // Ajoute une marge inférieure de 60px pour espacer le titre des éléments suivants.
             margin-bottom: 60px;
+            // Change le curseur en main (pointer) lorsque l'utilisateur survole le titre, indiquant qu'il est cliquable.
             cursor: pointer;
+            // Définit la taille de la police à 1.5rem, ce qui rend le titre plus grand.
             font-size: 1.5rem;
         }
         .additional-links {
+            // Ajoute une marge supérieure de 10px pour espacer les liens supplémentaires des éléments au-dessus.
             margin-top: 10px;
         }
         a {
+            // Définit la police des liens à partir d'une variable.
             font-family: $fontpara;
+            // Affiche les liens comme des blocs pour qu'ils occupent toute la largeur disponible.
             display: block;
+            // Ajoute une marge verticale de 5px entre les liens.
             margin: 5px 0;
+            // Ajoute une marge interne de 10px autour du texte des liens.
             padding: 10px;
+            // Centre le texte des liens.
             text-align: center;
+            // Définit la taille de la police à 1.2em, légèrement plus grande que la taille par défaut.
             font-size: 1.2em;
+            // Ajoute une bordure de 2px solide autour des liens, utilisant une couleur définie dans une variable.
             border: 2px solid $border;
+            // Applique un rayon de bordure pour arrondir les coins des liens, la valeur est définie dans une variable.
             border-radius: $border_radius_2;
+            // Définit la couleur du texte des liens à partir d'une variable.
             color: $color_1;
+            // Supprime la décoration de texte (comme le soulignement) des liens.
             text-decoration: none;
+            // Définit une transition pour le changement de couleur de fond au survol, avec une durée de 0.3 secondes.
             transition: background-color 0.3s;
-            &:hover{
+            &:hover {
+                // Change la couleur de fond des liens au survol, utilisant une couleur définie dans une variable.
                 background-color: $background-color_1;
-                }
+            }
         }
         img {
+            // Définit la largeur des images à 100% du conteneur parent, ce qui les rend responsives.
             width: 100%;
+            // Définit la hauteur des images à auto pour conserver leur ratio d'aspect.
             height: auto;
+            // Applique un rayon de bordure pour arrondir les coins des images, la valeur est définie dans une variable.
             border-radius: $border-radius-1;
+            // Ajoute une ombre portée autour des images pour un effet de profondeur.
             box-shadow: 0 0 10px $color-2;
         }
     }
 }
 
 @media (max-width: 768px) {
+    // Styles pour les écrans de 768px ou moins (tablettes et mobiles).
     .list {
+        // Définit un écart de 15px entre les éléments enfants du conteneur `.list`.
         gap: 15px;
+        // Réduit la marge externe à 10px.
         margin: 10px;
+        // Permet aux éléments de s'étendre et se rétrécir, avec une base de 100% de la largeur disponible.
         flex: 1 1 100%;
+        // Ajoute une marge inférieure de 20px pour espacer les éléments en colonne.
         margin-bottom: 20px;
+        // Réduit la marge interne à 15px.
         padding: 15px;
         h2 {
+            // Réduit la taille de la police des titres à 1.4rem sur les petits écrans.
             font-size: 1.4rem;
+            // Réduit la marge inférieure à 15px.
             margin-bottom: 15px;
         }
         img {
+            // Ajoute une marge inférieure de 10px aux images pour espacer les éléments en colonne.
             margin-bottom: 10px;
         }
         p {
+            // Réduit la taille de la police des paragraphes à 0.95rem pour les petits écrans.
             font-size: 0.95rem;
+            // Réduit la marge inférieure à 10px.
             margin-bottom: 10px;
         }
         a {
+            // Réduit la taille de la police des liens à 1.1em sur les petits écrans.
             font-size: 1.1em;
+            // Réduit la marge interne à 8px.
             padding: 8px;
         }
     }
 }
-
-

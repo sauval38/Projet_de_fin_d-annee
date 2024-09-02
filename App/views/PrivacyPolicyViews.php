@@ -4,6 +4,7 @@ namespace Views;
 
 class PrivacyPolicyViews {
 
+    // Méthode pour afficher la politique de confidentialité
     public function privacyPolicy() {
         echo '
         <div id="information">
@@ -12,13 +13,13 @@ class PrivacyPolicyViews {
             <p><strong>Dernière mise à jour : [Date]</strong></p>
             
             <h2>1. Introduction</h2>
-            <p>La présente Politique de Confidentialité explique comment nous collectons, utilisons, et protégeons vos informations personnelles lorsque vous utilisez le site <strong>FINAL FANTASY</strong> (ci-après "le site"). Nous nous engageons à protéger votre vie privée et à garantir la sécurité de vos données personnelles.</p>
+            <p>La présente Politique de Confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez le site <strong>FINAL FANTASY</strong> (ci-après "le site"). Nous nous engageons à protéger votre vie privée et à garantir la sécurité de vos données personnelles.</p>
             
             <h2>2. Informations que nous collectons</h2>
             <p>Nous pouvons collecter les types d\'informations suivants :</p>
             <ul>
-                <li><strong>Informations fournies par vous :</strong> Lorsque vous remplissez un formulaire sur notre site, nous collectons les informations que vous nous fournissez, telles que votre nom, votre adresse e-mail, et toute autre donnée pertinente.</li>
-                <li><strong>Données de navigation :</strong> Nous collectons des informations sur la manière dont vous accédez et utilisez notre site, y compris l\'adresse IP, le type de navigateur, la durée de visite, et les pages consultées. Cela nous aide à améliorer l\'expérience utilisateur.</li>
+                <li><strong>Informations fournies par vous :</strong> Lorsque vous remplissez un formulaire sur notre site, nous collectons les informations que vous nous fournissez, telles que votre nom, votre adresse e-mail et toute autre donnée pertinente.</li>
+                <li><strong>Données de navigation :</strong> Nous collectons des informations sur la manière dont vous accédez et utilisez notre site, y compris l\'adresse IP, le type de navigateur, la durée de visite et les pages consultées. Cela nous aide à améliorer l\'expérience utilisateur.</li>
             </ul>
             
             <h2>3. Utilisation des données</h2>
@@ -32,7 +33,7 @@ class PrivacyPolicyViews {
             <h2>4. Partage des données</h2>
             <p>Nous ne partageons pas vos données personnelles avec des tiers, sauf dans les cas suivants :</p>
             <ul>
-                <li><strong>Prestataires de services :</strong> Nous pouvons partager vos données avec des prestataires de services tiers qui nous aident à exploiter le site, à mener nos activités, ou à vous servir, tant que ces parties s\'engagent à garder ces informations confidentielles.</li>
+                <li><strong>Prestataires de services :</strong> Nous pouvons partager vos données avec des prestataires de services tiers qui nous aident à exploiter le site, à mener nos activités ou à vous servir, tant que ces parties s\'engagent à garder ces informations confidentielles.</li>
                 <li><strong>Obligations légales :</strong> Nous pouvons être amenés à divulguer vos informations si la loi l\'exige ou si nous croyons en toute bonne foi qu\'une telle action est nécessaire pour se conformer à une obligation légale.</li>
             </ul>
             

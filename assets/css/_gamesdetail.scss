@@ -1,76 +1,120 @@
 #games-detail {
+    // Définir le fond du conteneur principal
     background-color: $background-color-2;
+    // Ajouter une bordure autour du conteneur
     border: 2px solid $border;
+    // Appliquer des coins arrondis
     border-radius: $border-radius-2;
+    // Ajouter un espacement interne
     padding: 20px;
+    // Ajouter un espacement extérieur, centrer horizontalement
     margin: 20px auto;
+    // Définir la largeur du conteneur à 80% de son conteneur parent
     width: 80%;
+    // Définir la largeur maximale à 60% pour les grands écrans
     max-width: 60%;
+    // Définir la police utilisée dans le conteneur
     font-family: $fontpara;
     .games-image {
+        // Utiliser Flexbox pour centrer le contenu de l'image
+        @include flexbox(center, center);
+        // Définir la largeur du conteneur d'image à 100% du conteneur parent
         width: 100%;
+        // Définir la hauteur du conteneur d'image
         height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // Ajouter un espacement inférieur
         margin-bottom: 20px;
+        // Masquer les débordements de l'image
         overflow: hidden;
+        // Appliquer des coins arrondis aux images
         border-radius: $border-radius-1;
         img {
+            // Limiter la largeur de l'image à 100% du conteneur
             max-width: 100%;
+            // Limiter la hauteur de l'image à 100% du conteneur
             max-height: 100%;
+            // Maintenir les proportions de l'image tout en remplissant le conteneur
             object-fit: cover;
+            // Ajouter une transition pour l'effet de transformation
             transition: transform 0.3s ease;
+            // Ajouter une ombre portée autour de l'image
             box-shadow: 0 0 10px $color-2;
         }
     }
     .games-info {
+        // Disposer les éléments de jeu dans une grille
         display: grid;
+        // Définir la grille avec des colonnes flexibles
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        // Ajouter un espace entre les éléments de la grille
         gap: 20px;
     }
     .games-item {
+        // Définir la couleur de fond des éléments de jeu
         background-color: $background-color-1;
+        // Ajouter un espacement interne
         padding: 20px;
+        // Appliquer des coins arrondis aux éléments
         border-radius: $border-radius-1;
+        // Ajouter une bordure autour des éléments
         border: 1px solid $border;
+        // Ajouter une transition pour l'effet de transformation
         transition: transform 0.3s ease;
+        // Ajouter une ombre portée autour des éléments
         box-shadow: 0 0 5px $color-2;
+        // Utiliser Flexbox pour une disposition en colonne des contenus internes
         @include flexbox(false, false, column);
         .description-title {
+            // Définir la taille de la police pour le titre de la description
             font-size: 1.2em;
+            // Ajouter une ombre portée au texte pour le rendre plus visible
             text-shadow: 0 0 3px $color-2, 0 0 5px $color-2;
+            // Ajouter un espacement inférieur
             margin-bottom: 10px;
+            // S'assurer que le titre est un élément de bloc pour le style
             display: block;
         }
     }
-
+    // Étendre le dernier élément de la grille sur deux colonnes
     .games-item:last-child {
         grid-column: span 2;
     }
 }
 
+// Styles responsifs pour les écrans jusqu'à 768px
 @media (max-width: 768px) {
     #games-detail {
-        width: 95%; 
-        max-width: 100%; 
+        // Ajuster la largeur à 95% pour les écrans plus petits
+        width: 95%;
+        // Définir la largeur maximale à 100%
+        max-width: 100%;
+        // Réduire l'espacement interne
         padding: 10px;
+        // Réduire l'espacement extérieur
         margin: 10px auto;
     }
     .games-image {
-        height: 200px; 
+        // Réduire la hauteur du conteneur d'image pour les petits écrans
+        height: 200px;
+        // Réduire l'espacement inférieur
         margin-bottom: 10px;
     }
     .games-info {
-        display: block !important; 
-        gap: 10px; 
+        // Modifier la disposition en grille en bloc pour les petits écrans
+        display: block !important;
+        // Réduire l'espace entre les éléments
+        gap: 10px;
     }
     .games-item {
+        // Réduire l'espacement interne
         padding: 15px;
-        font-size: 0.9em; 
-        margin-bottom: 10px; 
+        // Réduire la taille de la police pour les petits écrans
+        font-size: 0.9em;
+        // Ajouter un espacement inférieur entre les éléments
+        margin-bottom: 10px;
     }
     .games-item:last-child {
-        margin-bottom: 0; 
+        // Supprimer l'espacement inférieur du dernier élément
+        margin-bottom: 0;
     }
 }

@@ -1,13 +1,13 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Supprime la marge par défaut de tous les éléments */
+    padding: 0; /* Supprime le padding par défaut de tous les éléments */
+    box-sizing: border-box; /* Inclut la bordure et le padding dans les dimensions totales des éléments */
 }
 body {
-    background-color: $background-color_1;
-    color: $color_1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    background-color: $background-color_1; /* Définit la couleur de fond du corps du document à la variable $background-color_1 */
+    color: $color_1; /* Définit la couleur du texte du corps du document à la variable $color_1 */
+    min-height: 100vh; /* Définit la hauteur minimale du corps du document à 100% de la hauteur de la fenêtre de visualisation (viewport) */
+    display: flex; /* Utilise Flexbox pour le modèle de mise en page du corps du document */
+    flex-direction: column; /* Aligne les éléments enfants du corps en colonne (verticalement) */
+    overflow-x: hidden; /* Empêche le défilement horizontal, même si le contenu dépasse la largeur du viewport */
 }

@@ -1,22 +1,23 @@
-@import "./style/variables";
-@import "./style/mixins";
-@import "./style/settings";
-@import "./style/globalstyle";
-@import "./style/input";
+// Importation des fichiers SCSS liés aux variables, mixins, et paramètres globaux utilisés dans le projet.
+@import "./style/variables"; // Contient probablement des variables SCSS globales (comme les couleurs, les tailles, etc.).
+@import "./style/mixins"; // Contient des mixins SCSS réutilisables (fonctions et blocs de styles).
+@import "./style/settings"; // Contient les paramètres globaux (par exemple, typographie, marges globales, etc.).
+@import "./style/globalstyle"; // Contient les styles globaux applicables à l'ensemble du site.
+@import "./style/input"; // Contient les styles spécifiques aux éléments de formulaire, comme les champs d'entrée.
 
-@import "./menu";
-@import "./footer";
-@import "./board";
-@import "./register";
-@import "./login";
-@import "./home";
-@import "./dropdown";
-@import "./form/form";
-@import "./admin/listadmin";
-@import "./delete/delete";
-@import "./listgames.scss";
-@import "./details/gamesinfodetail";
-@import "./gamesdetail";
-@import "./storygames";
-@import "./information/privacyandlegal";
-
+// Importation des styles spécifiques à certaines sections ou composants de l'application.
+@import "./menu"; // Contient les styles pour le menu de navigation.
+@import "./footer"; // Contient les styles pour le pied de page.
+@import "./board"; // Contient les styles pour le tableau de bord ou une zone spécifique d'affichage.
+@import "./register"; // Contient les styles pour la page ou le formulaire d'inscription.
+@import "./login"; // Contient les styles pour la page ou le formulaire de connexion.
+@import "./home"; // Contient les styles pour la page d'accueil.
+@import "./dropdown"; // Contient les styles pour les menus déroulants.
+@import "./form/form"; // Contient les styles pour les formulaires en général.
+@import "./admin/listadmin"; // Contient les styles pour l'affichage de la liste des administrateurs.
+@import "./delete/delete"; // Contient les styles pour la fonctionnalité de suppression (peut-être un bouton ou une page).
+@import "./listgames.scss"; // Contient les styles pour la liste des jeux.
+@import "./details/gamesinfodetail"; // Contient les styles pour les détails des informations sur les jeux.
+@import "./gamesdetail"; // Contient les styles pour une vue détaillée des jeux.
+@import "./storygames"; // Contient les styles pour les jeux d'histoire ou les récits interactifs.
+@import "./information/privacyandlegal"; // Contient les styles pour les pages d'information légale et de confidentialité.

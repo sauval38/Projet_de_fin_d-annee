@@ -1,15 +1,16 @@
+/* Styles pour les sections de formulaire (ajouter/modifier personnage, jeu, boss) */
 #add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss {
-    @include flexbox(center, center, column);
-	min-height: 100vh;
-	padding: 20px;
-	form {
-		@include flexbox(false, false, column);
-		width: 300px;
-		label {
-			margin-bottom: 5px;
-			font-size: 1.2em;
-			color: $color_1;
-			text-align: center;
-		}
-	}
+    @include flexbox(center, center, column); /* Centre les éléments enfants horizontalement et verticalement en colonne */
+    min-height: 100vh; /* Définit la hauteur minimale de la section à 100% de la hauteur de la fenêtre */
+    padding: 20px; /* Ajoute un espace intérieur de 20px tout autour de la section */
+    form {
+        @include flexbox(false, false, column); /* Centre les éléments enfants du formulaire en colonne sans alignement horizontal ou vertical supplémentaire */
+        width: 300px; /* Définit la largeur du formulaire à 300px */
+        label {
+            margin-bottom: 5px; /* Ajoute un espace de 5px en dessous de chaque label */
+            font-size: 1.2em; /* Définit la taille de la police du label à 1.2em */
+            color: $color_1; /* Définit la couleur du texte du label à $color_1 */
+            text-align: center; /* Centre le texte du label */
+        }
+    }
 }
