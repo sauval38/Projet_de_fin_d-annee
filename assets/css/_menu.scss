@@ -1,129 +1,104 @@
 #menu {
-    // Définit la couleur de fond du menu à partir d'une variable.
-    background-color: $background-color_2;
-    // Applique une marge interne de 10px au menu.
-    padding: 10px;
-    // Utilise Flexbox pour distribuer l'espace autour des éléments enfants.
-    @include flexbox(space-around);
+     // Utilise Flexbox pour distribuer l'espace autour des éléments enfants.
+    background-color: $background-color_2; // Définit la couleur de fond du menu à partir d'une variable.
+    padding: 10px; // Applique une marge interne de 10px au menu.
+    
     a {
-        // Définit la police des liens dans le menu à partir d'une variable.
-        font-family: $fontpara;
-        // Supprime la décoration de texte (comme le soulignement) des liens.
-        text-decoration: none;
-        // Définit la couleur du texte des liens à partir d'une variable.
-        color: $color_2;
-        // Applique une marge interne de 5px en haut et en bas, et de 10px sur les côtés.
-        padding: 5px 10px;
-        // Applique un rayon de bordure pour arrondir les coins des liens, la valeur est prise d'une variable.
-        border-radius: $border_radius_1;
-        // Définit une transition pour le changement de couleur de fond au survol, avec une durée de 0,3 seconde.
-        transition: background-color 0.3s;
+        @include text-decoration(none);
+        border-radius: $border_radius_1; // Applique un rayon de bordure pour arrondir les coins des liens, la valeur est prise d'une variable.
+        font-family: $fontpara; // Définit la police des liens dans le menu à partir d'une variable.
+        color: $color_2; // Définit la couleur du texte des liens à partir d'une variable.
+        padding: 5px 10px; // Applique une marge interne de 5px en haut et en bas, et de 10px sur les côtés.
+        transition: background-color 0.3s; // Définit une transition pour le changement de couleur de fond au survol, avec une durée de 0,3 seconde.
+
         &:hover {
-            // Change la couleur de fond au survol du lien, utilisant une variable pour la couleur.
-            background-color: $background-color_1;
-        }
-    }
-    #menu-toggle {
-        // Cache l'input checkbox qui sert de déclencheur pour afficher/cacher le menu sur les petits écrans.
-        display: none;
-    }
-    .menu-icon {
-        // Cache l'icône du menu (hamburger) par défaut.
-        display: none;
-        // Définit la largeur et la hauteur de l'icône du menu.
-        width: 30px;
-        height: 20px;
-        // Positionne l'icône relativement à son conteneur parent.
-        position: relative;
-        // Change le curseur en une main (pointer) lorsqu'on survole l'icône.
-        cursor: pointer;
-        // Définit un indice de z pour s'assurer que l'icône reste au-dessus des autres éléments.
-        z-index: 10;
-        span {
-            // Définit chaque barre de l'icône (hamburger) comme un bloc d'affichage.
-            display: block;
-            // Positionne chaque barre de manière absolue à l'intérieur de l'icône.
-            position: absolute;
-            // Définit la largeur de chaque barre à 100% de l'icône, et la hauteur à 3px.
-            width: 100%;
-            height: 3px;
-            // Définit la couleur de fond des barres à partir d'une variable.
-            background-color: $color_2;
-            // Applique une transition à toutes les propriétés pour une animation fluide.
-            transition: all 0.3s ease-in-out;
-        }
-        span:nth-child(1) {
-            // Positionne la première barre en haut de l'icône.
-            top: 0;
-        }
-        span:nth-child(2) {
-            // Positionne la deuxième barre au milieu de l'icône.
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        span:nth-child(3) {
-            // Positionne la troisième barre en bas de l'icône.
-            bottom: 0;
-        }
-    }
-    .menu-items {
-        // Affiche les éléments du menu en flexbox, les plaçant en ligne (horizontale) par défaut.
-        display: flex;
-        flex-direction: row;
-        // Distribue l'espace autour des éléments enfants dans le menu.
-        @include flexbox(space-around); 
-        // Définit la largeur du conteneur d'éléments de menu à 100% de son conteneur parent.
-        width: 100%; 
-        a {
-            // Ajoute une marge horizontale de 5px entre chaque lien du menu.
-            margin: 0 5px;
+            background-color: $background-color_1; // Change la couleur de fond au survol du lien, utilisant une variable pour la couleur.
         }
     }
 
-@media (max-width: 768px) {
-    // Sur les écrans de 768px ou moins, place les éléments enfants en haut du conteneur parent.
-    @include flexbox(flex-start);
-    .menu-icon {
-        // Affiche l'icône du menu (hamburger) sur les petits écrans.
-        display: block;
+    #menu-toggle {
+        display: none; // Cache l'input checkbox qui sert de déclencheur pour afficher/cacher le menu sur les petits écrans.
     }
-    .menu-items {
-        // Cache les éléments du menu par défaut sur les petits écrans.
-        display: none;
-        // Aligne les éléments du menu en colonne (verticalement).
-        flex-direction: column;
-        // Définit la largeur du conteneur d'éléments de menu à 100% de son conteneur parent.
-        width: 100%;
-        a {
-            // Ajoute une marge interne verticale de 10px et aucune marge horizontale aux liens.
-            padding: 10px 0;
-            // Supprime la marge pour s'assurer que les éléments sont alignés en colonne.
-            margin: 0;
-            // Centre le texte des liens dans le menu.
-            text-align: center;
-            // Ajoute une bordure inférieure à chaque lien, utilisant une couleur de fond provenant d'une variable.
-            border-bottom: 1px solid $background-color_1;
+
+    .menu-icon {
+        display: none; // Cache l'icône du menu (hamburger) par défaut.
+        position: relative; // Positionne l'icône relativement à son conteneur parent.
+        width: 30px; // Définit la largeur et la hauteur de l'icône du menu.
+        height: 20px;
+        z-index: 10; // Définit un indice de z pour s'assurer que l'icône reste au-dessus des autres éléments.
+        cursor: pointer; // Change le curseur en une main (pointer) lorsqu'on survole l'icône.
+        
+        span {
+            background-color: $color_2; // Définit la couleur de fond des barres à partir d'une variable.
+            display: block; // Définit chaque barre de l'icône (hamburger) comme un bloc d'affichage.
+            position: absolute; // Positionne chaque barre de manière absolue à l'intérieur de l'icône.
+            width: 100%; // Définit la largeur de chaque barre à 100% de l'icône, et la hauteur à 3px.
+            height: 3px;
+            transition: all 0.3s ease-in-out; // Applique une transition à toutes les propriétés pour une animation fluide.
+        }
+
+        span:nth-child(1) {
+            top: 0; // Positionne la première barre en haut de l'icône.
+        }
+
+        span:nth-child(2) {
+            top: 50%; // Positionne la deuxième barre au milieu de l'icône.
+            transform: translateY(-50%);
+        }
+
+        span:nth-child(3) {
+            bottom: 0; // Positionne la troisième barre en bas de l'icône.
         }
     }
+
+    .menu-items {
+        @include flexbox(space-around, false, row);
+        width: 100%; // Définit la largeur du conteneur d'éléments de menu à 100% de son conteneur parent.
+
+        a {
+            margin: 0 5px; // Ajoute une marge horizontale de 5px entre chaque lien du menu.
+        }
+    }
+
+
+// Sur les écrans de 768px ou moins, place les éléments enfants en haut du conteneur parent.    
+@media (max-width: 768px) {
+    
+    @include flexbox(flex-start);
+
+    .menu-icon {
+        display: block; // Affiche l'icône du menu (hamburger) sur les petits écrans.
+    }
+
+    .menu-items {
+        @include flexbox(false, false, column);
+        display: none; // Cache les éléments du menu par défaut sur les petits écrans.
+        width: 100%; // Définit la largeur du conteneur d'éléments de menu à 100% de son conteneur parent.
+
+        a {
+            @include text-align(center);
+            padding: 10px 0; // Ajoute une marge interne verticale de 10px et aucune marge horizontale aux liens.
+            margin: 0; // Supprime la marge pour s'assurer que les éléments sont alignés en colonne.
+            border-bottom: 1px solid $background-color_1; // Ajoute une bordure inférieure à chaque lien, utilisant une couleur de fond provenant d'une variable.
+        }
+    }
+
     #menu-toggle:checked + .menu-icon span:nth-child(1) {
-        // Fait pivoter la première barre de l'icône pour créer un "X" lorsque le menu est ouvert.
-        transform: rotate(45deg);
-        // Centre verticalement la première barre.
-        top: 50%;
+        top: 50%; // Centre verticalement la première barre.
+        transform: rotate(45deg); // Fait pivoter la première barre de l'icône pour créer un "X" lorsque le menu est ouvert.
     }
+
     #menu-toggle:checked + .menu-icon span:nth-child(2) {
-        // Rend la deuxième barre invisible lorsque le menu est ouvert.
-        opacity: 0;
+        opacity: 0; // Rend la deuxième barre invisible lorsque le menu est ouvert.
     }
+
     #menu-toggle:checked + .menu-icon span:nth-child(3) {
-        // Fait pivoter la troisième barre de l'icône pour créer un "X" lorsque le menu est ouvert.
-        transform: rotate(-45deg);
-        // Centre verticalement la troisième barre.
-        top: 50%;
+        top: 50%; // Centre verticalement la troisième barre.
+        transform: rotate(-45deg); // Fait pivoter la troisième barre de l'icône pour créer un "X" lorsque le menu est ouvert.
     }
+
     #menu-toggle:checked + .menu-icon + .menu-items {
-        // Affiche les éléments du menu sous forme de flexbox lorsque le menu est ouvert sur les petits écrans.
-        display: flex;
+        @include flexbox();
         }
     }
 }

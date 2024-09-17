@@ -1,210 +1,131 @@
-#logo {
-    // Utilise la police définie dans la variable $fonttitle pour le logo.
-    font-family: $fonttitle;
-    // Centre le texte horizontalement.
-    text-align: center;
-    // Définit la taille de la police du logo à 80px.
-    font-size: 80px;
-    // Applique un effet d'ombre portée au texte du logo pour un effet de profondeur.
-    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-    // Ajoute une marge supérieure de 30px pour espacer le logo des éléments au-dessus.
-    margin-top: 30px;
-}
 #carousel {
-    // Positionne le conteneur du carousel relativement pour permettre le positionnement absolu des boutons.
-    position: relative;
-    // Définit la largeur du carousel à 80% de la largeur du conteneur parent.
-    width: 80%;
-    // Centre le carousel horizontalement avec une marge automatique.
-    margin: auto;
-    // Cache les débordements du contenu (images) qui dépasse le conteneur.
-    overflow: hidden;
+    position: relative; // Positionne le conteneur du carousel relativement pour permettre le positionnement absolu des boutons.
+    overflow: hidden; // Cache les débordements du contenu (images) qui dépasse le conteneur.
+    margin: auto; // Centre le carousel horizontalement avec une marge automatique.
+    width: 80%; // Définit la largeur du carousel à 80% de la largeur du conteneur parent.
+    
     .carousel-slides {
-        // Ajoute une marge supérieure de 30px.
-        margin-top: 30px;
-        // Utilise Flexbox pour disposer les éléments en ligne.
-        @include flexbox();
-        // Ajoute une transition douce de 0.5 secondes pour le mouvement horizontal des diapositives.
-        transition: transform 0.5s ease-in-out;
+        @include flexbox(); // Utilise Flexbox pour disposer les éléments en ligne.
+        margin-top: 30px; // Ajoute une marge supérieure de 30px.
+        transition: transform 0.5s ease-in-out; // Ajoute une transition douce de 0.5 secondes pour le mouvement horizontal des diapositives.
+        
         .slide {
-            // Positionne les diapositives relativement pour permettre le positionnement absolu des éléments à l'intérieur.
-            position: relative;
-            // Définit la largeur minimale des diapositives à 100% du conteneur parent, permettant de faire défiler les diapositives horizontalement.
-            min-width: 100%;
-            // Inclut la bordure dans la largeur et la hauteur de l'élément.
-            box-sizing: border-box;
+            position: relative; // Positionne les diapositives relativement pour permettre le positionnement absolu des éléments à l'intérieur.
+            min-width: 100%;// Définit la largeur minimale des diapositives à 100% du conteneur parent, permettant de faire défiler les diapositives horizontalement.
+
             img {
-                // Définit la largeur des images à 100% du conteneur `.slide`.
-                width: 100%;
-                // Affiche les images en tant que blocs pour éviter les espaces blancs indésirables.
-                display: block;
-                // Définit la hauteur maximale des images à 500px pour éviter qu'elles ne deviennent trop grandes.
-                max-height: 500px;
-                // Ajuste l'image pour couvrir tout l'espace disponible tout en préservant son ratio d'aspect.
-                object-fit: cover;
+                display: block; // Affiche les images en tant que blocs pour éviter les espaces blancs indésirables.
+                width: 100%; // Définit la largeur des images à 100% du conteneur `.slide`.
+                object-fit: cover; // Ajuste l'image pour couvrir tout l'espace disponible tout en préservant son ratio d'aspect.
+                max-height: 500px; // Définit la hauteur maximale des images à 500px pour éviter qu'elles ne deviennent trop grandes.  
             }
+            
             .carousel-title {
-                // Utilise la police définie dans la variable $fonttitle pour le titre de la diapositive.
-                font-family: $fonttitle;
-                // Positionne le titre en bas de la diapositive.
-                position: absolute;
+                @include text-align(center);
+                background: $background_1; // Définit la couleur de fond du titre à partir de la variable $background_1.
+                font-family: $fonttitle; // Utilise la police définie dans la variable $fonttitle pour le titre de la diapositive.
+                font-size: $font-size_para; // Définit la taille de la police du titre à 22px.
+                color: $color_1; // Définit la couleur du texte du titre à partir de la variable $color_1.
+                position: absolute; // Positionne le titre en bas de la diapositive.
                 bottom: 0;
-                // Définit la largeur du titre à 100% de la diapositive.
-                width: 100%;
-                // Centre le texte du titre horizontalement.
-                text-align: center;
-                // Définit la taille de la police du titre à 24px.
-                font-size: 24px;
-                // Définit la couleur du texte du titre à partir de la variable $color_1.
-                color: $color_1;
-                // Définit l'ordre d'empilement du titre pour le placer au-dessus des autres éléments avec un z-index élevé.
-                z-index: 50;
-                // Ajoute une marge interne de 1rem en haut et en bas pour espacer le texte du bord du conteneur.
-                padding: 1rem 0;
-                // Applique un effet d'ombre portée au texte du titre pour le rendre plus visible.
-                text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-                // Définit la couleur de fond du titre à partir de la variable $background_1.
-                background: $background_1;
+                width: 100%; // Définit la largeur du titre à 100% de la diapositive.
+                z-index: 50; // Définit l'ordre d'empilement du titre pour le placer au-dessus des autres éléments avec un z-index élevé.
+                padding: 1rem 0; // Ajoute une marge interne de 1rem en haut et en bas pour espacer le texte du bord du conteneur.
+                text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; // Applique un effet d'ombre portée au texte du titre pour le rendre plus visible.
             }
         }
     }
     .carousel-button {
-        // Positionne les boutons du carousel en position absolue pour les placer au centre verticalement du conteneur.
-        position: absolute;
+        background: $background_2; // Définit la couleur de fond des boutons à partir de la variable $background_2.
+        color: $color_1; // Définit la couleur du texte des boutons à partir de la variable $color_1.
+        position: absolute; // Positionne les boutons du carousel en position absolue pour les placer au centre verticalement du conteneur.
+        border: none; // Supprime les bordures par défaut des boutons.
         top: 50%;
         transform: translateY(-50%);
-        // Définit la couleur de fond des boutons à partir de la variable $background_2.
-        background: $background_2;
-        // Supprime les bordures par défaut des boutons.
-        border: none;
-        // Définit la couleur du texte des boutons à partir de la variable $color_1.
-        color: $color_1;
-        // Ajoute une marge interne de 10px pour agrandir la zone cliquable des boutons.
-        padding: 10px;
-        // Change le curseur en main (pointer) lorsqu'on survole le bouton.
-        cursor: pointer;
+        padding: 10px; // Ajoute une marge interne de 10px pour agrandir la zone cliquable des boutons.
+        cursor: pointer; // Change le curseur en main (pointer) lorsqu'on survole le bouton.   
     }
+
     .carousel-button-prev {
-        // Positionne le bouton précédent à gauche du carousel avec une marge de 10px.
-        left: 10px;
+        left: 10px; // Positionne le bouton précédent à gauche du carousel avec une marge de 10px.
     }
+
     .carousel-button-next {
-        // Positionne le bouton suivant à droite du carousel avec une marge de 10px.
-        right: 10px;
+        right: 10px; // Positionne le bouton suivant à droite du carousel avec une marge de 10px.
     }
+
     .carousel-button:focus {
-        // Supprime le contour par défaut lorsque le bouton reçoit le focus.
-        outline: none;
+        outline: none; // Supprime le contour par défaut lorsque le bouton reçoit le focus.
     }
 }
-h2 {
-    // Utilise la police définie dans la variable $fontpara pour les titres h2.
-    font-family: $fontpara;
-    // Applique un effet d'ombre portée au texte des titres h2 pour le rendre plus visible.
-    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-    // Centre le texte des titres h2 horizontalement.
-    text-align: center;
-    // Définit la taille de la police des titres h2 à 40px.
-    font-size: 40px;
-    // Ajoute une marge supérieure de 40px pour espacer le titre des éléments au-dessus.
-    margin-top: 40px;
-}
+
 .presentation-container {
-    // Utilise Flexbox pour centrer le conteneur de présentation horizontalement.
-    @include flexbox(center);
-    // Centre le conteneur de présentation horizontalement avec une marge automatique.
-    margin: 0 auto;
-    // Ajoute une marge supérieure de 30px.
-    margin-top: 30px;
+    @include flexbox(center); // Utilise Flexbox pour centrer le conteneur de présentation horizontalement.
+    margin: 0 auto; // Centre le conteneur de présentation horizontalement avec une marge automatique.
+    margin-top: 30px; // Ajoute une marge supérieure de 30px.
+
     .presentation {
-        // Définit la largeur du conteneur de présentation à 60% de la largeur du parent.
-        width: 60%;
-        // Centre le conteneur de présentation horizontalement avec une marge automatique.
-        margin: 20px auto;
+        width: 60%; // Définit la largeur du conteneur de présentation à 60% de la largeur du parent.
+        margin: 20px auto; // Centre le conteneur de présentation horizontalement avec une marge automatique.
+
         .section {
-            // Ajoute une bordure de 2px solide autour des sections avec une couleur définie dans une variable.
-            border: 2px solid $color_2;
-            // Applique un rayon de bordure pour arrondir les coins des sections.
-            border-radius: $border_radius_2;
-            // Ajoute une marge interne de 20px autour du contenu de la section.
-            padding: 20px;
-            // Définit la couleur de fond des sections à partir de la variable $background-color_2.
-            background-color: $background-color_2;
-            // Ajoute une marge inférieure de 20px pour espacer les sections entre elles.
-            margin-bottom: 20px;
-            h3 {
-                // Définit la taille de la police des sous-titres h3 à 1.8em, plus grande que la taille de texte normale.
-                font-size: 1.8em;
-                // Utilise la police définie dans la variable $fontpara pour les sous-titres h3.
-                font-family: $fontpara;
-                // Ajoute une marge inférieure de 10px pour espacer le sous-titre des éléments suivants.
-                margin-bottom: 10px;
-                // Applique un effet d'ombre portée au texte des sous-titres h3 pour le rendre plus visible.
-                text-shadow: 0 0 3px $color_2, 0 0 5px $color_2;
-            }
+            background-color: $background-color_2; // Définit la couleur de fond des sections à partir de la variable $background-color_2.
+            border-radius: $border_radius_2; // Applique un rayon de bordure pour arrondir les coins des sections.
+            border: 2px solid $color_2; // Ajoute une bordure de 2px solide autour des sections avec une couleur définie dans une variable.
+            padding: 20px; // Ajoute une marge interne de 20px autour du contenu de la section.
+            margin-bottom: 20px; // Ajoute une marge inférieure de 20px pour espacer les sections entre elles.
+
+           
             a {
-                // Définit la taille de la police des liens à 1.2em, légèrement plus grande que la taille par défaut.
-                font-size: 1.2em;
-                // Utilise la police définie dans la variable $fontpara pour les liens.
-                font-family: $fontpara;
-                // Ajoute une marge inférieure de 10px pour espacer les liens des éléments suivants.
-                margin-bottom: 10px;
-                // Centre le texte des liens horizontalement.
-                text-align: center;
+                @include text-align(center);
+                margin-bottom: 10px; // Ajoute une marge inférieure de 10px pour espacer les liens des éléments suivants.
             }
         }
     }
 }
 
+// Styles pour les écrans de 768px ou moins (tablettes et mobiles).
 @media (max-width: 768px) {
-    // Styles pour les écrans de 768px ou moins (tablettes et mobiles).
+    
     #logo {
-        // Réduit la taille de la police du logo à 50px sur les petits écrans.
-        font-size: 50px;
-        // Réduit la marge supérieure à 20px.
-        margin-top: 20px;
+        font-size: 50px; // Réduit la taille de la police du logo à 50px sur les petits écrans.
+        margin-top: 20px; // Réduit la marge supérieure à 20px.
     }
+
     #carousel {
-        // Définit la largeur du carousel à 95% de la largeur du conteneur parent sur les petits écrans.
-        width: 95%;
+        width: 95%; // Définit la largeur du carousel à 95% de la largeur du conteneur parent sur les petits écrans.
+
         .carousel-slides {
+
             .slide {
+
                 .carousel-title {
-                    // Réduit la taille de la police du titre de la diapositive à 18px.
-                    font-size: 18px;
-                    // Réduit la marge interne à 0.5rem.
-                    padding: 0.5rem 0;
+                    font-size: 18px; // Réduit la taille de la police du titre de la diapositive à 18px.
+                    padding: 0.5rem 0; // Réduit la marge interne à 0.5rem.
                 }
             }
         }
+        
         .carousel-button {
-            // Réduit la marge interne des boutons à 8px sur les petits écrans.
-            padding: 8px;
+            padding: 8px; // Réduit la marge interne des boutons à 8px sur les petits écrans.
         }
     }
-    h2 {
-        // Réduit la taille de la police des titres h2 à 30px sur les petits écrans.
-        font-size: 30px;
-
-        // Réduit la marge supérieure à 20px.
-        margin-top: 20px;
-    }
+    
     .presentation-container {
-        // Définit la largeur du conteneur de présentation à 90% de la largeur du parent sur les petits écrans.
-        width: 90%;
+        width: 90%; // Définit la largeur du conteneur de présentation à 90% de la largeur du parent sur les petits écrans.
+
         .presentation {
-            // Définit la largeur du conteneur de présentation à 100% sur les petits écrans.
-            width: 100%;
+            width: 100%; // Définit la largeur du conteneur de présentation à 100% sur les petits écrans.
+
             .section {
-                // Réduit la marge interne à 10px sur les petits écrans.
-                padding: 10px;
+                padding: 10px; // Réduit la marge interne à 10px sur les petits écrans.
+        
                 h3 {
-                    // Réduit la taille de la police des sous-titres h3 à 1.5em sur les petits écrans.
-                    font-size: 1.5em;
+                    font-size: 1.5em; // Réduit la taille de la police des sous-titres h3 à 1.5em sur les petits écrans.
                 }
+
                 a {
-                    // Réduit la taille de la police des liens à 1em sur les petits écrans.
-                    font-size: 1em;
+                    font-size: 1em; // Réduit la taille de la police des liens à 1em sur les petits écrans.
                 }
             }
         }

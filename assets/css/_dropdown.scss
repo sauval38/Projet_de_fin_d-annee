@@ -1,71 +1,48 @@
 .dropdown-container {
-  // Utiliser Flexbox pour disposer les éléments à égale distance les uns des autres
-  @include flexbox(space-around);
-  // Définir la largeur du conteneur à 100% de son conteneur parent
-  width: 100%;
+  @include flexbox(space-around); // Utiliser Flexbox pour disposer les éléments à égale distance les uns des autres
+  width: 100%; // Définir la largeur du conteneur à 100% de son conteneur parent
+
   .dropdown {
-      // Définir la largeur du dropdown à 100% du conteneur parent
-      width: 100%;
-      // Positionner le dropdown de manière relative pour permettre au contenu déroulant de se positionner absolument par rapport à lui
-      position: relative;
-      // Utiliser Flexbox pour centrer le contenu du dropdown
-      @include flexbox(center);
-      // Aligner le texte au centre
-      text-align: center;
-      // Ajouter un espacement supérieur pour séparer le dropdown des éléments au-dessus
-      margin-top: 30px;
+    @include flexbox(center); // Utiliser Flexbox pour centrer le contenu du dropdown
+    @include text-align(center);
+    position: relative; // Positionner le dropdown de manière relative pour permettre au contenu déroulant de se positionner absolument par rapport à lui
+    width: 100%; // Définir la largeur du dropdown à 100% du conteneur parent
+    margin-top: 30px; // Ajouter un espacement supérieur pour séparer le dropdown des éléments au-dessus
+    
       // Afficher le contenu déroulant lorsque le curseur est au-dessus du dropdown
       &:hover .dropdown-content {
-          display: block;
+        display: block;
       }
-      .lien {
-          // Définir la couleur de fond du bouton du dropdown
-          background-color: $background-color_4;
-          // Définir la couleur du texte du bouton
-          color: $color_1;
-          // Ajouter un espacement interne
-          padding: 1rem;
-          // Définir la police utilisée pour le texte du bouton
-          font-family: $fontpara;
-          // Définir la taille de la police
-          font-size: 24px;
-          // Supprimer les bordures du bouton
-          border: none;
-          // Modifier le curseur pour indiquer qu'il est cliquable
-          cursor: pointer;
+      .lien { 
+        background-color: $background-color_4; // Définir la couleur de fond du bouton du dropdown
+        font-family: $fontpara; // Définir la police utilisée pour le texte du bouton
+        font-size: $font-size_para; // Définir la taille de la police
+        color: $color_1; // Définir la couleur du texte du bouton
+        border: none; // Supprimer les bordures du bouton
+        padding: 1rem; // Ajouter un espacement interne
+        cursor: pointer; // Modifier le curseur pour indiquer qu'il est cliquable   
       }
-      .dropdown-content {
-          // Ajouter un espacement supérieur pour que le contenu déroulant apparaisse en dessous du bouton
-          margin-top: 3rem;
-          // Cacher le contenu déroulant par défaut
-          display: none;
-          // Positionner le contenu déroulant absolument par rapport au conteneur parent
-          position: absolute;
-          // Définir la couleur de fond du contenu déroulant
-          background-color: $background-color_3;
-          // Définir une largeur minimale pour le contenu déroulant
-          min-width: 160px;
-          // Ajouter une ombre portée pour donner un effet de profondeur
-          box-shadow: 0px 8px 16px 0px $background_2;
-          // Placer le contenu déroulant au-dessus des autres éléments
-          z-index: 1;
-          a {
-              // Définir la couleur des liens dans le contenu déroulant
-              color: $color_4;
-              // Définir la police utilisée pour le texte des liens
-              font-family: $fontpara;
-              // Ajouter un espacement interne pour les liens
-              padding: 12px 16px;
-              // Supprimer la décoration par défaut des liens
-              text-decoration: none;
-              // Afficher les liens en tant qu'éléments de bloc pour qu'ils occupent toute la largeur disponible
-              display: block;
 
+      .dropdown-content {
+        background-color: $background-color_3; // Définir la couleur de fond du contenu déroulant
+        margin-top: 3rem; // Ajouter un espacement supérieur pour que le contenu déroulant apparaisse en dessous du bouton
+        position: absolute; // Positionner le contenu déroulant absolument par rapport au conteneur parent  
+        display: none; // Cacher le contenu déroulant par défaut
+        z-index: 1; // Placer le contenu déroulant au-dessus des autres éléments  
+        min-width: 160px; // Définir une largeur minimale pour le contenu déroulant  
+        box-shadow: 0px 8px 16px 0px $background_2; // Ajouter une ombre portée pour donner un effet de profondeur  
+          
+          a {
+            @include text-decoration(none);  
+            color: $color_4; // Définir la couleur des liens dans le contenu déroulant
+            font-family: $fontpara; // Définir la police utilisée pour le texte des liens
+            display: block; // Afficher les liens en tant qu'éléments de bloc pour qu'ils occupent toute la largeur disponible
+            padding: 12px 16px; // Ajouter un espacement interne pour les liens
+              
               &:hover {
-                  // Changer la couleur de fond des liens lorsqu'ils sont survolés
-                  background-color: $background-color_2;
-              }
-          }
-      }
-  }
+                  background-color: $background-color_2; // Changer la couleur de fond des liens lorsqu'ils sont survolés
+                }
+            }
+        }
+    }
 }

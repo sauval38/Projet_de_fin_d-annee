@@ -1,69 +1,53 @@
 footer {
-    // Définir la couleur de fond du pied de page
-    background-color: $background-color_2;
-    // Définir la couleur du texte
-    color: $color_1;
-    // Placer le pied de page en bas du conteneur
-    margin-top: auto;
-    // Ajouter un espacement interne
-    padding: 20px 0;
-    // Aligner le texte au centre
-    text-align: center;
-    // Définir la police du pied de page
-    font-family: $fontpara;
+    @include text-align(center);
+    background-color: $background-color_2; // Définir la couleur de fond du pied de page
+    font-family: $fontpara; // Définir la police du pied de page
+    color: $color_1; // Définir la couleur du texte
+    margin-top: auto; // Placer le pied de page en bas du conteneur
+    padding: 20px 0; // Ajouter un espacement interne
+    
     #footer-container {
-        // Définir la largeur maximale pour s'adapter à la vue entière
-        max-width: 100vw;
-        // Centrer horizontalement le conteneur
-        margin: 0 auto;
-        // Ajouter un espacement interne sur les côtés
-        padding: 0 20px;
-        // Utiliser Flexbox pour centrer les éléments verticalement dans le conteneur
-        @include flexbox(false, center, column);
+        @include flexbox(false, center, column); // Utiliser Flexbox pour centrer les éléments verticalement dans le conteneur
+        margin: 0 auto; // Centrer horizontalement le conteneur
+        max-width: 100vw; // Définir la largeur maximale pour s'adapter à la vue entière
+        padding: 0 20px; // Ajouter un espacement interne sur les côtés
+        
         .footer-section {
-            // Ajouter un espacement inférieur entre les sections du pied de page
-            margin-bottom: 20px;
+            margin-bottom: 20px; // Ajouter un espacement inférieur entre les sections du pied de page
 
             .footer-para {
-                // Ajouter un espacement vertical autour des paragraphes
-                margin: 5px 0;
-                // S'assurer que les paragraphes sont des éléments de bloc pour le style
-                display: block;
+                display: block; // S'assurer que les paragraphes sont des éléments de bloc pour le style
+                margin: 5px 0; // Ajouter un espacement vertical autour des paragraphes
             }
+
             a {
-                // Définir la couleur des liens
-                color: $color_1;
-                // Supprimer la décoration par défaut des liens
-                text-decoration: none;
+                @include text-decoration(none);
+                color: $color_1; // Définir la couleur des liens
+
                 &:hover {
-                    // Ajouter une décoration de soulignement au survol des liens
-                    text-decoration: underline;
+                   @include text-decoration(underline);
                 }
             }
         }
+
         .social-icons {
-            // Utiliser Flexbox pour disposer les icônes sociales horizontalement avec un espacement
-            display: flex;
+            @include flexbox(); // Utiliser Flexbox pour disposer les icônes sociales horizontalement avec un espacement
             gap: 15px;
+
             a {
-                // Définir la couleur des liens d'icônes sociales
-                color: $color_1;
-                // Supprimer la décoration par défaut des liens
-                text-decoration: none;
-                // Utiliser Flexbox pour disposer les icônes en colonne et centrer
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flexbox(false, center, column);
+                @include text-decoration(none);
+                color: $color_1; // Définir la couleur des liens d'icônes sociales
+                
                 img {
-                    // Définir la taille des icônes sociales
-                    width: 24px;
+                    
+                    width: 24px; // Définir la taille des icônes sociales
                     height: 24px;
-                    // Ajouter un espacement inférieur pour séparer les icônes du texte
-                    margin-bottom: 5px;
+                    margin-bottom: 5px; // Ajouter un espacement inférieur pour séparer les icônes du texte
                 }
+
                 span {
-                    // Définir la taille de la police pour les textes des icônes sociales
-                    font-size: 14px;
+                    font-size: $font-size_span; // Définir la taille de la police pour les textes des icônes sociales
                 }
             }
         }

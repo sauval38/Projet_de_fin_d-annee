@@ -1,75 +1,115 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Inclut la bordure et le padding dans les dimensions totales des éléments */
+  margin: 0; /* Supprime la marge par défaut de tous les éléments */
+  padding: 0; /* Supprime le padding par défaut de tous les éléments */
 }
 
 body {
-  background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  background-color: rgb(34, 34, 34); /* Définit la couleur de fond du corps du document à la variable $background-color_1 */
+  color: rgb(255, 255, 255); /* Définit la couleur du texte du corps du document à la variable $color_1 */
+  overflow-x: hidden; /* Empêche le défilement horizontal, même si le contenu dépasse la largeur du viewport */
+  min-height: 100vh; /* Définit la hauteur minimale du corps du document à 100% de la hauteur de la fenêtre de visualisation (viewport) */
 }
 
-h1 {
+/* Styles pour le logo */
+#logo {
   text-align: center;
-  margin-top: 30px;
   font-family: "Raleway", sans-serif;
-  font-size: 3em;
-  margin-bottom: 20px;
+  font-size: 70px;
+  margin-top: 30px;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 
-p {
-  font-family: "Exo", sans-serif;
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: rgb(255, 255, 255);
-  margin-top: 10px;
-  background-color: rgb(34, 34, 34);
-  padding: 15px;
-  border-radius: 5px;
-  border: 1px solid rgb(0, 255, 0);
+/* Styles pour les titres de niveau 1 (h1) */
+h1 {
   text-align: center;
-  box-shadow: 0 0 5px rgb(0, 255, 0);
+  font-family: "Raleway", sans-serif; /* Utilise la police spécifiée pour les titres */
+  font-size: 40px; /* Définit la taille de la police à 3 fois la taille de base */
+  margin-top: 30px; /* Ajoute un espace de 30px au-dessus du titre */
+  margin-bottom: 20px; /* Ajoute un espace de 20px en dessous du titre */
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre au texte pour un effet de profondeur */
 }
 
+/* Styles pour les titres de niveau 2 (h2) */
+h2 {
+  text-align: center;
+  font-family: "Exo", sans-serif; /* Applique la police de caractères spécifiée pour les titres */
+  border-radius: 10px; /* Arrondit les coins de la bordure du titre */
+  font-size: 30px; /* Définit la taille de la police du titre */
+  border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour du titre */
+  display: block; /* Définit l'affichage du titre comme un bloc */
+  margin: 5px 0; /* Ajoute un espace extérieur de 5px en haut et en bas du titre */
+  padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du titre */
+  cursor: pointer;
+}
+
+/* Styles pour les titres de niveau 3 (h3) */
+h3 {
+  font-family: "Exo", sans-serif;
+  font-size: 30px; /* Définit la taille de la police du titre */
+  margin-bottom: 10px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+
+/* Styles pour les paragraphes */
+p {
+  text-align: center;
+  background-color: rgb(34, 34, 34); /* Définit la couleur de fond du paragraphe */
+  border-radius: 5px; /* Applique des coins arrondis */
+  font-family: "Exo", sans-serif; /* Utilise la police spécifiée pour les paragraphes */
+  color: rgb(255, 255, 255); /* Définit la couleur du texte */
+  font-size: 22px; /* Définit la taille de la police à 1.2 fois la taille de base *
+border: 1px solid $border; /* Ajoute une bordure solide de 1px */
+  font-size: 22px; /* Définit la taille de la police à 1.2 fois la taille de base */
+  line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
+  margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
+  padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
+  box-shadow: 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre portée pour donner de la profondeur */
+}
+
+/* Styles pour les liens */
 a {
   text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  color: rgb(0, 255, 0);
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(0, 255, 0);
-  color: rgb(0, 0, 0);
-  font-size: 1.2rem;
+  font-family: "Exo", sans-serif;
+  font-size: 22px;
+  color: rgb(0, 255, 0); /* Définit la couleur du texte des liens */
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  color: rgb(44, 62, 80); /* Change la couleur du texte des liens au survol */
+}
+
+/* Styles pour les boutons */
+button {
+  background-color: rgb(0, 255, 0); /* Définit la couleur de fond du bouton */
+  border-radius: 5px; /* Applique des coins arrondis */
+  color: rgb(0, 0, 0); /* Définit la couleur du texte du bouton */
+  font-size: 22px; /* Définit la taille de la police à 1.2 fois la taille de la police racine */
+  border: none; /* Supprime la bordure par défaut */
+  padding: 10px 20px; /* Ajoute un espace intérieur de 10px en haut/bas et 20px sur les côtés */
+  transition: all 0.2s ease-in-out; /* Ajoute une transition douce pour tous les changements de style */
+  cursor: pointer; /* Change le curseur en une main pointant lorsqu’il est survolé */
 }
 button:hover {
-  background-color: rgb(44, 62, 80);
+  background-color: rgb(44, 62, 80); /* Change la couleur de fond du bouton lorsqu'il est survolé */
 }
 
+/* Styles pour les boutons de fermeture */
 .close-button {
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  color: rgb(0, 255, 0);
   text-decoration: none;
-  cursor: pointer;
+  color: rgb(0, 255, 0); /* Définit la couleur du texte du bouton */
+  font-size: 24px; /* Définit la taille de la police pour le bouton de fermeture */
+  top: 10px; /* Positionne le bouton à 10px du haut */
+  right: 10px; /* Positionne le bouton à 10px de la droite */
+  cursor: pointer; /* Change le curseur en une main pointant lorsqu'il est survolé */
 }
 .close-button:hover {
-  color: #009900;
+  color: #009900; /* Assombrit la couleur du bouton de fermeture lorsqu'il est survolé */
 }
 
 input[type=text],
@@ -81,14 +121,14 @@ input[type=email],
 input[type=password],
 input[type=file],
 select, textarea {
-  padding: 10px;
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 5px;
-  background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
-  font-size: 1em;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
+  background-color: rgb(34, 34, 34); /* Définit la couleur de fond à la valeur de la variable $background-color_1 */
+  border-radius: 5px; /* Applique un rayon de bordure arrondi selon la variable $border_radius_1 */
+  font-size: 18px; /* Définit la taille de la police à 1em (taille relative à l'élément parent) */
+  color: rgb(255, 255, 255); /* Définit la couleur du texte à la valeur de la variable $color_1 */
+  border: 2px solid rgb(0, 255, 0); /* Définit une bordure solide de 2 pixels de largeur avec la couleur spécifiée par la variable $border */
+  padding: 10px; /* Ajoute un espace intérieur de 10 pixels à tous les côtés des éléments */
+  margin-bottom: 15px; /* Ajoute une marge inférieure de 15 pixels aux éléments pour les espacer verticalement */
+  transition: all 0.2s ease-in-out; /* Applique une transition fluide de 0.2 secondes pour toutes les propriétés modifiées lors de l'interaction */
 }
 input[type=text]:focus,
 input[type=number]:focus,
@@ -99,36 +139,34 @@ input[type=email]:focus,
 input[type=password]:focus,
 input[type=file]:focus,
 select:focus, textarea:focus {
-  outline: none;
-  border-color: rgb(44, 62, 80);
+  border-color: rgb(44, 62, 80); /* Change la couleur de la bordure lorsqu'un élément est en focus, en utilisant la valeur de la variable $border-color_1 */
+  outline: none; /* Supprime le contour par défaut des éléments de formulaire lorsqu'ils sont en focus */
 }
 
 input[type=submit] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(0, 255, 0);
-  color: rgb(0, 0, 0);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  background-color: rgb(0, 255, 0); /* Définit la couleur de fond du bouton à la valeur de la variable $background-color_4 */
+  border-radius: 5px; /* Applique un rayon de bordure arrondi selon la variable $border_radius_1 */
+  font-size: 18px; /* Définit la taille de la police du bouton à 1.2rem (taille relative à la taille de la police racine) */
+  color: rgb(0, 0, 0); /* Définit la couleur du texte du bouton à la valeur de la variable $color_4 */
+  padding: 10px 20px; /* Ajoute un espace intérieur de 10 pixels verticalement et 20 pixels horizontalement */
+  border: none; /* Supprime la bordure par défaut du bouton de soumission */
+  transition: all 0.2s ease-in-out; /* Applique une transition fluide de 0.2 secondes pour toutes les propriétés modifiées lors de l'interaction */
+  cursor: pointer; /* Change le curseur en une main lorsqu'il survole le bouton pour indiquer qu'il est cliquable */
 }
 input[type=submit]:hover {
-  background-color: rgb(44, 62, 80);
+  background-color: rgb(44, 62, 80); /* Change la couleur de fond du bouton lorsqu'il est survolé, en utilisant la valeur de la variable $background-color_2 */
 }
 
 #menu {
   background-color: rgb(44, 62, 80);
   padding: 10px;
-  display: flex;
-  justify-content: space-around;
 }
 #menu a {
-  font-family: "Exo", sans-serif;
   text-decoration: none;
+  border-radius: 5px;
+  font-family: "Exo", sans-serif;
   color: rgb(0, 255, 0);
   padding: 5px 10px;
-  border-radius: 5px;
   transition: background-color 0.3s;
 }
 #menu a:hover {
@@ -139,18 +177,18 @@ input[type=submit]:hover {
 }
 #menu .menu-icon {
   display: none;
+  position: relative;
   width: 30px;
   height: 20px;
-  position: relative;
-  cursor: pointer;
   z-index: 10;
+  cursor: pointer;
 }
 #menu .menu-icon span {
+  background-color: rgb(0, 255, 0);
   display: block;
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: rgb(0, 255, 0);
   transition: all 0.3s ease-in-out;
 }
 #menu .menu-icon span:nth-child(1) {
@@ -164,10 +202,11 @@ input[type=submit]:hover {
   bottom: 0;
 }
 #menu .menu-items {
-  display: flex;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-around;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-around; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: row; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   width: 100%;
 }
 #menu .menu-items a {
@@ -175,79 +214,86 @@ input[type=submit]:hover {
 }
 @media (max-width: 768px) {
   #menu {
-    display: flex;
-    justify-content: flex-start;
+    display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+    /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+    justify-content: flex-start; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
   }
   #menu .menu-icon {
     display: block;
   }
   #menu .menu-items {
+    display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+    /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+    flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
     display: none;
-    flex-direction: column;
     width: 100%;
   }
   #menu .menu-items a {
+    text-align: center;
     padding: 10px 0;
     margin: 0;
-    text-align: center;
     border-bottom: 1px solid rgb(34, 34, 34);
   }
   #menu #menu-toggle:checked + .menu-icon span:nth-child(1) {
-    transform: rotate(45deg);
     top: 50%;
+    transform: rotate(45deg);
   }
   #menu #menu-toggle:checked + .menu-icon span:nth-child(2) {
     opacity: 0;
   }
   #menu #menu-toggle:checked + .menu-icon span:nth-child(3) {
-    transform: rotate(-45deg);
     top: 50%;
+    transform: rotate(-45deg);
   }
   #menu #menu-toggle:checked + .menu-icon + .menu-items {
-    display: flex;
+    display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   }
 }
 
 footer {
+  text-align: center;
   background-color: rgb(44, 62, 80);
+  font-family: "Exo", sans-serif;
   color: rgb(255, 255, 255);
   margin-top: auto;
   padding: 20px 0;
-  text-align: center;
-  font-family: "Exo", sans-serif;
 }
 footer #footer-container {
-  max-width: 100vw;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   margin: 0 auto;
+  max-width: 100vw;
   padding: 0 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 footer #footer-container .footer-section {
   margin-bottom: 20px;
 }
 footer #footer-container .footer-section .footer-para {
-  margin: 5px 0;
   display: block;
+  margin: 5px 0;
 }
 footer #footer-container .footer-section a {
-  color: rgb(255, 255, 255);
   text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 footer #footer-container .footer-section a:hover {
   text-decoration: underline;
 }
 footer #footer-container .social-icons {
-  display: flex;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   gap: 15px;
 }
 footer #footer-container .social-icons a {
-  color: rgb(255, 255, 255);
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: rgb(255, 255, 255);
 }
 footer #footer-container .social-icons a img {
   width: 24px;
@@ -259,38 +305,38 @@ footer #footer-container .social-icons a span {
 }
 
 #role {
+  background-color: rgb(44, 62, 80);
+  border-radius: 10px;
   margin: 100px auto;
   padding: 20px;
   width: 80%;
   max-width: 800px;
-  background-color: rgb(44, 62, 80);
-  border-radius: 8px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
 #role #filterInput {
+  border-radius: 5px;
+  font-size: 18px;
+  border: 1px solid rgb(0, 255, 0);
+  outline: none;
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  font-size: 16px;
-  border: 1px solid rgb(0, 255, 0);
-  border-radius: 4px;
-  outline: none;
   transition: border-color 0.3s;
 }
 #role #filterInput:focus {
   border-color: rgb(0, 255, 0);
 }
 #role #usersTable {
-  width: 100%;
-  border-collapse: collapse;
   background-color: rgb(44, 62, 80);
   font-family: "Raleway", sans-serif;
+  border-collapse: collapse;
   border: 1;
+  width: 100%;
 }
 #role #usersTable th, #role #usersTable td {
-  padding: 12px 15px;
   text-align: left;
   color: rgb(255, 255, 255);
+  padding: 12px 15px;
 }
 #role #usersTable th {
   background-color: rgb(34, 34, 34);
@@ -306,30 +352,12 @@ footer #footer-container .social-icons a span {
   background-color: rgb(44, 62, 80);
 }
 #role #usersTable select {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid rgb(0, 255, 0);
-  border-radius: 4px;
   background-color: rgb(34, 34, 34);
-  cursor: pointer;
-}
-#role input[type=submit] {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-  padding: 20px;
-  font-size: 16px;
   border-radius: 5px;
-  background-color: rgb(0, 255, 0);
-  color: rgb(255, 255, 255);
-  border: none;
+  font-size: 16px;
+  border: 1px solid rgb(0, 255, 0);
+  padding: 8px;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.2s ease-in-out;
-}
-#role input[type=submit]:hover {
-  background-color: rgb(34, 34, 34);
 }
 
 @media (max-width: 768px) {
@@ -366,102 +394,102 @@ footer #footer-container .social-icons a span {
   }
 }
 #register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   min-height: 100vh;
   padding: 20px;
 }
 #register .register-form {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   width: 300px;
 }
 #register .register-form label {
-  margin-bottom: 5px;
-  font-size: 1.2em;
+  font-size: 1px;
   color: rgb(255, 255, 255);
-  text-align: center;
+  margin-bottom: 5px;
 }
 
 #login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
 }
 
 #login-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   min-height: 100vh;
   padding: 20px;
 }
 #login-form .form-login {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   width: 300px;
 }
 #login-form .form-login label {
-  margin-bottom: 5px;
-  font-size: 1.2em;
+  text-align: center;
   color: rgb(255, 255, 255);
-  text-align: center;
-}
-
-#logo {
-  font-family: "Raleway", sans-serif;
-  text-align: center;
-  font-size: 80px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-  margin-top: 30px;
+  margin-bottom: 5px;
+  font-size: 22px;
 }
 
 #carousel {
   position: relative;
-  width: 80%;
-  margin: auto;
   overflow: hidden;
+  margin: auto;
+  width: 80%;
 }
 #carousel .carousel-slides {
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   margin-top: 30px;
-  display: flex;
   transition: transform 0.5s ease-in-out;
 }
 #carousel .carousel-slides .slide {
   position: relative;
   min-width: 100%;
-  box-sizing: border-box;
 }
 #carousel .carousel-slides .slide img {
-  width: 100%;
   display: block;
-  max-height: 500px;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  max-height: 500px;
 }
 #carousel .carousel-slides .slide .carousel-title {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
   font-family: "Raleway", sans-serif;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
   position: absolute;
   bottom: 0;
   width: 100%;
-  text-align: center;
-  font-size: 24px;
-  color: rgb(255, 255, 255);
   z-index: 50;
   padding: 1rem 0;
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-  background: rgba(0, 0, 0, 0.7);
 }
 #carousel .carousel-button {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
   position: absolute;
+  border: none;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: rgb(255, 255, 255);
   padding: 10px;
   cursor: pointer;
 }
@@ -475,17 +503,10 @@ footer #footer-container .social-icons a span {
   outline: none;
 }
 
-h2 {
-  font-family: "Exo", sans-serif;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-  text-align: center;
-  font-size: 40px;
-  margin-top: 40px;
-}
-
 .presentation-container {
-  display: flex;
-  justify-content: center;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
   margin: 0 auto;
   margin-top: 30px;
 }
@@ -494,23 +515,15 @@ h2 {
   margin: 20px auto;
 }
 .presentation-container .presentation .section {
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  padding: 20px;
   background-color: rgb(44, 62, 80);
+  border-radius: 10px;
+  border: 2px solid rgb(0, 255, 0);
+  padding: 20px;
   margin-bottom: 20px;
 }
-.presentation-container .presentation .section h3 {
-  font-size: 1.8em;
-  font-family: "Exo", sans-serif;
-  margin-bottom: 10px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-}
 .presentation-container .presentation .section a {
-  font-size: 1.2em;
-  font-family: "Exo", sans-serif;
-  margin-bottom: 10px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -527,10 +540,6 @@ h2 {
   }
   #carousel .carousel-button {
     padding: 8px;
-  }
-  h2 {
-    font-size: 30px;
-    margin-top: 20px;
   }
   .presentation-container {
     width: 90%;
@@ -549,16 +558,18 @@ h2 {
   }
 }
 .dropdown-container {
-  display: flex;
-  justify-content: space-around;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-around; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
   width: 100%;
 }
 .dropdown-container .dropdown {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
   text-align: center;
+  position: relative;
+  width: 100%;
   margin-top: 30px;
 }
 .dropdown-container .dropdown:hover .dropdown-content {
@@ -566,219 +577,229 @@ h2 {
 }
 .dropdown-container .dropdown .lien {
   background-color: rgb(0, 255, 0);
-  color: rgb(255, 255, 255);
-  padding: 1rem;
   font-family: "Exo", sans-serif;
-  font-size: 24px;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
   border: none;
+  padding: 1rem;
   cursor: pointer;
 }
 .dropdown-container .dropdown .dropdown-content {
-  margin-top: 3rem;
-  display: none;
-  position: absolute;
   background-color: rgb(255, 255, 255);
+  margin-top: 3rem;
+  position: absolute;
+  display: none;
+  z-index: 1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 .dropdown-container .dropdown .dropdown-content a {
+  text-decoration: none;
   color: rgb(0, 0, 0);
   font-family: "Exo", sans-serif;
-  padding: 12px 16px;
-  text-decoration: none;
   display: block;
+  padding: 12px 16px;
 }
 .dropdown-container .dropdown .dropdown-content a:hover {
   background-color: rgb(44, 62, 80);
 }
 
+/* Styles pour les sections de formulaire (ajouter/modifier personnage, jeu, boss) */
 #add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 20px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  /* Centre les éléments enfants horizontalement et verticalement en colonne */
+  min-height: 100vh; /* Définit la hauteur minimale de la section à 100% de la hauteur de la fenêtre */
+  padding: 20px; /* Ajoute un espace intérieur de 20px tout autour de la section */
 }
 #add-character form, #add-games form, #add-boss form, #modify-character form, #modify-games form, #modify-boss form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  /* Centre les éléments enfants du formulaire en colonne sans alignement horizontal ou vertical supplémentaire */
+  width: 300px; /* Définit la largeur du formulaire à 300px */
 }
 #add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label, #modify-boss form label {
-  margin-bottom: 5px;
-  font-size: 1.2em;
-  color: rgb(255, 255, 255);
   text-align: center;
+  font-size: 22px; /* Définit la taille de la police du label à 1.2em */
+  color: rgb(255, 255, 255); /* Définit la couleur du texte du label à $color_1 */
+  margin-bottom: 5px; /* Ajoute un espace de 5px en dessous de chaque label */
 }
 
+/* Styles pour les sections administratives de gestion de personnages, boss et jeux */
 #list-character-admin,
 #list-boss-admin,
 #list-delete-character-admin,
 #list-delete-boss-admin,
-#list-modify-character-admin, #list-modify-games-admin,
+#list-modify-character-admin,
+#list-modify-games-admin,
 #list-modify-boss-admin {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 20px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-around; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: flex-start; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fw a une valeur (n'est pas false) */
+  flex-wrap: wrap; /* Applique la valeur de $fw à la propriété flex-wrap pour contrôler si les éléments doivent être déplacés sur plusieurs lignes */
+  /* Utilisation de Flexbox pour disposer les éléments avec un espace autour, alignés au début, sans alignement vertical spécifique, avec retour à la ligne */
+  margin: 20px; /* Ajoute un espace extérieur de 20px tout autour des sections */
+  /* Styles pour les listes à l'intérieur des sections */
 }
 #list-character-admin .list,
 #list-boss-admin .list,
 #list-delete-character-admin .list,
 #list-delete-boss-admin .list,
-#list-modify-character-admin .list, #list-modify-games-admin .list,
+#list-modify-character-admin .list,
+#list-modify-games-admin .list,
 #list-modify-boss-admin .list {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  background-color: rgb(44, 62, 80);
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  width: calc(30% - 40px);
-}
-#list-character-admin .list h2,
-#list-boss-admin .list h2,
-#list-delete-character-admin .list h2,
-#list-delete-boss-admin .list h2,
-#list-modify-character-admin .list h2, #list-modify-games-admin .list h2,
-#list-modify-boss-admin .list h2 {
-  font-family: "Exo", sans-serif;
-  cursor: pointer;
-  font-size: 1.5rem;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-between; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  /* Utilisation de Flexbox pour disposer les éléments avec un espace entre eux, alignés verticalement en colonne */
+  background-color: rgb(44, 62, 80); /* Définit la couleur de fond de la liste */
+  border-radius: 10px; /* Arrondit les coins de la bordure de la liste */
+  border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour de la liste */
+  padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du contenu de la liste */
+  margin: 10px; /* Ajoute un espace extérieur de 10px tout autour de la liste */
+  width: calc(30% - 40px); /* Définit la largeur de la liste à 30% de celle du conteneur parent, moins 40px pour compenser les marges */
+  /* Styles pour les liens (a) à l'intérieur des listes */
+  /* Styles pour les images à l'intérieur des listes */
 }
 #list-character-admin .list a,
 #list-boss-admin .list a,
 #list-delete-character-admin .list a,
 #list-delete-boss-admin .list a,
-#list-modify-character-admin .list a, #list-modify-games-admin .list a,
+#list-modify-character-admin .list a,
+#list-modify-games-admin .list a,
 #list-modify-boss-admin .list a {
-  font-family: "Exo", sans-serif;
-  display: block;
-  margin: 5px 0;
-  padding: 10px;
   text-align: center;
-  font-size: 1.2em;
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
   text-decoration: none;
-  transition: background-color 0.3s;
+  color: rgb(255, 255, 255); /* Définit la couleur du texte du lien */
+  border-radius: 10px; /* Arrondit les coins de la bordure du lien */
+  font-family: "Exo", sans-serif; /* Applique la police de caractères spécifiée pour les liens */
+  font-size: 22px; /* Définit la taille de la police du lien */
+  border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour du lien */
+  display: block; /* Définit l'affichage du lien comme un bloc */
+  margin: 5px 0; /* Ajoute un espace extérieur de 5px en haut et en bas du lien */
+  padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du lien */
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre portée au texte du lien pour le faire ressortir */
+  transition: background-color 0.3s; /* Ajoute une transition fluide pour le changement de couleur de fond du lien */
+  /* Styles pour le lien lors du survol */
 }
 #list-character-admin .list a:hover,
 #list-boss-admin .list a:hover,
 #list-delete-character-admin .list a:hover,
 #list-delete-boss-admin .list a:hover,
-#list-modify-character-admin .list a:hover, #list-modify-games-admin .list a:hover,
+#list-modify-character-admin .list a:hover,
+#list-modify-games-admin .list a:hover,
 #list-modify-boss-admin .list a:hover {
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(34, 34, 34); /* Change la couleur de fond du lien au survol */
 }
 #list-character-admin .list img,
 #list-boss-admin .list img,
 #list-delete-character-admin .list img,
 #list-delete-boss-admin .list img,
-#list-modify-character-admin .list img, #list-modify-games-admin .list img,
+#list-modify-character-admin .list img,
+#list-modify-games-admin .list img,
 #list-modify-boss-admin .list img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-top: 10px;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
+  border-radius: 5px; /* Arrondit les coins de l'image */
+  height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
+  width: 100%; /* Définit la largeur de l'image à 100% du conteneur */
+  margin-top: 10px; /* Ajoute un espace extérieur de 10px au-dessus de l'image */
+  box-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
 }
 
+/* Styles pour les sections de suppression de jeux, personnages et boss */
 #delete-games, #delete-character, #delete-boss {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 20px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-around; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: flex-start; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fw a une valeur (n'est pas false) */
+  flex-wrap: wrap; /* Applique la valeur de $fw à la propriété flex-wrap pour contrôler si les éléments doivent être déplacés sur plusieurs lignes */
+  /* Utilisation de Flexbox pour disposer les éléments en espace autour, alignés au début, sans alignement vertical spécifique, avec retour à la ligne */
+  margin: 20px; /* Ajoute un espace extérieur de 20px tout autour des sections */
+  /* Styles pour les listes à l'intérieur des sections */
 }
 #delete-games .list, #delete-character .list, #delete-boss .list {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  background-color: rgb(44, 62, 80);
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  width: calc(30% - 40px);
-}
-#delete-games .list h2, #delete-character .list h2, #delete-boss .list h2 {
-  font-family: "Exo", sans-serif;
-  display: block;
-  margin: 5px 0;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.2em;
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-between; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  /* Utilisation de Flexbox pour disposer les éléments avec un espace entre eux, alignés verticalement en colonne */
+  background-color: rgb(44, 62, 80); /* Définit la couleur de fond de la liste */
+  border-radius: 10px; /* Arrondit les coins de la bordure */
+  border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour de la liste */
+  padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du contenu de la liste */
+  margin: 10px; /* Ajoute un espace extérieur de 10px tout autour de la liste */
+  width: calc(30% - 40px); /* Définit la largeur de la liste à 30% de celle du conteneur parent, moins 40px pour compenser les marges */
+  /* Styles pour les images à l'intérieur des listes */
+  /* Styles pour le conteneur des boutons à l'intérieur des listes */
 }
 #delete-games .list img, #delete-character .list img, #delete-boss .list img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-top: 10px;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
+  border-radius: 5px; /* Arrondit les coins de l'image */
+  height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
+  width: 100%; /* Définit la largeur de l'image à 100% du conteneur */
+  margin-top: 10px; /* Ajoute un espace extérieur de 10px au-dessus de l'image */
+  box-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
 }
 #delete-games .list .button-container, #delete-character .list .button-container, #delete-boss .list .button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  margin-top: 20px; /* Ajoute un espace extérieur de 20px au-dessus du conteneur des boutons */
 }
 
 #list-games {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-around; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: flex-start; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fw a une valeur (n'est pas false) */
+  flex-wrap: wrap; /* Applique la valeur de $fw à la propriété flex-wrap pour contrôler si les éléments doivent être déplacés sur plusieurs lignes */
   margin: 20px;
 }
 #list-games .list {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: space-between; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   background-color: rgb(44, 62, 80);
-  border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
+  border: 2px solid rgb(0, 255, 0);
   padding: 20px;
   margin: 20px;
   width: calc(30% - 40px);
-}
-#list-games .list h2 {
-  font-family: "Exo", sans-serif;
-  margin-bottom: 60px;
-  cursor: pointer;
-  font-size: 1.5rem;
 }
 #list-games .list .additional-links {
   margin-top: 10px;
 }
 #list-games .list a {
-  font-family: "Exo", sans-serif;
+  text-align: center;
+  border-radius: 10px;
   display: block;
   margin: 5px 0;
   padding: 10px;
-  text-align: center;
-  font-size: 1.2em;
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
   transition: background-color 0.3s;
 }
 #list-games .list a:hover {
   background-color: rgb(34, 34, 34);
 }
 #list-games .list img {
-  width: 100%;
-  height: auto;
   border-radius: 5px;
+  height: auto;
+  width: 100%;
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
 
@@ -791,146 +812,167 @@ h2 {
     padding: 15px;
   }
   .list h2 {
-    font-size: 1.4rem;
+    font-size: 30px;
     margin-bottom: 15px;
   }
   .list img {
     margin-bottom: 10px;
   }
   .list p {
-    font-size: 0.95rem;
+    font-size: 1px;
     margin-bottom: 10px;
   }
   .list a {
-    font-size: 1.1em;
+    font-size: 1px;
     padding: 8px;
   }
 }
+/* Styles pour les sections de détails des personnages de jeu et des boss de jeu */
 #game-character-detail, #game-boss-detail {
-  background-color: rgb(44, 62, 80);
-  border: 2px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 90%;
-  font-family: "Exo", sans-serif;
+  border-radius: 10px; /* Arrondit les coins de la bordure */
+  background-color: rgb(44, 62, 80); /* Définit la couleur de fond pour les sections de détails */
+  font-family: "Exo", sans-serif; /* Applique la police de caractères spécifiée pour le texte à l'intérieur des sections */
+  border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour des sections */
+  padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du contenu */
+  margin: 20px auto; /* Ajoute un espace extérieur de 20px tout autour des sections et centre les sections horizontalement */
+  width: 90%; /* Définit la largeur des sections à 90% de celle de leur conteneur parent */
+  max-width: 90%; /* Définit la largeur maximale des sections à 90% */
+  /* Grille pour les éléments de détail des personnages */
+  /* Bloc pour chaque élément de détail de personnage */
+  /* Conteneur pour l'image du personnage */
+  /* Conteneur pour les informations du personnage */
+  /* Élément pour chaque item d'information du personnage */
+  /* Styles spécifiques pour les écrans avec une largeur maximale de 768px */
 }
 #game-character-detail .game-character-grid, #game-boss-detail .game-character-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  display: grid; /* Utilise une grille pour disposer les éléments enfants */
+  grid-template-columns: repeat(3, 1fr); /* Crée trois colonnes de largeur égale dans la grille */
+  gap: 60px; /* Définit un espace de 60px entre les colonnes et les rangées */
 }
 #game-character-detail .game-character-block, #game-boss-detail .game-character-block {
-  padding: 20px;
-  background-color: rgb(34, 34, 34);
-  border: 1px solid rgb(0, 255, 0);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  /* Dispose les éléments à l'intérieur du bloc en colonne avec un centrage horizontal */
+  border-radius: 10px; /* Arrondit les coins de la bordure du bloc */
+  background-color: rgb(34, 34, 34); /* Définit la couleur de fond du bloc */
+  border: 1px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 1px autour du bloc */
+  padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du bloc */
+  box-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour du bloc */
 }
 #game-character-detail .game-character-image, #game-boss-detail .game-character-image {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Centre l'image horizontalement et verticalement */
+  width: 100%; /* Définit la largeur du conteneur d'image à 100% du conteneur parent */
+  height: 200px; /* Définit la hauteur du conteneur d'image à 200px */
+  margin-bottom: 20px; /* Ajoute un espace de 20px en dessous de l'image */
 }
 #game-character-detail .game-character-image img, #game-boss-detail .game-character-image img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
+  border-radius: 5px; /* Arrondit les coins de l'image */
   -o-object-fit: cover;
-     object-fit: cover;
+     object-fit: cover; /* Assure que l'image couvre le conteneur sans déformation */
+  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
+  max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du conteneur */
+  box-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
 }
 #game-character-detail .game-character-info, #game-boss-detail .game-character-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  /* Dispose les éléments en colonne sans alignement horizontal ou vertical supplémentaire */
+  gap: 15px; /* Définit un espace de 15px entre les éléments enfants */
+  width: 100%; /* Définit la largeur du conteneur à 100% */
 }
 #game-character-detail .game-character-item, #game-boss-detail .game-character-item {
-  background-color: rgb(34, 34, 34);
-  padding: 15px;
-  border-radius: 5px;
-  border: 1px solid rgb(0, 255, 0);
-  width: 100%;
+  background-color: rgb(34, 34, 34); /* Définit la couleur de fond de l'élément */
+  border-radius: 5px; /* Arrondit les coins de la bordure de l'élément */
+  padding: 15px; /* Ajoute un espace intérieur de 15px tout autour de l'élément */
+  width: 100%; /* Définit la largeur de l'élément à 100% du conteneur parent */
 }
 #game-character-detail .game-character-item .description-title, #game-boss-detail .game-character-item .description-title {
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre au texte pour le rendre plus visible */
 }
 @media (max-width: 768px) {
+  #game-character-detail, #game-boss-detail {
+    /* Ajuste la grille pour les petits écrans */
+  }
   #game-character-detail #game-character-detail, #game-character-detail #game-boss-detail, #game-boss-detail #game-character-detail, #game-boss-detail #game-boss-detail {
-    width: 95%;
-    max-width: 100%;
-    padding: 10px;
-    margin: 10px auto;
+    width: 95%; /* Réduit la largeur des sections à 95% pour les petits écrans */
+    max-width: 100%; /* Définit la largeur maximale des sections à 100% */
+    padding: 10px; /* Réduit l'espace intérieur à 10px */
+    margin: 10px auto; /* Réduit l'espace extérieur à 10px et centre les sections horizontalement */
   }
   #game-character-detail .game-character-grid, #game-boss-detail .game-character-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: grid; /* Utilise une grille pour disposer les éléments enfants */
+    grid-template-columns: 1fr; /* Crée une seule colonne dans la grille */
+    gap: 20px; /* Réduit l'espace entre les colonnes et les rangées à 20px */
   }
   #game-character-detail .game-character-block, #game-boss-detail .game-character-block {
-    padding: 10px;
-    background-color: rgb(34, 34, 34);
-    border: 1px solid rgb(0, 255, 0);
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgb(0, 255, 0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+    /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+    align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+    /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+    flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+    background-color: rgb(34, 34, 34); /* Maintient la couleur de fond */
+    border-radius: 5px; /* Maintient l'arrondissement des coins */
+    border: 1px solid rgb(0, 255, 0); /* Maintient la bordure */
+    padding: 10px; /* Réduit l'espace intérieur du bloc à 10px */
+    box-shadow: 0 0 8px rgb(0, 255, 0); /* Réduit l'ombre portée autour du bloc */
   }
   #game-character-detail .game-character-image, #game-boss-detail .game-character-image {
-    height: auto;
-    max-height: 200px;
-    margin-bottom: 10px;
+    height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
+    max-height: 200px; /* Maintient une hauteur maximale de 200px */
+    margin-bottom: 10px; /* Réduit l'espace en dessous de l'image à 10px */
   }
   #game-character-detail .game-character-image img, #game-boss-detail .game-character-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgb(0, 255, 0);
+    border-radius: 5px; /* Maintient l'arrondissement des coins */
+    height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
+    box-shadow: 0 0 8px rgb(0, 255, 0); /* Réduit l'ombre portée autour de l'image */
   }
   #game-character-detail .game-character-info, #game-boss-detail .game-character-info {
-    gap: 10px;
+    gap: 10px; /* Réduit l'espace entre les éléments enfants à 10px */
   }
   #game-character-detail .game-character-item, #game-boss-detail .game-character-item {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid rgb(0, 255, 0);
+    border-radius: 5px; /* Maintient l'arrondissement des coins */
+    border: 1px solid rgb(0, 255, 0); /* Maintient la bordure */
+    padding: 10px; /* Réduit l'espace intérieur de l'élément à 10px */
   }
 }
 
 #games-detail {
   background-color: rgb(44, 62, 80);
-  border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
+  font-family: "Exo", sans-serif;
+  border: 2px solid rgb(0, 255, 0);
   padding: 20px;
   margin: 20px auto;
   width: 80%;
   max-width: 60%;
-  font-family: "Exo", sans-serif;
 }
 #games-detail .games-image {
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $jc a une valeur (n'est pas false) */
+  justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  border-radius: 5px;
+  overflow: hidden;
   width: 100%;
   height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
-  overflow: hidden;
-  border-radius: 5px;
 }
 #games-detail .games-image img {
-  max-width: 100%;
-  max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
   transition: transform 0.3s ease;
   box-shadow: 0 0 10px rgb(0, 255, 0);
 }
@@ -940,20 +982,21 @@ h2 {
   gap: 20px;
 }
 #games-detail .games-item {
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   background-color: rgb(34, 34, 34);
-  padding: 20px;
   border-radius: 5px;
   border: 1px solid rgb(0, 255, 0);
+  padding: 20px;
   transition: transform 0.3s ease;
   box-shadow: 0 0 5px rgb(0, 255, 0);
-  display: flex;
-  flex-direction: column;
 }
 #games-detail .games-item .description-title {
-  font-size: 1.2em;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-  margin-bottom: 10px;
+  font-size: 30px;
   display: block;
+  margin-bottom: 10px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 #games-detail .games-item:last-child {
   grid-column: span 2;
@@ -976,7 +1019,6 @@ h2 {
   }
   .games-item {
     padding: 15px;
-    font-size: 0.9em;
     margin-bottom: 10px;
   }
   .games-item:last-child {
@@ -985,36 +1027,27 @@ h2 {
 }
 #story-game {
   background-color: rgb(44, 62, 80);
-  border: 2px solid rgb(0, 255, 0);
   border-radius: 10px;
+  font-family: "Exo", sans-serif;
+  border: 2px solid rgb(0, 255, 0);
   padding: 20px;
   margin: 20px auto;
   width: 80%;
   max-width: 60%;
-  font-family: "Exo", sans-serif;
 }
 #story-game .story {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $ai a une valeur (n'est pas false) */
+  align-items: center; /* Applique la valeur de $ai à la propriété align-items pour aligner les éléments verticalement */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   gap: 20px;
 }
 #story-game .story img {
+  border-radius: 5px;
   max-width: 75%;
   width: 50%;
-  border-radius: 5px;
   box-shadow: 0 0 10px rgb(0, 255, 0);
-}
-#story-game .close-button {
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  color: rgb(0, 255, 0);
-  text-decoration: none;
-  cursor: pointer;
-}
-#story-game .close-button:hover {
-  color: #009900;
 }
 
 @media (max-width: 768px) {
@@ -1037,25 +1070,29 @@ h2 {
     font-size: 20px;
   }
 }
+/* Styles pour la section d'information */
 #information {
-  color: rgb(255, 255, 255);
-  background-color: rgb(44, 62, 80);
-  padding: 20px;
-  border-radius: 5px;
-  border: 1px solid rgb(44, 62, 80);
-  margin: 20px auto;
-  max-width: 800px;
+  background-color: rgb(44, 62, 80); /* Définit la couleur de fond à $background-color_2 */
+  color: rgb(255, 255, 255); /* Définit la couleur du texte à $color_1 */
+  border-radius: 5px; /* Applique des coins arrondis avec un rayon défini */
+  border: 1px solid rgb(44, 62, 80); /* Ajoute une bordure solide de 1px avec la couleur $border-color_1 */
+  padding: 20px; /* Ajoute un espace intérieur de 20px tout autour */
+  margin: 20px auto; /* Ajoute un espace de 20px au-dessus et en dessous et centre horizontalement */
+  max-width: 800px; /* Définit la largeur maximale de l'élément à 800px */
 }
 
+/* Styles pour les listes non ordonnées */
 ul {
-  margin: 10px 0;
-  padding-left: 20px;
+  margin: 10px 0; /* Ajoute un espace de 10px au-dessus et en dessous de la liste */
+  padding-left: 20px; /* Ajoute un espace intérieur de 20px sur le côté gauche */
 }
 
+/* Styles pour les éléments de liste */
 li {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Ajoute un espace de 10px en dessous de chaque élément de liste */
 }
 
+/* Styles pour les éléments de texte en gras */
 strong {
-  color: rgb(0, 255, 0);
+  color: rgb(0, 255, 0); /* Définit la couleur du texte en gras à $color_2 */
 }/*# sourceMappingURL=index.css.map */

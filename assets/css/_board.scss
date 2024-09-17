@@ -1,125 +1,64 @@
 #role {
-  // Centrer le conteneur avec une marge automatique et un espacement supérieur
-  margin: 100px auto;
-  // Ajouter un espacement intérieur autour du contenu
-  padding: 20px;
-  // Définir la largeur du conteneur à 80% de son parent avec une largeur maximale de 800px
-  width: 80%;
-  max-width: 800px;
-  // Définir la couleur de fond du conteneur
-  background-color: $background-color_2;
-  // Ajouter un rayon de bordure pour arrondir les coins du conteneur
-  border-radius: 8px;
-  // Ajouter une ombre portée autour du conteneur pour un effet de profondeur
-  box-shadow: 0px 8px 16px 0px $background_2;
+  background-color: $background-color_2; // Définir la couleur de fond du conteneur
+  border-radius: $border_radius_2;  // Ajouter un rayon de bordure pour arrondir les coins du conteneur
+  margin: 100px auto; // Centrer le conteneur avec une marge automatique et un espacement supérieur
+  padding: 20px; // Ajouter un espacement intérieur autour du contenu
+  width: 80%; // Définir la largeur du conteneur à 80% de son parent 
+  max-width: 800px; //une largeur maximale de 800px
+  box-shadow: 0px 8px 16px 0px $background_2; // Ajouter une ombre portée autour du conteneur pour un effet de profondeur
+
   #filterInput {
-    // Définir la largeur du champ de saisie à 100% du conteneur parent
-    width: 100%;
-    // Ajouter un espacement intérieur au champ de saisie
-    padding: 10px;
-    // Ajouter un espacement inférieur pour séparer le champ de saisie du contenu suivant
-    margin-bottom: 20px;
-    // Définir la taille de la police pour le texte du champ de saisie
-    font-size: 16px;
-    // Définir la bordure du champ de saisie
-    border: 1px solid $border;
-    // Ajouter un rayon de bordure pour arrondir les coins du champ de saisie
-    border-radius: 4px;
-    // Supprimer le contour par défaut du champ de saisie
-    outline: none;
-    // Ajouter une transition pour le changement de couleur de la bordure
-    transition: border-color 0.3s;
-    // Changer la couleur de la bordure lorsque le champ de saisie est focalisé
+    border-radius: $border_radius_1; // Ajouter un rayon de bordure pour arrondir les coins du champ de saisie
+    font-size: $font-size_input; // Définir la taille de la police pour le texte du champ de saisie
+    border: 1px solid $border; // Définir la bordure du champ de saisie
+    outline: none; // Supprimer le contour par défaut du champ de saisie
+    width: 100%; // Définir la largeur du champ de saisie à 100% du conteneur parent
+    padding: 10px; // Ajouter un espacement intérieur au champ de saisie
+    margin-bottom: 20px; // Ajouter un espacement inférieur pour séparer le champ de saisie du contenu suivant
+    transition: border-color 0.3s; // Ajouter une transition pour le changement de couleur de la bordure
+
     &:focus {
-      border-color: $border;
+      border-color: $border; // Changer la couleur de la bordure lorsque le champ de saisie est focalisé
     }
   }
-  #usersTable {
-    // Définir la largeur du tableau à 100% du conteneur parent
-    width: 100%;
-    // Fusionner les bordures du tableau pour une apparence plus propre
-    border-collapse: collapse;
-    // Définir la couleur de fond du tableau
-    background-color: $background-color_2;
-    // Définir la police utilisée dans le tableau
-    font-family: $fonttitle;
-    // Définir la bordure du tableau (1 pixel, mais peut être ajusté ou retiré)
-    border: 1;
-    th, td {
-      // Ajouter un espacement intérieur aux cellules du tableau
-      padding: 12px 15px;
-      // Aligner le texte à gauche
-      text-align: left;
-      // Définir la couleur du texte
-      color: $color_1;
-    }
-    th {
-      // Définir la couleur de fond des en-têtes de colonne
-      background-color: $background-color_1;
-      // Définir la couleur du texte dans les en-têtes de colonne
-      color: $color_2;
-      // Ajouter une bordure aux en-têtes de colonne
-      border: 1px solid $border;
-      // Mettre le texte en majuscules
-      text-transform: uppercase;
-      // Ajouter un espacement entre les lettres
-      letter-spacing: 1px;
-    }
-    tr, td {
-      // Ajouter une bordure autour des lignes et cellules
-      border: 1px solid $border;
 
-      // Définir la couleur de fond des lignes paires
+  #usersTable {
+    background-color: $background-color_2; // Définir la couleur de fond du tableau
+    font-family: $fonttitle; // Définir la police utilisée dans le tableau
+    border-collapse: collapse; // Fusionner les bordures du tableau pour une apparence plus propre
+    border: 1; // Définir la bordure du tableau (1 pixel, mais peut être ajusté ou retiré)
+    width: 100%; // Définir la largeur du tableau à 100% du conteneur parent
+    
+    th, td {
+      @include text-align(left);
+      color: $color_1; // Définir la couleur du texte
+      padding: 12px 15px; // Ajouter un espacement intérieur aux cellules du tableau 
+    }
+
+    th {
+      
+      background-color: $background-color_1; // Définir la couleur de fond des en-têtes de colonne
+      color: $color_2; // Définir la couleur du texte dans les en-têtes de colonne
+      border: 1px solid $border; // Ajouter une bordure aux en-têtes de colonne
+      text-transform: uppercase; // Mettre le texte en majuscules
+      letter-spacing: 1px; // Ajouter un espacement entre les lettres
+    }
+
+    tr, td {
+      border: 1px solid $border;// Ajouter une bordure autour des lignes et cellules
+
       &:nth-child(even) {
-        background-color: $background-color_2;
+        background-color: $background-color_2; // Définir la couleur de fond des lignes paires
       }
     }
-    select {
-      // Ajouter un espacement intérieur au menu déroulant
-      padding: 8px;
-      // Définir la taille de la police dans le menu déroulant
-      font-size: 14px;
-      // Définir la bordure du menu déroulant
-      border: 1px solid $border;
-      // Ajouter un rayon de bordure pour arrondir les coins du menu déroulant
-      border-radius: 4px;
-      // Définir la couleur de fond du menu déroulant
-      background-color: $background-color_1;
-      // Modifier le curseur pour indiquer que le menu déroulant est interactif
-      cursor: pointer;
-    }
-  }
-  input[type="submit"] {
-    // Afficher le bouton de soumission en tant qu'élément de bloc
-    display: block;
-    // Définir la largeur du bouton à 100% du conteneur parent
-    width: 100%;
-    // Ajouter un espacement supérieur pour séparer le bouton du contenu précédent
-    margin-top: 20px;
-    // Ajouter un espacement intérieur au bouton
-    padding: 20px;
-    // Définir la taille de la police pour le texte du bouton
-    font-size: 16px;
-    // Ajouter un rayon de bordure pour arrondir les coins du bouton
-    border-radius: $border_radius_1;
-    // Définir la couleur de fond du bouton
-    background-color: $background-color_4;
-    // Définir la couleur du texte du bouton
-    color: $color_1;
-    // Supprimer la bordure par défaut du bouton
-    border: none;
-    // Modifier le curseur pour indiquer que le bouton est cliquable
-    cursor: pointer;
-    // Mettre le texte en majuscules
-    text-transform: uppercase;
-    // Ajouter un espacement entre les lettres
-    letter-spacing: 1px;
-    // Ajouter une transition pour les changements de couleur et d'autres effets
-    transition: all 0.2s ease-in-out;
 
-    // Changer la couleur de fond lorsque le bouton est survolé
-    &:hover {
-      background-color: $background-color_1;
+    select {
+      background-color: $background-color_1; // Définir la couleur de fond du menu déroulant
+      border-radius: $border_radius_1; // Ajouter un rayon de bordure pour arrondir les coins du menu déroulant
+      font-size: $font-size_select; // Définir la taille de la police dans le menu déroulant
+      border: 1px solid $border; // Définir la bordure du menu déroulant
+      padding: 8px; // Ajouter un espacement intérieur au menu déroulant
+      cursor: pointer; // Modifier le curseur pour indiquer que le menu déroulant est interactif
     }
   }
 }
@@ -131,26 +70,31 @@
     margin: 20px auto;
     width: 95%;
     padding: 15px;
+
     #filterInput {
       // Réduire la taille de la police et l'espacement intérieur pour les petits écrans
       font-size: 14px;
       padding: 8px;
     }
+
     #usersTable {
       // Permettre le défilement horizontal pour les petits écrans
       display: block;
       overflow-x: auto;
       white-space: nowrap;
+
       th, td {
         // Réduire l'espacement intérieur et la taille de la police pour les petits écrans
         padding: 10px;
         font-size: 14px;
       }
+
       th {
         // Réduire la taille de la police et l'espacement intérieur pour les petits écrans
         font-size: 12px;
         padding: 10px;
       }
+
       select {
         // Ajuster la largeur et la taille de la police pour le menu déroulant sur les petits écrans
         width: 100%;
@@ -158,6 +102,7 @@
         padding: 6px;
       }
     }
+    
     input[type="submit"] {
       // Réduire l'espacement intérieur et la taille de la police pour le bouton sur les petits écrans
       padding: 15px;

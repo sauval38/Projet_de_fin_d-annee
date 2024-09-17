@@ -1,5 +1,7 @@
 <?php
+
 namespace Models; 
+
 use App\Database; 
 
 class RegisterModels { 

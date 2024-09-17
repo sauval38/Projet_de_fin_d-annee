@@ -54,7 +54,7 @@ class HomeViews {
 
         ?>
         <!-- Titre principal du site -->
-        <h1 id="logo">SQUARE ENIX</h1>
+        <h1 id="logo">FINALSTORY</h1>
         <!-- Conteneur principal pour le carrousel d'images -->
         <div id="carousel">
             <div class="carousel-slides">

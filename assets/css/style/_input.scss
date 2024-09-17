@@ -7,28 +7,31 @@ input[type=email],
 input[type=password],
 input[type=file],
 select, textarea {
-    padding: 10px; /* Ajoute un espace intérieur de 10 pixels à tous les côtés des éléments */
-    border: 2px solid $border; /* Définit une bordure solide de 2 pixels de largeur avec la couleur spécifiée par la variable $border */
-    border-radius: $border_radius_1; /* Applique un rayon de bordure arrondi selon la variable $border_radius_1 */
     background-color: $background-color_1; /* Définit la couleur de fond à la valeur de la variable $background-color_1 */
+    border-radius: $border_radius_1; /* Applique un rayon de bordure arrondi selon la variable $border_radius_1 */
+    font-size: $font-size_input; /* Définit la taille de la police à 1em (taille relative à l'élément parent) */
     color: $color_1; /* Définit la couleur du texte à la valeur de la variable $color_1 */
-    font-size: 1em; /* Définit la taille de la police à 1em (taille relative à l'élément parent) */
+    border: 2px solid $border; /* Définit une bordure solide de 2 pixels de largeur avec la couleur spécifiée par la variable $border */
+    padding: 10px; /* Ajoute un espace intérieur de 10 pixels à tous les côtés des éléments */
     margin-bottom: 15px; /* Ajoute une marge inférieure de 15 pixels aux éléments pour les espacer verticalement */
     transition: all 0.2s ease-in-out; /* Applique une transition fluide de 0.2 secondes pour toutes les propriétés modifiées lors de l'interaction */
+
     &:focus {
-        outline: none; /* Supprime le contour par défaut des éléments de formulaire lorsqu'ils sont en focus */
         border-color: $border-color_1; /* Change la couleur de la bordure lorsqu'un élément est en focus, en utilisant la valeur de la variable $border-color_1 */
+        outline: none; /* Supprime le contour par défaut des éléments de formulaire lorsqu'ils sont en focus */
     }
 }
+
 input[type=submit] {
+    background-color: $background-color_4; /* Définit la couleur de fond du bouton à la valeur de la variable $background-color_4 */
+    border-radius: $border_radius_1; /* Applique un rayon de bordure arrondi selon la variable $border_radius_1 */
+    font-size: $font-size_input; /* Définit la taille de la police du bouton à 1.2rem (taille relative à la taille de la police racine) */
+    color: $color_4; /* Définit la couleur du texte du bouton à la valeur de la variable $color_4 */
     padding: 10px 20px; /* Ajoute un espace intérieur de 10 pixels verticalement et 20 pixels horizontalement */
     border: none; /* Supprime la bordure par défaut du bouton de soumission */
-    border-radius: $border_radius_1; /* Applique un rayon de bordure arrondi selon la variable $border_radius_1 */
-    background-color: $background-color_4; /* Définit la couleur de fond du bouton à la valeur de la variable $background-color_4 */
-    color: $color_4; /* Définit la couleur du texte du bouton à la valeur de la variable $color_4 */
-    font-size: 1.2rem; /* Définit la taille de la police du bouton à 1.2rem (taille relative à la taille de la police racine) */
-    cursor: pointer; /* Change le curseur en une main lorsqu'il survole le bouton pour indiquer qu'il est cliquable */
     transition: all 0.2s ease-in-out; /* Applique une transition fluide de 0.2 secondes pour toutes les propriétés modifiées lors de l'interaction */
+    cursor: pointer; /* Change le curseur en une main lorsqu'il survole le bouton pour indiquer qu'il est cliquable */
+    
     &:hover {
         background-color: $background-color_2; /* Change la couleur de fond du bouton lorsqu'il est survolé, en utilisant la valeur de la variable $background-color_2 */
     }

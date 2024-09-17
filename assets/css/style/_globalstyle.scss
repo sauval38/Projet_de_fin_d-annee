@@ -1,58 +1,97 @@
+/* Styles pour le logo */
+#logo {
+    @include text-align(center);
+    font-family: $fonttitle; // Utilise la police définie dans la variable $fonttitle pour le logo.
+    font-size: $font-size_logo; // Définit la taille de la police du logo à 80px.
+    margin-top: 30px; // Ajoute une marge supérieure de 30px pour espacer le logo des éléments au-dessus.
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; // Applique un effet d'ombre portée au texte du logo pour un effet de profondeur.
+}
+
 /* Styles pour les titres de niveau 1 (h1) */
 h1 {
-    text-align: center; /* Centre le texte horizontalement */
-    margin-top: 30px; /* Ajoute un espace de 30px au-dessus du titre */
+    @include text-align(center);
     font-family: $fonttitle; /* Utilise la police spécifiée pour les titres */
-    font-size: 3em; /* Définit la taille de la police à 3 fois la taille de base */
+    font-size: $font-size_title; /* Définit la taille de la police à 3 fois la taille de base */
+    margin-top: 30px; /* Ajoute un espace de 30px au-dessus du titre */
     margin-bottom: 20px; /* Ajoute un espace de 20px en dessous du titre */
     text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; /* Ajoute une ombre au texte pour un effet de profondeur */
 }
+
+/* Styles pour les titres de niveau 2 (h2) */
+h2 {
+    @include text-align(center);
+    font-family: $fontpara; /* Applique la police de caractères spécifiée pour les titres */
+    border-radius: $border_radius_2; /* Arrondit les coins de la bordure du titre */
+    font-size: $font-size_sous-title; /* Définit la taille de la police du titre */
+    border: 2px solid $border; /* Ajoute une bordure solide de 2px autour du titre */
+    display: block; /* Définit l'affichage du titre comme un bloc */
+    margin: 5px 0; /* Ajoute un espace extérieur de 5px en haut et en bas du titre */
+    padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du titre */
+    cursor: pointer;
+}
+
+/* Styles pour les titres de niveau 3 (h3) */
+h3 {
+    font-family: $fontpara; // Utilise la police définie dans la variable $fontpara pour les sous-titres h3.
+    font-size: $font-size_sous-title; /* Définit la taille de la police du titre */ // Définit la taille de la police des sous-titres h3 à 1.8em, plus grande que la taille de texte normale.
+    margin-bottom: 10px; // Ajoute une marge inférieure de 10px pour espacer le sous-titre des éléments suivants
+    text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; // Applique un effet d'ombre portée au texte des sous-titres h3 pour le rendre plus visible.
+}
+
 /* Styles pour les paragraphes */
 p {
-    font-family: $fontpara; /* Utilise la police spécifiée pour les paragraphes */
-    font-size: 1.2em; /* Définit la taille de la police à 1.2 fois la taille de base */
-    line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
-    color: $color_1; /* Définit la couleur du texte */
-    margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
+    @include text-align(center);
     background-color: $background-color_1; /* Définit la couleur de fond du paragraphe */
-    padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
     border-radius: $border-radius-1; /* Applique des coins arrondis */
+    font-family: $fontpara; /* Utilise la police spécifiée pour les paragraphes */
+    color: $color_1; /* Définit la couleur du texte */
+    font-size: $font-size_para; /* Définit la taille de la police à 1.2 fois la taille de base *
     border: 1px solid $border; /* Ajoute une bordure solide de 1px */
-    text-align: center; /* Centre le texte à l’intérieur du paragraphe */
+    font-size: $font-size_para; /* Définit la taille de la police à 1.2 fois la taille de base */
+    line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
+    margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
+    padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
     box-shadow: 0 0 5px $color_2; /* Ajoute une ombre portée pour donner de la profondeur */
 }
+
 /* Styles pour les liens */
 a {
-    text-decoration: none; /* Supprime le soulignement par défaut des liens */
-    color: white; /* Définit la couleur du texte des liens */
+    @include text-decoration(none);
+    font-family: $fontpara; // Utilise la police définie dans la variable $fontpara pour les liens.
+    font-size: $font-size_para; // Définit la taille de la police des liens à 1.2em, légèrement plus grande que la taille par défaut.
+    color: $color_2; /* Définit la couleur du texte des liens */
+    cursor: pointer;
+
+    &:hover {
+        color: $color_3; /* Change la couleur du texte des liens au survol */
+    }
 }
-/* Styles pour les liens au survol */
-a:hover {
-    color: $color_2; /* Change la couleur du texte des liens au survol */
-}
+
 /* Styles pour les boutons */
 button {
-    padding: 10px 20px; /* Ajoute un espace intérieur de 10px en haut/bas et 20px sur les côtés */
-    border: none; /* Supprime la bordure par défaut */
-    border-radius: $border_radius_1; /* Applique des coins arrondis */
     background-color: $background-color_4; /* Définit la couleur de fond du bouton */
+    border-radius: $border_radius_1; /* Applique des coins arrondis */
     color: $color_4; /* Définit la couleur du texte du bouton */
-    font-size: 1.2rem; /* Définit la taille de la police à 1.2 fois la taille de la police racine */
-    cursor: pointer; /* Change le curseur en une main pointant lorsqu’il est survolé */
+    font-size: $font-size_para; /* Définit la taille de la police à 1.2 fois la taille de la police racine */
+    border: none; /* Supprime la bordure par défaut */
+    padding: 10px 20px; /* Ajoute un espace intérieur de 10px en haut/bas et 20px sur les côtés */
     transition: all 0.2s ease-in-out; /* Ajoute une transition douce pour tous les changements de style */
+    cursor: pointer; /* Change le curseur en une main pointant lorsqu’il est survolé */
 
     &:hover {
         background-color: $background-color_2; /* Change la couleur de fond du bouton lorsqu'il est survolé */
     }
 }
+
 /* Styles pour les boutons de fermeture */
 .close-button {
+    @include text-decoration(none);
+    color: $color_2; /* Définit la couleur du texte du bouton */
+    font-size: $font-size_close-button; /* Définit la taille de la police pour le bouton de fermeture */
     top: 10px; /* Positionne le bouton à 10px du haut */
     right: 10px; /* Positionne le bouton à 10px de la droite */
-    font-size: 24px; /* Définit la taille de la police pour le bouton de fermeture */
-    color: $color_2; /* Définit la couleur du texte du bouton */
-    text-decoration: none; /* Supprime toute décoration de texte (comme le soulignement) */
     cursor: pointer; /* Change le curseur en une main pointant lorsqu'il est survolé */
+    
     &:hover {
         color: darken($color_2, 20%); /* Assombrit la couleur du bouton de fermeture lorsqu'il est survolé */
     }

@@ -12,30 +12,25 @@
     .list {
         @include flexbox(space-between, false, column); /* Utilisation de Flexbox pour disposer les éléments avec un espace entre eux, alignés verticalement en colonne */
         background-color: $background-color_2; /* Définit la couleur de fond de la liste */
-        border: 2px solid $border; /* Ajoute une bordure solide de 2px autour de la liste */
         border-radius: $border_radius_2; /* Arrondit les coins de la bordure de la liste */
+        border: 2px solid $border; /* Ajoute une bordure solide de 2px autour de la liste */
         padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du contenu de la liste */
         margin: 10px; /* Ajoute un espace extérieur de 10px tout autour de la liste */
         width: calc(30% - 40px); /* Définit la largeur de la liste à 30% de celle du conteneur parent, moins 40px pour compenser les marges */
-        /* Styles pour les titres (h2) à l'intérieur des listes */
-        h2 {
-            font-family: $fontpara; /* Applique la police de caractères spécifiée pour les titres */
-            cursor: pointer; /* Change le curseur en pointeur lorsque l'on survole le titre */
-            font-size: 1.5rem; /* Définit la taille de la police du titre */
-        }
+    
         /* Styles pour les liens (a) à l'intérieur des listes */
         a {
+            @include text-align(center);
+            @include text-decoration(none);
+            color: $color_1; /* Définit la couleur du texte du lien */
+            border-radius: $border_radius_2; /* Arrondit les coins de la bordure du lien */
             font-family: $fontpara; /* Applique la police de caractères spécifiée pour les liens */
+            font-size: $font-size_para; /* Définit la taille de la police du lien */
+            border: 2px solid $border; /* Ajoute une bordure solide de 2px autour du lien */
             display: block; /* Définit l'affichage du lien comme un bloc */
             margin: 5px 0; /* Ajoute un espace extérieur de 5px en haut et en bas du lien */
             padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du lien */
-            text-align: center; /* Centre le texte du lien */
-            font-size: 1.2em; /* Définit la taille de la police du lien */
-            border: 2px solid $border; /* Ajoute une bordure solide de 2px autour du lien */
-            border-radius: $border_radius_2; /* Arrondit les coins de la bordure du lien */
-            color: $color_1; /* Définit la couleur du texte du lien */
             text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; /* Ajoute une ombre portée au texte du lien pour le faire ressortir */
-            text-decoration: none; /* Enlève la décoration du texte du lien */
             transition: background-color 0.3s; /* Ajoute une transition fluide pour le changement de couleur de fond du lien */
             /* Styles pour le lien lors du survol */
             &:hover {
@@ -44,9 +39,9 @@
         }
         /* Styles pour les images à l'intérieur des listes */
         img {
-            width: 100%; /* Définit la largeur de l'image à 100% du conteneur */
-            height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
             border-radius: $border_radius_1; /* Arrondit les coins de l'image */
+            height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
+            width: 100%; /* Définit la largeur de l'image à 100% du conteneur */
             margin-top: 10px; /* Ajoute un espace extérieur de 10px au-dessus de l'image */
             box-shadow: 0 0 10px $color_2; /* Ajoute une ombre portée autour de l'image */
         }

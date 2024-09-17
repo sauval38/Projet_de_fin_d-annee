@@ -1,84 +1,50 @@
 #story-game {
-    // Applique une couleur de fond provenant d'une variable.
-    background-color: $background-color-2;
-    // Définit une bordure de 2px d'épaisseur, utilisant une couleur provenant d'une variable.
-    border: 2px solid $border;
-    // Applique un rayon de bordure pour arrondir les coins, la valeur est prise d'une variable.
-    border-radius: $border-radius-2;
-    // Applique une marge interne de 20px à l'élément.
-    padding: 20px;
-    // Centre l'élément horizontalement avec une marge automatique sur les côtés.
-    margin: 20px auto;
-    // Définit la largeur de l'élément à 80% de son conteneur parent.
-    width: 80%;
-    // Limite la largeur maximale de l'élément à 60% de son conteneur parent.
-    max-width: 60%;
-    // Définit la police utilisée pour le texte à l'intérieur de l'élément, provenant d'une variable.
-    font-family: $fontpara;
+    
+    background-color: $background-color-2; // Applique une couleur de fond provenant d'une variable.
+    border-radius: $border-radius-2; // Applique un rayon de bordure pour arrondir les coins, la valeur est prise d'une variable.
+    font-family: $fontpara; // Définit la police utilisée pour le texte à l'intérieur de l'élément, provenant d'une variable.
+    border: 2px solid $border; // Définit une bordure de 2px d'épaisseur, utilisant une couleur provenant d'une variable.
+    padding: 20px; // Applique une marge interne de 20px à l'élément.
+    margin: 20px auto; // Centre l'élément horizontalement avec une marge automatique sur les côtés.
+    width: 80%; // Définit la largeur de l'élément à 80% de son conteneur parent.
+    max-width: 60%; // Limite la largeur maximale de l'élément à 60% de son conteneur parent.
+    
     .story {
-        // Utilise un mixin pour appliquer un modèle de boîte flexible (flexbox) avec des options spécifiques.
-        @include flexbox(false, center, column);
-        // Définit un espacement de 20px entre les éléments enfants de ".story".
-        gap: 20px;
+        @include flexbox(false, center, column); // Utilise un mixin pour appliquer un modèle de boîte flexible (flexbox) avec des options spécifiques.
+        gap: 20px; // Définit un espacement de 20px entre les éléments enfants de ".story".
+    
         img {
-            // Définit la largeur maximale de l'image à 75% de son conteneur parent.
-            max-width: 75%;
-            // Définit la largeur de l'image à 50% de son conteneur parent.
-            width: 50%;
-            // Applique un rayon de bordure pour arrondir les coins de l'image, la valeur est prise d'une variable.
-            border-radius: $border-radius-1;
-            // Applique une ombre portée autour de l'image, utilisant une couleur provenant d'une variable.
-            box-shadow: 0 0 10px $color-2;
-        }
-    }
-    .close-button {
-        // Positionne le bouton de fermeture à 10px du haut du conteneur parent.
-        top: 10px;
-        // Positionne le bouton de fermeture à 10px du côté droit du conteneur parent.
-        right: 10px;
-        // Définit la taille de la police pour le texte du bouton de fermeture à 24px.
-        font-size: 24px;
-        // Définit la couleur du texte du bouton de fermeture, provenant d'une variable.
-        color: $color-2;
-        // Supprime la décoration de texte (comme le soulignement) du bouton de fermeture.
-        text-decoration: none;
-        // Change le curseur en une main (pointer) lorsqu'on survole le bouton de fermeture.
-        cursor: pointer;
-        &:hover {
-            // Lors du survol du bouton de fermeture, assombrit la couleur du texte de 20%.
-            color: darken($color-2, 20%);
+            border-radius: $border-radius-1; // Applique un rayon de bordure pour arrondir les coins de l'image, la valeur est prise d'une variable.
+            max-width: 75%; // Définit la largeur maximale de l'image à 75% de son conteneur parent.
+            width: 50%; // Définit la largeur de l'image à 50% de son conteneur parent.
+            box-shadow: 0 0 10px $color-2; // Applique une ombre portée autour de l'image, utilisant une couleur provenant d'une variable.  
         }
     }
 }
 
+// Styles appliqués uniquement lorsque la largeur de l'écran est de 768px ou moins.
 @media (max-width: 768px) {
-    // Styles appliqués uniquement lorsque la largeur de l'écran est de 768px ou moins.
+    
     #story-game {
-        // Augmente la largeur de l'élément à 95% du conteneur parent pour les écrans étroits.
-        width: 95%;
-        // Définit la largeur maximale à 100% pour s'assurer qu'elle ne dépasse pas son conteneur parent.
-        max-width: 100%;
-        // Réduit la marge interne à 10px pour les petits écrans.
-        padding: 10px;
-        // Réduit la marge externe à 10px pour les petits écrans.
-        margin: 10px auto;
+        width: 95%; // Augmente la largeur de l'élément à 95% du conteneur parent pour les écrans étroits.
+        max-width: 100%; // Définit la largeur maximale à 100% pour s'assurer qu'elle ne dépasse pas son conteneur parent.
+        padding: 10px; // Réduit la marge interne à 10px pour les petits écrans.
+        margin: 10px auto; // Réduit la marge externe à 10px pour les petits écrans.
     }
+
     .story {
-        // Réduit l'espacement entre les éléments enfants de ".story" à 15px pour les petits écrans.
-        gap: 15px;
+        
+        gap: 15px; // Réduit l'espacement entre les éléments enfants de ".story" à 15px pour les petits écrans.
+
         img {
-            // Augmente la largeur maximale de l'image à 100% du conteneur parent pour les petits écrans.
-            max-width: 100%;
-            // Permet à l'image de s'ajuster automatiquement en fonction de son conteneur.
-            width: auto;
+            max-width: 100%; // Augmente la largeur maximale de l'image à 100% du conteneur parent pour les petits écrans.
+            width: auto; // Permet à l'image de s'ajuster automatiquement en fonction de son conteneur.
         }
     }
+
     .close-button {
-        // Réduit la position du bouton de fermeture à 5px du haut pour les petits écrans.
-        top: 5px;
-        // Réduit la position du bouton de fermeture à 5px du côté droit pour les petits écrans.
-        right: 5px;
-        // Réduit la taille de la police du bouton de fermeture à 20px pour les petits écrans.
-        font-size: 20px;
+        top: 5px; // Réduit la position du bouton de fermeture à 5px du haut pour les petits écrans.
+        right: 5px; // Réduit la position du bouton de fermeture à 5px du côté droit pour les petits écrans.
+        font-size: 20px; // Réduit la taille de la police du bouton de fermeture à 20px pour les petits écrans.
     }
 }

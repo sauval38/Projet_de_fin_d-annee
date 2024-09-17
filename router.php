@@ -193,7 +193,7 @@ switch($action) {
                     // Si $id et $characterId sont définis
                     if ($id && $characterId) {
                         // Instancie un objet de la classe modifyCharacterController
-                        $modifyCharacterController = new modifyCharacterController();
+                        $modifyCharacterController = new ModifyCharacterController();
                         
                         // Si la requête HTTP est de type POST
                         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
