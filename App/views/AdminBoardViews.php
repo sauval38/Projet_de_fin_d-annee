@@ -12,7 +12,7 @@ class AdminBoardViews {
         if (isset($users) && is_array($users) && count($users) > 0) { ?>
 
             <!-- En-tête de la section de modification des rôles -->
-            <h1>Modifications rôles</h1>
+            <h1 id="admin">Modifications rôles</h1>
 
             <!-- Formulaire pour modifier les rôles des utilisateurs -->
             <form id="role" method="post">

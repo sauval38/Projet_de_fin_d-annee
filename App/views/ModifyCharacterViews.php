@@ -10,7 +10,7 @@ class ModifyCharacterViews {
         ?>
         <!-- Conteneur principal pour le formulaire de modification du personnage -->
         <div id="modify-character">
-            <h1>Modifier un personnage</h1> <!-- Titre du formulaire -->
+            <h1 id="titre-list">Modifier un personnage</h1> <!-- Titre du formulaire -->
 
             <!-- Formulaire de modification avec la méthode POST et le type d'encodage multipart/form-data pour les fichiers -->
             <form class="form-modify-character" method="post" enctype="multipart/form-data">
@@ -19,7 +19,7 @@ class ModifyCharacterViews {
                 <input type="hidden" id="id_character" name="id_character" value="<?= htmlspecialchars($character['id']) ?>">
                 
                 <!-- Champ pour le nom du personnage -->
-                <label for="names">Names :</label>
+                <label for="names">Nom :</label>
                 <input type="text" id="names" name="names" value="<?= htmlspecialchars($character['names_character']) ?>">
 
                 <!-- Champ pour la description du personnage -->

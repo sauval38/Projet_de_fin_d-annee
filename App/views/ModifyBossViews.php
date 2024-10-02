@@ -10,7 +10,7 @@ class ModifyBossViews {
         ?>
         <!-- Conteneur principal pour le formulaire de modification du boss -->
         <div id="modify-boss">
-            <h1>Modifier un boss</h1> <!-- Titre du formulaire -->
+            <h1 id="titre-list">Modifier un boss</h1> <!-- Titre du formulaire -->
 
             <!-- Formulaire de modification avec la méthode POST et le type d'encodage multipart/form-data pour les fichiers -->
             <form class="form-modify-character" method="post" enctype="multipart/form-data">
@@ -19,7 +19,7 @@ class ModifyBossViews {
                 <input type="hidden" id="id_boss" name="id_boss" value="<?= htmlspecialchars($boss['id']) ?>">
 
                 <!-- Champ pour le nom du boss -->
-                <label for="name">Name :</label>
+                <label for="name">Nom :</label>
                 <input type="text" id="name" name="name" value="<?= htmlspecialchars($boss['name_boss']) ?>">
 
                 <!-- Champ pour la description du boss -->

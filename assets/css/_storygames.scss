@@ -1,5 +1,4 @@
 #story-game {
-    
     background-color: $background-color-2; // Applique une couleur de fond provenant d'une variable.
     border-radius: $border-radius-2; // Applique un rayon de bordure pour arrondir les coins, la valeur est prise d'une variable.
     font-family: $fontpara; // Définit la police utilisée pour le texte à l'intérieur de l'élément, provenant d'une variable.
@@ -8,6 +7,10 @@
     margin: 20px auto; // Centre l'élément horizontalement avec une marge automatique sur les côtés.
     width: 80%; // Définit la largeur de l'élément à 80% de son conteneur parent.
     max-width: 60%; // Limite la largeur maximale de l'élément à 60% de son conteneur parent.
+
+    h1 {
+        text-shadow: 0 0 10px $color_2; // Ajoute une ombre portée autour des images pour un effet de profondeur.
+    }
     
     .story {
         @include flexbox(false, center, column); // Utilise un mixin pour appliquer un modèle de boîte flexible (flexbox) avec des options spécifiques.
@@ -15,9 +18,10 @@
     
         img {
             border-radius: $border-radius-1; // Applique un rayon de bordure pour arrondir les coins de l'image, la valeur est prise d'une variable.
+            margin-top: 20px;
             max-width: 75%; // Définit la largeur maximale de l'image à 75% de son conteneur parent.
             width: 50%; // Définit la largeur de l'image à 50% de son conteneur parent.
-            box-shadow: 0 0 10px $color-2; // Applique une ombre portée autour de l'image, utilisant une couleur provenant d'une variable.  
+            box-shadow: 0 0 10px $color_4; // Ajoute une ombre portée autour des images pour un effet de profondeur.  
         }
     }
 }

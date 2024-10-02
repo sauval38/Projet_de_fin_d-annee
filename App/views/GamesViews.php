@@ -42,8 +42,9 @@ class GamesViews {
                         ?>
                         <!-- Conteneur pour chaque élément d'information du jeu -->
                         <div class="games-item">
+                            <h2><?= htmlspecialchars($label) ?></h2>
                             <!-- Affichage du label et de la valeur du champ -->
-                            <p><strong class="description-title"><?= htmlspecialchars($label) ?>:</strong><br><?= htmlspecialchars($game[$field]) ?></p>
+                            <p><?= htmlspecialchars($game[$field]) ?></p>
                         </div>
                     <?php 
                     endforeach; 

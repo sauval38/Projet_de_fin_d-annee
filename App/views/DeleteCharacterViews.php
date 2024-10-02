@@ -9,7 +9,7 @@ class DeleteCharacterViews {
     public function listDeleteGames($games) {
         ?>
         <!-- Titre de la page -->
-        <h1>LISTE DES PERSONNAGES</h1>
+        <h1 id="titre-list">LISTE DES PERSONNAGES</h1>
         <!-- Conteneur principal pour la liste des personnages à supprimer -->
         <div id="delete-character">
             <?php 

@@ -7,6 +7,10 @@
     margin: 20px auto; // Ajouter un espacement extérieur, centrer horizontalement
     width: 80%; // Définir la largeur du conteneur à 80% de son conteneur parent
     max-width: 60%; // Définir la largeur maximale à 60% pour les grands écrans
+
+    h1 {
+        text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; // Applique un effet d'ombre portée au texte du logo pour un effet de profondeur.
+    }
    
     .games-image {
         @include flexbox(center, center); // Utiliser Flexbox pour centrer le contenu de l'image
@@ -21,7 +25,7 @@
             max-width: 100%; // Limiter la largeur de l'image à 100% du conteneur
             max-height: 100%; // Limiter la hauteur de l'image à 100% du conteneur
             transition: transform 0.3s ease; // Ajouter une transition pour l'effet de transformation
-            box-shadow: 0 0 10px $color-2; // Ajouter une ombre portée autour de l'image
+            box-shadow: 0 0 10px $color_4; // Ajoute une ombre portée autour des images pour un effet de profondeur.
         }
     }
 
@@ -38,13 +42,16 @@
         border: 1px solid $border; // Ajouter une bordure autour des éléments
         padding: 20px; // Ajouter un espacement interne
         transition: transform 0.3s ease; // Ajouter une transition pour l'effet de transformation
-        box-shadow: 0 0 5px $color-2; // Ajouter une ombre portée autour des éléments
-        
-        .description-title {
-            font-size: $font-size_sous-title; // Définir la taille de la police pour le titre de la description
-            display: block; // S'assurer que le titre est un élément de bloc pour le style
-            margin-bottom: 10px; // Ajouter un espacement inférieur
-            text-shadow: 0 0 3px $color-2, 0 0 5px $color-2; // Ajouter une ombre portée au texte pour le rendre plus visible
+        box-shadow: 0 0 5px $color-2; // Ajouter une ombre portée autour des élément
+
+        h2 {
+            text-shadow: 0 0 5px $color-2; // Ajouter une ombre portée autour des élément
+            border-bottom: 2px solid $color-2; // Ajouter un trait en bas du titre
+            padding-bottom: 5px; // Optionnel : ajouter de l'espace entre le texte et le trait
+        }
+
+        p {
+            margin-top: 20px;
         }
     }
     

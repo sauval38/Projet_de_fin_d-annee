@@ -16,72 +16,41 @@ body {
   min-height: 100vh; /* Définit la hauteur minimale du corps du document à 100% de la hauteur de la fenêtre de visualisation (viewport) */
 }
 
-/* Styles pour le logo */
-#logo {
-  text-align: center;
-  font-family: "Raleway", sans-serif;
-  font-size: 70px;
-  margin-top: 30px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
-}
-
 /* Styles pour les titres de niveau 1 (h1) */
 h1 {
   text-align: center;
   font-family: "Raleway", sans-serif; /* Utilise la police spécifiée pour les titres */
-  font-size: 40px; /* Définit la taille de la police à 3 fois la taille de base */
-  margin-top: 30px; /* Ajoute un espace de 30px au-dessus du titre */
-  margin-bottom: 20px; /* Ajoute un espace de 20px en dessous du titre */
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre au texte pour un effet de profondeur */
+  font-size: 70px; /* Définit la taille de la police à 3 fois la taille de base */
+  box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 /* Styles pour les titres de niveau 2 (h2) */
 h2 {
   text-align: center;
   font-family: "Exo", sans-serif; /* Applique la police de caractères spécifiée pour les titres */
-  border-radius: 10px; /* Arrondit les coins de la bordure du titre */
   font-size: 30px; /* Définit la taille de la police du titre */
-  border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour du titre */
-  display: block; /* Définit l'affichage du titre comme un bloc */
-  margin: 5px 0; /* Ajoute un espace extérieur de 5px en haut et en bas du titre */
-  padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du titre */
-  cursor: pointer;
 }
 
 /* Styles pour les titres de niveau 3 (h3) */
 h3 {
   font-family: "Exo", sans-serif;
   font-size: 30px; /* Définit la taille de la police du titre */
-  margin-bottom: 10px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 
 /* Styles pour les paragraphes */
 p {
   text-align: center;
-  background-color: rgb(34, 34, 34); /* Définit la couleur de fond du paragraphe */
-  border-radius: 5px; /* Applique des coins arrondis */
   font-family: "Exo", sans-serif; /* Utilise la police spécifiée pour les paragraphes */
-  color: rgb(255, 255, 255); /* Définit la couleur du texte */
   font-size: 22px; /* Définit la taille de la police à 1.2 fois la taille de base *
 border: 1px solid $border; /* Ajoute une bordure solide de 1px */
-  font-size: 22px; /* Définit la taille de la police à 1.2 fois la taille de base */
-  line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
-  margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
-  padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
-  box-shadow: 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre portée pour donner de la profondeur */
 }
 
 /* Styles pour les liens */
 a {
+  text-align: center;
   text-decoration: none;
   font-family: "Exo", sans-serif;
   font-size: 22px;
-  color: rgb(0, 255, 0); /* Définit la couleur du texte des liens */
-  cursor: pointer;
-}
-a:hover {
-  color: rgb(44, 62, 80); /* Change la couleur du texte des liens au survol */
 }
 
 /* Styles pour les boutons */
@@ -304,6 +273,10 @@ footer #footer-container .social-icons a span {
   font-size: 14px;
 }
 
+#admin {
+  margin-top: 150px;
+}
+
 #role {
   background-color: rgb(44, 62, 80);
   border-radius: 10px;
@@ -404,6 +377,9 @@ footer #footer-container .social-icons a span {
   min-height: 100vh;
   padding: 20px;
 }
+#register h1 {
+  margin-bottom: 100px;
+}
 #register .register-form {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $fd a une valeur (n'est pas false) */
@@ -411,7 +387,8 @@ footer #footer-container .social-icons a span {
   width: 300px;
 }
 #register .register-form label {
-  font-size: 1px;
+  text-align: center;
+  font-size: 22px;
   color: rgb(255, 255, 255);
   margin-bottom: 5px;
 }
@@ -435,6 +412,9 @@ footer #footer-container .social-icons a span {
   min-height: 100vh;
   padding: 20px;
 }
+#login-form h1 {
+  margin-bottom: 100px;
+}
 #login-form .form-login {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $fd a une valeur (n'est pas false) */
@@ -453,6 +433,10 @@ footer #footer-container .social-icons a span {
   overflow: hidden;
   margin: auto;
   width: 80%;
+}
+#carousel h1 {
+  margin-top: 30px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
 }
 #carousel .carousel-slides {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
@@ -505,10 +489,16 @@ footer #footer-container .social-icons a span {
 
 .presentation-container {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
+  /* Vérifie si la variable $fd a une valeur (n'est pas false) */
+  flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
+  display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $jc a une valeur (n'est pas false) */
   justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
   margin: 0 auto;
   margin-top: 30px;
+}
+.presentation-container h2 {
+  padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du titre */
 }
 .presentation-container .presentation {
   width: 60%;
@@ -521,9 +511,27 @@ footer #footer-container .social-icons a span {
   padding: 20px;
   margin-bottom: 20px;
 }
+.presentation-container .presentation .section h3 {
+  margin-bottom: 10px;
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
+.presentation-container .presentation .section p {
+  background-color: rgb(34, 34, 34); /* Définit la couleur de fond du paragraphe */
+  border-radius: 5px; /* Applique des coins arrondis */
+  color: rgb(255, 255, 255); /* Définit la couleur du texte */
+  line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
+  margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
+  padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
+  box-shadow: 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre portée pour donner de la profondeur */
+}
 .presentation-container .presentation .section a {
   text-align: center;
   margin-bottom: 10px;
+  color: rgb(0, 255, 0); /* Définit la couleur du texte des liens */
+  cursor: pointer;
+}
+.presentation-container .presentation .section a:hover {
+  color: rgb(44, 62, 80); /* Change la couleur du texte des liens au survol */
 }
 
 @media (max-width: 768px) {
@@ -604,6 +612,11 @@ footer #footer-container .social-icons a span {
   background-color: rgb(44, 62, 80);
 }
 
+#ajouter {
+  margin-top: 150px;
+  text-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
+}
+
 /* Styles pour les sections de formulaire (ajouter/modifier personnage, jeu, boss) */
 #add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
@@ -623,12 +636,18 @@ footer #footer-container .social-icons a span {
   flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
   /* Centre les éléments enfants du formulaire en colonne sans alignement horizontal ou vertical supplémentaire */
   width: 300px; /* Définit la largeur du formulaire à 300px */
+  margin-top: 50px;
 }
 #add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label, #modify-boss form label {
   text-align: center;
   font-size: 22px; /* Définit la taille de la police du label à 1.2em */
   color: rgb(255, 255, 255); /* Définit la couleur du texte du label à $color_1 */
   margin-bottom: 5px; /* Ajoute un espace de 5px en dessous de chaque label */
+}
+
+#titre-list {
+  margin-top: 150px;
+  text-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
 }
 
 /* Styles pour les sections administratives de gestion de personnages, boss et jeux */
@@ -648,6 +667,7 @@ footer #footer-container .social-icons a span {
   flex-wrap: wrap; /* Applique la valeur de $fw à la propriété flex-wrap pour contrôler si les éléments doivent être déplacés sur plusieurs lignes */
   /* Utilisation de Flexbox pour disposer les éléments avec un espace autour, alignés au début, sans alignement vertical spécifique, avec retour à la ligne */
   margin: 20px; /* Ajoute un espace extérieur de 20px tout autour des sections */
+  margin-top: 50px;
   /* Styles pour les listes à l'intérieur des sections */
 }
 #list-character-admin .list,
@@ -679,8 +699,6 @@ footer #footer-container .social-icons a span {
 #list-modify-character-admin .list a,
 #list-modify-games-admin .list a,
 #list-modify-boss-admin .list a {
-  text-align: center;
-  text-decoration: none;
   color: rgb(255, 255, 255); /* Définit la couleur du texte du lien */
   border-radius: 10px; /* Arrondit les coins de la bordure du lien */
   font-family: "Exo", sans-serif; /* Applique la police de caractères spécifiée pour les liens */
@@ -713,7 +731,15 @@ footer #footer-container .social-icons a span {
   height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
   width: 100%; /* Définit la largeur de l'image à 100% du conteneur */
   margin-top: 10px; /* Ajoute un espace extérieur de 10px au-dessus de l'image */
-  box-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
+}
+#list-character-admin .list p,
+#list-boss-admin .list p,
+#list-delete-character-admin .list p,
+#list-delete-boss-admin .list p,
+#list-modify-character-admin .list p,
+#list-modify-games-admin .list p,
+#list-modify-boss-admin .list p {
+  margin-top: 10px;
 }
 
 /* Styles pour les sections de suppression de jeux, personnages et boss */
@@ -759,6 +785,11 @@ footer #footer-container .social-icons a span {
   margin-top: 20px; /* Ajoute un espace extérieur de 20px au-dessus du conteneur des boutons */
 }
 
+#liste {
+  margin-top: 30px;
+  text-shadow: 0 0 10px rgb(0, 255, 0);
+}
+
 #list-games {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $jc a une valeur (n'est pas false) */
@@ -782,25 +813,39 @@ footer #footer-container .social-icons a span {
   margin: 20px;
   width: calc(30% - 40px);
 }
+#list-games .list h2 {
+  margin-top: 10px;
+  cursor: pointer;
+}
+#list-games .list h2:hover {
+  color: rgb(0, 255, 0);
+}
+#list-games .list p {
+  margin-top: 20px;
+}
 #list-games .list .additional-links {
   margin-top: 10px;
 }
-#list-games .list a {
+#list-games .list .additional-links a {
   text-align: center;
+  background-color: rgb(44, 62, 80);
   border-radius: 10px;
+  border: rgb(0, 255, 0);
+  color: rgb(0, 255, 0);
   display: block;
   margin: 5px 0;
   padding: 10px;
   transition: background-color 0.3s;
 }
-#list-games .list a:hover {
+#list-games .list .additional-links a:hover {
   background-color: rgb(34, 34, 34);
 }
 #list-games .list img {
   border-radius: 5px;
+  margin-top: 20px;
   height: auto;
   width: 100%;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
+  box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 @media (max-width: 768px) {
@@ -827,6 +872,11 @@ footer #footer-container .social-icons a span {
     padding: 8px;
   }
 }
+#titre-detail {
+  text-shadow: 0 0 10px rgb(0, 255, 0);
+  margin-top: 20px;
+}
+
 /* Styles pour les sections de détails des personnages de jeu et des boss de jeu */
 #game-character-detail, #game-boss-detail {
   border-radius: 10px; /* Arrondit les coins de la bordure */
@@ -835,8 +885,8 @@ footer #footer-container .social-icons a span {
   border: 2px solid rgb(0, 255, 0); /* Ajoute une bordure solide de 2px autour des sections */
   padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du contenu */
   margin: 20px auto; /* Ajoute un espace extérieur de 20px tout autour des sections et centre les sections horizontalement */
-  width: 90%; /* Définit la largeur des sections à 90% de celle de leur conteneur parent */
-  max-width: 90%; /* Définit la largeur maximale des sections à 90% */
+  width: 70%; /* Définit la largeur des sections à 90% de celle de leur conteneur parent */
+  max-width: 80%; /* Définit la largeur maximale des sections à 90% */
   /* Grille pour les éléments de détail des personnages */
   /* Bloc pour chaque élément de détail de personnage */
   /* Conteneur pour l'image du personnage */
@@ -846,7 +896,7 @@ footer #footer-container .social-icons a span {
 }
 #game-character-detail .game-character-grid, #game-boss-detail .game-character-grid {
   display: grid; /* Utilise une grille pour disposer les éléments enfants */
-  grid-template-columns: repeat(3, 1fr); /* Crée trois colonnes de largeur égale dans la grille */
+  grid-template-columns: repeat(2, 1fr); /* Crée trois colonnes de largeur égale dans la grille */
   gap: 60px; /* Définit un espace de 60px entre les colonnes et les rangées */
 }
 #game-character-detail .game-character-block, #game-boss-detail .game-character-block {
@@ -874,12 +924,11 @@ footer #footer-container .social-icons a span {
   margin-bottom: 20px; /* Ajoute un espace de 20px en dessous de l'image */
 }
 #game-character-detail .game-character-image img, #game-boss-detail .game-character-image img {
-  border-radius: 5px; /* Arrondit les coins de l'image */
   -o-object-fit: cover;
      object-fit: cover; /* Assure que l'image couvre le conteneur sans déformation */
   max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
   max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du conteneur */
-  box-shadow: 0 0 10px rgb(0, 255, 0); /* Ajoute une ombre portée autour de l'image */
+  box-shadow: 0 0 10px rgb(0, 0, 0); /* Ajoute une ombre portée autour de l'image */
 }
 #game-character-detail .game-character-info, #game-boss-detail .game-character-info {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
@@ -894,6 +943,14 @@ footer #footer-container .social-icons a span {
   border-radius: 5px; /* Arrondit les coins de la bordure de l'élément */
   padding: 15px; /* Ajoute un espace intérieur de 15px tout autour de l'élément */
   width: 100%; /* Définit la largeur de l'élément à 100% du conteneur parent */
+}
+#game-character-detail .game-character-item h2, #game-boss-detail .game-character-item h2 {
+  text-shadow: 0 0 5px rgb(0, 255, 0);
+  border-bottom: 2px solid rgb(0, 255, 0);
+  padding-bottom: 5px;
+}
+#game-character-detail .game-character-item p, #game-boss-detail .game-character-item p {
+  margin-top: 20px;
 }
 #game-character-detail .game-character-item .description-title, #game-boss-detail .game-character-item .description-title {
   text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0); /* Ajoute une ombre au texte pour le rendre plus visible */
@@ -956,6 +1013,9 @@ footer #footer-container .social-icons a span {
   width: 80%;
   max-width: 60%;
 }
+#games-detail h1 {
+  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+}
 #games-detail .games-image {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $jc a une valeur (n'est pas false) */
@@ -974,7 +1034,7 @@ footer #footer-container .social-icons a span {
   max-width: 100%;
   max-height: 100%;
   transition: transform 0.3s ease;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
+  box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 #games-detail .games-info {
   display: grid;
@@ -992,11 +1052,13 @@ footer #footer-container .social-icons a span {
   transition: transform 0.3s ease;
   box-shadow: 0 0 5px rgb(0, 255, 0);
 }
-#games-detail .games-item .description-title {
-  font-size: 30px;
-  display: block;
-  margin-bottom: 10px;
-  text-shadow: 0 0 3px rgb(0, 255, 0), 0 0 5px rgb(0, 255, 0);
+#games-detail .games-item h2 {
+  text-shadow: 0 0 5px rgb(0, 255, 0);
+  border-bottom: 2px solid rgb(0, 255, 0);
+  padding-bottom: 5px;
+}
+#games-detail .games-item p {
+  margin-top: 20px;
 }
 #games-detail .games-item:last-child {
   grid-column: span 2;
@@ -1035,6 +1097,9 @@ footer #footer-container .social-icons a span {
   width: 80%;
   max-width: 60%;
 }
+#story-game h1 {
+  text-shadow: 0 0 10px rgb(0, 255, 0);
+}
 #story-game .story {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $ai a une valeur (n'est pas false) */
@@ -1045,9 +1110,10 @@ footer #footer-container .social-icons a span {
 }
 #story-game .story img {
   border-radius: 5px;
+  margin-top: 20px;
   max-width: 75%;
   width: 50%;
-  box-shadow: 0 0 10px rgb(0, 255, 0);
+  box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 @media (max-width: 768px) {

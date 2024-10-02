@@ -9,7 +9,7 @@ class ListBossViews {
     public function listCharacter($boss) {
         // Début de la génération du contenu HTML pour la liste des boss
         ?>
-        <h1>LISTE DES BOSS</h1> <!-- Titre principal pour la liste des boss -->
+        <h1 id="titre-list">LISTE DES BOSS</h1> <!-- Titre principal pour la liste des boss -->
         <div id="list-boss-admin"> <!-- Conteneur principal pour la liste des boss -->
             <?php foreach ($boss as $boss): ?> <!-- Boucle à travers chaque élément de la liste des boss -->
                 <div class="list"> <!-- Conteneur pour chaque boss -->

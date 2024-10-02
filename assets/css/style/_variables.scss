@@ -31,13 +31,14 @@ $border_radius_2: 10px; // Rayon de bordure pour les coins plus arrondis
 // Couleur de bordure spécifique pour certains éléments
 $border-color_1: rgb(44, 62, 80); // Bordure de couleur gris-bleu
 
+$font-size_logo: 70px; // Variable définissant la taille de la police pour le logo. La taille est assez grande (70px), ce qui suggère un élément de haute importance ou visibilité.
 
-$font-size_logo: 70px;
-$font-size_title: 40px;
-$font-size_sous-title: 30px;
-$font-size_close-button: 24px;
-$font-size_para: 22px;
-$font-size_input: 18px;
-$font-size_select: 16px;
-$font-size_span: 14px;
-$font-size_mobile: 1px;
+$font-size_title: 40px; // Variable définissant la taille de la police pour les titres principaux. À 40px, cette taille est bien adaptée pour des titres en tête de page ou de section.
+$font-size_sous-title: 30px; // Variable définissant la taille de la police pour les sous-titres. Légèrement plus petite que celle du titre principal, elle permet de différencier les sous-sections tout en restant visible.
+$font-size_close-button: 24px; // Variable définissant la taille de la police pour les boutons de fermeture (close button). À 24px, cette taille assure que le bouton est lisible tout en restant discret.
+$font-size_para: 22px; // Variable définissant la taille de la police pour les paragraphes. Une taille de 22px est relativement grande pour du texte courant, ce qui suggère une mise en page très lisible.
+$font-size_input: 18px; // Variable définissant la taille de la police pour les champs de saisie (input). 18px est une taille confortable pour que le texte saisi soit clairement visible.
+$font-size_select: 16px; // Variable définissant la taille de la police pour les éléments de sélection (select). 16px est une taille standard qui convient bien aux champs de formulaire.
+$font-size_span: 14px; // Variable définissant la taille de la police pour les éléments `<span>`. Ces éléments contiennent souvent du texte d'accompagnement ou des informations secondaires, donc une taille de 14px est adéquate.
+$font-size_mobile: 1px; // Variable définissant la taille de la police pour les appareils mobiles. 1px semble être une erreur, car une telle taille est trop petite pour être lisible. Une taille plus réaliste pour le mobile serait entre 14px et 18px.
+

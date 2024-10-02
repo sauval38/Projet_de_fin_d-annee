@@ -9,7 +9,7 @@ class DeleteGamesViews {
     public function listDeleteGames($games) {
         ?>
         <!-- Titre de la page -->
-        <h1>LISTE DES JEUX</h1>
+        <h1 id="titre-list">LISTE DES JEUX</h1>
         <!-- Conteneur principal pour la liste des jeux à supprimer -->
         <div id="delete-games">
             <?php 

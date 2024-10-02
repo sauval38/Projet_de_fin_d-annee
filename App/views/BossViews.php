@@ -13,7 +13,7 @@ class BossViews {
             ?>
 
             <!-- Affiche le titre du jeu (nom du jeu) -->
-            <h1><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
+            <h1 id="titre-detail"><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
 
             <!-- Conteneur pour les détails des boss du jeu -->
             <div id="game-boss-detail">
@@ -62,7 +62,8 @@ class BossViews {
                                         <!-- Conteneur pour chaque élément d'information du boss -->
                                         <div class="game-character-item">
                                             <!-- Affiche le label de l'information suivi de la valeur -->
-                                            <p><strong class="description-title"><?= htmlspecialchars($label) ?>:</strong><br><?= nl2br(htmlspecialchars($item[$key])) ?></p>
+                                            <h2><?= htmlspecialchars($label) ?>:<br></h2>
+                                            <p><?= nl2br(htmlspecialchars($item[$key]))?></p>
                                         </div>
                                         <?php
                                     }

@@ -1,3 +1,8 @@
+#ajouter {
+    margin-top: 150px;
+    text-shadow: 0 0 10px $color_2; /* Ajoute une ombre portée autour de l'image */
+}
+
 /* Styles pour les sections de formulaire (ajouter/modifier personnage, jeu, boss) */
 #add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss {
     @include flexbox(center, center, column); /* Centre les éléments enfants horizontalement et verticalement en colonne */
@@ -7,6 +12,7 @@
     form {
         @include flexbox(false, false, column); /* Centre les éléments enfants du formulaire en colonne sans alignement horizontal ou vertical supplémentaire */
         width: 300px; /* Définit la largeur du formulaire à 300px */
+        margin-top: 50px;
 
         label {
             @include text-align(center);

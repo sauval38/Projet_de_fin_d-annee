@@ -10,7 +10,7 @@ class CharacterViews {
         if (isset($game) && is_array($game) && !empty($game)) { 
             ?>
             <!-- Affiche le titre du jeu -->
-            <h1><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
+            <h1 id="titre-detail"><?= htmlspecialchars($game[0]['titles_article']) ?></h1>
             <!-- Conteneur pour les détails du personnage du jeu -->
             <div id="game-character-detail">
                 <!-- Lien pour fermer la vue des détails et revenir à la liste des jeux -->
@@ -54,7 +54,8 @@ class CharacterViews {
                                         ?>
                                         <!-- Conteneur pour chaque caractéristique du personnage -->
                                         <div class="game-character-item">
-                                            <p><strong class="description-title"><?= htmlspecialchars($label) ?>:</strong><br><?= nl2br(htmlspecialchars($item[$key])) ?></p>
+                                            <h2><?= htmlspecialchars($label) ?>:<br></h2>
+                                            <p><?= nl2br(htmlspecialchars($item[$key]))?></p>
                                         </div>
                                         <?php
                                     }

@@ -10,7 +10,7 @@ class ModifyGamesViews {
         ?>
         <!-- Conteneur principal pour le formulaire de modification du jeu -->
         <div id="modify-games">
-            <h1>Modifier un jeu</h1> <!-- Titre du formulaire -->
+            <h1 id="titre-list">Modifier un jeu</h1> <!-- Titre du formulaire -->
 
             <!-- Formulaire de modification avec la méthode POST et le type d'encodage multipart/form-data pour les fichiers -->
             <form class="form-modify-games" method="post" enctype="multipart/form-data">

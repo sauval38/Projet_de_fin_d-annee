@@ -53,10 +53,11 @@ class HomeViews {
         ];
 
         ?>
-        <!-- Titre principal du site -->
-        <h1 id="logo">FINALSTORY</h1>
+        
         <!-- Conteneur principal pour le carrousel d'images -->
         <div id="carousel">
+            <!-- Titre principal du site -->
+            <h1>FINALSTORY</h1>
             <div class="carousel-slides">
                 <?php 
                 // Itération sur chaque diapositive du carrousel
@@ -77,10 +78,11 @@ class HomeViews {
             <button class="carousel-button carousel-button-next" aria-label="Next Slide">&raquo;</button>
         </div>
 
-        <!-- Titre pour la section de présentation -->
-        <h2>Découvrez l'Épopée Légendaire de Final Fantasy</h2>
+        
         <!-- Conteneur pour la présentation des sections -->
         <div class="presentation-container">
+            <!-- Titre pour la section de présentation -->
+            <h2>Découvrez l'Épopée Légendaire de Final Fantasy</h2>
             <div class="presentation">
                 <?php 
                 // Itération sur chaque section de présentation

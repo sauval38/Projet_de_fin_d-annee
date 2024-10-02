@@ -1,9 +1,13 @@
+#liste {
+    margin-top: 30px;
+    text-shadow: 0 0 10px $color-2; // Ajoute une ombre portée autour des images pour un effet de profondeur.
+}
+
 #list-games {
     @include flexbox(space-around, flex-start, false, wrap); // Utilise Flexbox pour disposer les éléments enfants en lignes, avec un espace uniforme autour des éléments, les éléments alignés au début sur l'axe transversal, sans alignement sur l'axe principal, et permet le retour à la ligne des éléments si nécessaire (wrap).
     margin: 20px; // Applique une marge de 20px autour du conteneur.
     
     .list {
-        
         @include flexbox(space-between, false, column); // Utilise Flexbox pour organiser les éléments enfants en colonne, avec un espace uniforme entre les éléments sur l'axe principal et sans alignement sur l'axe transversal.
         background-color: $background-color_2; // Définit la couleur de fond du conteneur des jeux à partir d'une variable.
         border-radius: $border_radius_2; // Applique un rayon de bordure pour arrondir les coins, la valeur est définie dans une variable.
@@ -12,28 +16,45 @@
         margin: 20px; // Ajoute une marge externe de 20px autour du conteneur des jeux.
         width: calc(30% - 40px); // Définit la largeur du conteneur des jeux à 30% de la largeur du parent moins 40px pour tenir compte des marges.
 
-        .additional-links {
-            margin-top: 10px; // Ajoute une marge supérieure de 10px pour espacer les liens supplémentaires des éléments au-dessus.
-        }
-
-        a {
-            @include text-align(center);
-            border-radius: $border_radius_2; // Applique un rayon de bordure pour arrondir les coins des liens, la valeur est définie dans une variable.            
-            display: block; // Affiche les liens comme des blocs pour qu'ils occupent toute la largeur disponible.
-            margin: 5px 0; // Ajoute une marge verticale de 5px entre les liens.
-            padding: 10px; // Ajoute une marge interne de 10px autour du texte des liens.
-            transition: background-color 0.3s; // Définit une transition pour le changement de couleur de fond au survol, avec une durée de 0.3 secondes.
+        h2 {
+            margin-top: 10px;
+            cursor: pointer;
 
             &:hover {
-                background-color: $background-color_1; // Change la couleur de fond des liens au survol, utilisant une couleur définie dans une variable.
+                color: $color_2; // Change la couleur de fond des liens au survol, utilisant une couleur définie dans une variable.
+            }
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        .additional-links {
+            margin-top: 10px; // Ajoute une marge supérieure de 10px pour espacer les liens supplémentaires des éléments au-dessus.
+
+            a {
+                @include text-align(center);
+                background-color: $background-color_2; // Définit la couleur de fond des sections à partir de la variable $background-color_2.
+                border-radius: $border_radius_2; // Applique un rayon de bordure pour arrondir les coins des liens, la valeur est définie dans une variable.     
+                border: $border; // Bordure verte lumineuse
+                color: $color_2;
+                display: block; // Affiche les liens comme des blocs pour qu'ils occupent toute la largeur disponible.
+                margin: 5px 0; // Ajoute une marge verticale de 5px entre les liens.
+                padding: 10px; // Ajoute une marge interne de 10px autour du texte des liens.
+                transition: background-color 0.3s; // Définit une transition pour le changement de couleur de fond au survol, avec une durée de 0.3 secondes.
+    
+                &:hover {
+                    background-color: $background-color_1; // Change la couleur de fond des liens au survol, utilisant une couleur définie dans une variable.
+                }
             }
         }
 
         img {
             border-radius: $border-radius-1; // Applique un rayon de bordure pour arrondir les coins des images, la valeur est définie dans une variable.
+            margin-top: 20px;
             height: auto; // Définit la hauteur des images à auto pour conserver leur ratio d'aspect.
             width: 100%; // Définit la largeur des images à 100% du conteneur parent, ce qui les rend responsives.
-            box-shadow: 0 0 10px $color-2; // Ajoute une ombre portée autour des images pour un effet de profondeur.
+            box-shadow: 0 0 10px $color_4; // Ajoute une ombre portée autour des images pour un effet de profondeur.
         }
     }
 }

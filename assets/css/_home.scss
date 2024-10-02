@@ -3,6 +3,11 @@
     overflow: hidden; // Cache les débordements du contenu (images) qui dépasse le conteneur.
     margin: auto; // Centre le carousel horizontalement avec une marge automatique.
     width: 80%; // Définit la largeur du carousel à 80% de la largeur du conteneur parent.
+
+    h1 {
+        margin-top: 30px; // Ajoute une marge supérieure de 30px pour espacer le logo des éléments au-dessus.
+        text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; // Applique un effet d'ombre portée au texte du logo pour un effet de profondeur.
+    }
     
     .carousel-slides {
         @include flexbox(); // Utilise Flexbox pour disposer les éléments en ligne.
@@ -60,9 +65,14 @@
 }
 
 .presentation-container {
+    @include flexbox(false, false, column);
     @include flexbox(center); // Utilise Flexbox pour centrer le conteneur de présentation horizontalement.
     margin: 0 auto; // Centre le conteneur de présentation horizontalement avec une marge automatique.
     margin-top: 30px; // Ajoute une marge supérieure de 30px.
+
+    h2 {
+        padding: 10px; /* Ajoute un espace intérieur de 10px tout autour du titre */    
+    }
 
     .presentation {
         width: 60%; // Définit la largeur du conteneur de présentation à 60% de la largeur du parent.
@@ -75,10 +85,30 @@
             padding: 20px; // Ajoute une marge interne de 20px autour du contenu de la section.
             margin-bottom: 20px; // Ajoute une marge inférieure de 20px pour espacer les sections entre elles.
 
-           
+           h3 {
+                margin-bottom: 10px; // Ajoute une marge inférieure de 10px pour espacer le sous-titre des éléments suivants
+                text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; // Applique un effet d'ombre portée au texte des sous-titres h3 pour le rendre plus visible.
+           }
+
+           p {
+                background-color: $background-color_1; /* Définit la couleur de fond du paragraphe */
+                border-radius: $border-radius-1; /* Applique des coins arrondis */
+                color: $color_1; /* Définit la couleur du texte */
+                line-height: 1.6; /* Augmente l’interligne à 1.6 fois la taille de la police */
+                margin-top: 10px; /* Ajoute un espace de 10px au-dessus du paragraphe */
+                padding: 15px; /* Ajoute un espace intérieur de 15px autour du texte */
+                box-shadow: 0 0 5px $color_2; /* Ajoute une ombre portée pour donner de la profondeur */
+           }
+
             a {
                 @include text-align(center);
                 margin-bottom: 10px; // Ajoute une marge inférieure de 10px pour espacer les liens des éléments suivants.
+                color: $color_2; /* Définit la couleur du texte des liens */
+                cursor: pointer;
+            
+                &:hover {
+                    color: $color_3; /* Change la couleur du texte des liens au survol */
+                }
             }
         }
     }

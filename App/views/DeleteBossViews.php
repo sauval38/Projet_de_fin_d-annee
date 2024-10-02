@@ -9,7 +9,7 @@ class DeleteBossViews {
     public function listDeleteBoss($games) {
         ?>
         <!-- Titre de la page -->
-        <h1>LISTE DES BOSS</h1>
+        <h1 id="titre-list">LISTE DES BOSS</h1>
         <!-- Conteneur principal pour la liste des boss à supprimer -->
         <div id="delete-boss">
             <?php 

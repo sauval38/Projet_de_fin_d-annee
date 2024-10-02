@@ -3,12 +3,17 @@
     min-height: 100vh; // Définit une hauteur minimale de 100% de la hauteur de la fenêtre (viewport).
     padding: 20px; // Applique une marge interne de 20px à l'élément.
 
+    h1 {
+        margin-bottom: 100px;
+    }
+
     .register-form {
         @include flexbox(false, false, column); // Applique un modèle de boîte flexible (flexbox) sans centrage particulier des éléments enfants, avec les éléments disposés en colonne.
         width: 300px; // Définit la largeur de l'élément de formulaire à 300px.
 
         label {
-            font-size: $font-size_mobile; // Définit la taille de la police à 1.2em, ce qui est légèrement plus grand que la taille de police par défaut.
+            @include text-align(center);
+            font-size: $font-size_para;
             color: $color_1; // Applique une couleur de texte au label, issue de la variable `$color_1`.
             margin-bottom: 5px; // Ajoute une marge inférieure de 5px pour espacer le label des éléments suivants.
         }

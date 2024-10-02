@@ -1,3 +1,7 @@
+#titre-detail {
+    text-shadow: 0 0 10px $color_2; // Ajoute une ombre portée autour des images pour un effet de profondeur.
+    margin-top: 20px;
+}
 /* Styles pour les sections de détails des personnages de jeu et des boss de jeu */
 #game-character-detail, #game-boss-detail {
     border-radius: $border_radius_2; /* Arrondit les coins de la bordure */
@@ -6,13 +10,13 @@
     border: 2px solid $border; /* Ajoute une bordure solide de 2px autour des sections */
     padding: 20px; /* Ajoute un espace intérieur de 20px tout autour du contenu */
     margin: 20px auto; /* Ajoute un espace extérieur de 20px tout autour des sections et centre les sections horizontalement */
-    width: 90%; /* Définit la largeur des sections à 90% de celle de leur conteneur parent */
-    max-width: 90%; /* Définit la largeur maximale des sections à 90% */
+    width: 70%; /* Définit la largeur des sections à 90% de celle de leur conteneur parent */
+    max-width: 80%; /* Définit la largeur maximale des sections à 90% */
     
     /* Grille pour les éléments de détail des personnages */
     .game-character-grid {
         display: grid; /* Utilise une grille pour disposer les éléments enfants */
-        grid-template-columns: repeat(3, 1fr); /* Crée trois colonnes de largeur égale dans la grille */
+        grid-template-columns: repeat(2, 1fr); /* Crée trois colonnes de largeur égale dans la grille */
         gap: 60px; /* Définit un espace de 60px entre les colonnes et les rangées */
     }
     /* Bloc pour chaque élément de détail de personnage */
@@ -32,11 +36,10 @@
         margin-bottom: 20px; /* Ajoute un espace de 20px en dessous de l'image */
 
         img {
-            border-radius: $border_radius_1; /* Arrondit les coins de l'image */
             object-fit: cover; /* Assure que l'image couvre le conteneur sans déformation */
             max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
             max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du conteneur */
-            box-shadow: 0 0 10px $color_2; /* Ajoute une ombre portée autour de l'image */
+            box-shadow: 0 0 10px $color_4; /* Ajoute une ombre portée autour de l'image */
         }
     }
     /* Conteneur pour les informations du personnage */
@@ -51,6 +54,16 @@
         border-radius: $border_radius_1; /* Arrondit les coins de la bordure de l'élément */
         padding: 15px; /* Ajoute un espace intérieur de 15px tout autour de l'élément */
         width: 100%; /* Définit la largeur de l'élément à 100% du conteneur parent */
+
+        h2 {
+            text-shadow: 0 0 5px $color-2; // Ajouter une ombre portée autour des élément
+            border-bottom: 2px solid $color-2; // Ajouter un trait en bas du titre
+            padding-bottom: 5px; // Optionnel : ajouter de l'espace entre le texte et le trait
+        }
+
+        p {
+            margin-top: 20px;
+        }
 
         .description-title {
             text-shadow: 0 0 3px $color_2, 0 0 5px $color_2; /* Ajoute une ombre au texte pour le rendre plus visible */

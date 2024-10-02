@@ -8,6 +8,10 @@
     min-height: 100vh; // Définit la hauteur minimale à 100% de la hauteur de la fenêtre (viewport), assurant que le formulaire occupe tout l'espace disponible.
     padding: 20px; // Applique une marge interne de 20px au formulaire pour ajouter de l'espace autour du contenu.
 
+    h1 {
+        margin-bottom: 100px;
+    }
+
     .form-login {
         @include flexbox(false, false, column); // Utilise un modèle de boîte flexible (flexbox) pour organiser les éléments du formulaire en colonne.
         width: 300px; // Définit une largeur fixe de 300px pour le formulaire, ce qui limite sa taille sur les grands écrans.

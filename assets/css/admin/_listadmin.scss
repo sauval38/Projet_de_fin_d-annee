@@ -1,3 +1,8 @@
+#titre-list {
+    margin-top: 150px;
+    text-shadow: 0 0 10px $color_2; /* Ajoute une ombre portée autour de l'image */
+}
+
 /* Styles pour les sections administratives de gestion de personnages, boss et jeux */
 #list-character-admin,
 #list-boss-admin,
@@ -8,6 +13,8 @@
 #list-modify-boss-admin {
     @include flexbox(space-around, flex-start, false, wrap); /* Utilisation de Flexbox pour disposer les éléments avec un espace autour, alignés au début, sans alignement vertical spécifique, avec retour à la ligne */
     margin: 20px; /* Ajoute un espace extérieur de 20px tout autour des sections */
+    margin-top: 50px;
+
     /* Styles pour les listes à l'intérieur des sections */
     .list {
         @include flexbox(space-between, false, column); /* Utilisation de Flexbox pour disposer les éléments avec un espace entre eux, alignés verticalement en colonne */
@@ -20,8 +27,6 @@
     
         /* Styles pour les liens (a) à l'intérieur des listes */
         a {
-            @include text-align(center);
-            @include text-decoration(none);
             color: $color_1; /* Définit la couleur du texte du lien */
             border-radius: $border_radius_2; /* Arrondit les coins de la bordure du lien */
             font-family: $fontpara; /* Applique la police de caractères spécifiée pour les liens */
@@ -43,7 +48,10 @@
             height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
             width: 100%; /* Définit la largeur de l'image à 100% du conteneur */
             margin-top: 10px; /* Ajoute un espace extérieur de 10px au-dessus de l'image */
-            box-shadow: 0 0 10px $color_2; /* Ajoute une ombre portée autour de l'image */
+        }
+
+        p {
+            margin-top: 10px;
         }
     }
 }

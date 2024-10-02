@@ -22,18 +22,20 @@
     }
 }
 
-@mixin text-align($alignment) {
-    @if $alignment == left or $alignment == right or $alignment == center or $alignment == justify {
-      text-align: $alignment;
-    } @else {
-      @warn "Valeur invalide pour text-align: #{$alignment}";
-    }
+@mixin text-align($alignment) { // Déclare un mixin 'text-align' qui prend une variable '$alignment'. Ce mixin permet de définir l'alignement du texte.
+  @if $alignment == left or $alignment == right or $alignment == center or $alignment == justify { // Condition: Si la valeur de '$alignment' est 'left', 'right', 'center', ou 'justify', le code à l'intérieur sera exécuté.
+      text-align: $alignment; // Définit la propriété CSS 'text-align' avec la valeur fournie par '$alignment'.
+  } @else { // Sinon, si la valeur ne correspond à aucun des cas précédents...
+      @warn "Valeur invalide pour text-align: #{$alignment}"; // Affiche un avertissement dans la console avec un message d'erreur précisant que la valeur de '$alignment' est invalide.
+      
   }
+}
 
-@mixin text-decoration($decoration) {
-    @if $decoration == none or $decoration == underline or $decoration == overline or $decoration == line-through or $decoration == blink {
-      text-decoration: $decoration;
-    } @else {
-      @warn "Valeur invalide pour text-decoration: #{$decoration}";
-    }
+@mixin text-decoration($decoration) { // Déclare un mixin 'text-decoration' qui prend une variable '$decoration'. Ce mixin permet de définir la décoration du texte
+
+  @if $decoration == none or $decoration == underline or $decoration == overline or $decoration == line-through or $decoration == blink { // Condition: Si la valeur de '$decoration' est 'none', 'underline', 'overline', 'line-through', ou 'blink', le code à l'intérieur sera exécuté
+      text-decoration: $decoration; // Définit la propriété CSS 'text-decoration' avec la valeur fournie par '$decoration'.
+  } @else { // Sinon, si la valeur ne correspond à aucun des cas précédents...
+      @warn "Valeur invalide pour text-decoration: #{$decoration}"; // Affiche un avertissement dans la console avec un message d'erreur précisant que la valeur de '$decoration' est invalide.
   }
+}

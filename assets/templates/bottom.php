@@ -1,3 +1,6 @@
+<?php
+// Vérifiez si l'URL contient 'admin'
+if (strpos($_SERVER['REQUEST_URI'], 'admin') === false): ?>
 <footer> 
     <!-- Début de la balise <footer>, qui représente le pied de page du document. -->
     <nav id="footer-container"> 
@@ -44,6 +47,8 @@
     <!-- Fermeture de la balise <nav> "footer-container". -->
 </footer> 
 <!-- Fermeture de la balise <footer>. -->
+<?php endif; ?>  
+<!-- Fermeture de la balise php -->  
 </body> 
 <!-- Fermeture de la balise <body>, qui contient le contenu principal de la page. -->
 </html> 

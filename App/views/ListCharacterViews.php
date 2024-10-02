@@ -9,7 +9,7 @@ class ListCharacterViews {
     public function listCharacter($characters) {
         // Début de la génération du contenu HTML pour la liste des personnages
         ?>
-        <h1>LISTE DES PERSONNAGES</h1> <!-- Titre principal pour la liste des personnages -->
+        <h1 id="titre-list">LISTE DES PERSONNAGES</h1> <!-- Titre principal pour la liste des personnages -->
         <div id="list-character-admin"> <!-- Conteneur principal pour la liste des personnages -->
             <?php foreach ($characters as $character): ?> <!-- Boucle à travers chaque élément de la liste des personnages -->
                 <div class="list"> <!-- Conteneur pour chaque personnage -->

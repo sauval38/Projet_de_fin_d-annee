@@ -9,7 +9,7 @@ class ListDeleteBossViews {
     public function listDeleteBoss($games) {
         // Début de la génération du contenu HTML pour la liste des jeux
         ?>
-        <h1>LISTE DES JEUX</h1> <!-- Titre principal pour la liste des jeux -->
+        <h1 id="titre-list">LISTE DES JEUX</h1> <!-- Titre principal pour la liste des jeux -->
         <div id="list-delete-boss-admin"> <!-- Conteneur principal pour la liste des jeux -->
             <?php foreach ($games as $game): ?> <!-- Boucle à travers chaque élément de la liste des jeux -->
                 <div class="list"> <!-- Conteneur pour chaque jeu individuel -->
