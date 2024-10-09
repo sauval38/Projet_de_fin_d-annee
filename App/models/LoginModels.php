@@ -20,6 +20,7 @@ class LoginModels { // Déclare la classe 'LoginModels', qui gère les opératio
             $sqlLogin = $this->db->prepare("SELECT * FROM users WHERE email = :email"); // Prépare une requête SQL pour sélectionner toutes les colonnes de la table 'users' où l'email correspond à celui fourni.
             $sqlLogin->bindParam(':email', $email); // Lie la valeur de l'email à la requête préparée pour éviter les injections SQL.
             $sqlLogin->execute(); // Exécute la requête SQL.
+            
             $user = $sqlLogin->fetch(\PDO::FETCH_ASSOC);  // Récupère le résultat de la requête sous forme de tableau associatif. Si aucun utilisateur n'est trouvé, '$user' sera 'false'.
             if ($user && password_verify($password, $user['password'])) { // Vérifie que l'utilisateur existe et que le mot de passe fourni correspond au mot de passe haché dans la base de données.
                 $_SESSION['id'] = $user['id']; // Stocke l'ID de l'utilisateur dans la session pour garder une trace de son authentification.

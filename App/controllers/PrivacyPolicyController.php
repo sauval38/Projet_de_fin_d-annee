@@ -7,7 +7,7 @@ class PrivacyPolicyController {
     protected $privacyPolicyViews;
 
     public function __construct() {
-        $this->privacyPolicyViews = new PrivacyPolicyViews;
+        $this->privacyPolicyViews = new PrivacyPolicyViews();
     }
 
     public function privacy() {

@@ -250,6 +250,7 @@ footer #footer-container .footer-section a {
 }
 footer #footer-container .footer-section a:hover {
   text-decoration: underline;
+  color: rgb(0, 255, 0); /* Change la couleur de fond du bouton lorsqu'il est survolé */
 }
 footer #footer-container .social-icons {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
@@ -618,7 +619,7 @@ footer #footer-container .social-icons a span {
 }
 
 /* Styles pour les sections de formulaire (ajouter/modifier personnage, jeu, boss) */
-#add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss {
+#add-character, #add-games, #add-boss, #modify-character, #modify-games, #modify-boss, #form-contact {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $jc a une valeur (n'est pas false) */
   justify-content: center; /* Applique la valeur de $jc à la propriété justify-content pour aligner les éléments horizontalement */
@@ -630,7 +631,7 @@ footer #footer-container .social-icons a span {
   min-height: 100vh; /* Définit la hauteur minimale de la section à 100% de la hauteur de la fenêtre */
   padding: 20px; /* Ajoute un espace intérieur de 20px tout autour de la section */
 }
-#add-character form, #add-games form, #add-boss form, #modify-character form, #modify-games form, #modify-boss form {
+#add-character form, #add-games form, #add-boss form, #modify-character form, #modify-games form, #modify-boss form, #form-contact form {
   display: flex; /* Définit l'affichage en mode Flexbox pour l'élément auquel le mixin est appliqué */
   /* Vérifie si la variable $fd a une valeur (n'est pas false) */
   flex-direction: column; /* Applique la valeur de $fd à la propriété flex-direction pour définir l'orientation des éléments flexibles */
@@ -638,7 +639,10 @@ footer #footer-container .social-icons a span {
   width: 300px; /* Définit la largeur du formulaire à 300px */
   margin-top: 50px;
 }
-#add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label, #modify-boss form label {
+#add-character form h2, #add-games form h2, #add-boss form h2, #modify-character form h2, #modify-games form h2, #modify-boss form h2, #form-contact form h2 {
+  margin-bottom: 30px;
+}
+#add-character form label, #add-games form label, #add-boss form label, #modify-character form label, #modify-games form label, #modify-boss form label, #form-contact form label {
   text-align: center;
   font-size: 22px; /* Définit la taille de la police du label à 1.2em */
   color: rgb(255, 255, 255); /* Définit la couleur du texte du label à $color_1 */

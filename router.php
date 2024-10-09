@@ -23,6 +23,7 @@ use Controllers\AdminBoardController;
 use Controllers\BossController;
 use Controllers\ButtonAdminController;
 use Controllers\CharacterController;
+use Controllers\ContactController;
 use Controllers\DeleteBossController;
 use Controllers\DeleteCharacterController;
 use Controllers\DeleteGamesController;
@@ -310,6 +311,15 @@ switch($action) {
         }
         // Termine l'exécution de ce cas
         break;
+
+        case 'contact':
+            $contactControllers = new ContactController();
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $contactControllers->sendMessage();
+            } else {
+                $contactControllers->contactController();
+            }
+            break;
     
     // Cas où $action est égal à 'listgames'
     case 'listgames':

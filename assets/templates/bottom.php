@@ -9,7 +9,9 @@ if (strpos($_SERVER['REQUEST_URI'], 'admin') === false): ?>
             <!-- Div avec la classe "footer-section", utilisée pour regrouper les éléments du pied de page. -->
             <a class="footer-para">&copy; 2024 GamingSite. Tous droits réservés.</a> 
             <!-- Lien avec la classe "footer-para", qui affiche le copyright de l'année 2024 pour GamingSite. -->
-            <a href="legalNotices">Mentions légales</a> | 
+            <a href="legalNotices">Mentions légales</a> |
+             <!-- Lien hypertexte vers la page contact. -->
+            <a href="contact">Contact</a> |  
             <!-- Lien hypertexte vers la page des mentions légales avec le texte "Mentions légales". -->
             <a href="privacyPolicy">Politique de confidentialité</a> 
             <!-- Lien hypertexte vers la page de la politique de confidentialité avec le texte "Politique de confidentialité". -->

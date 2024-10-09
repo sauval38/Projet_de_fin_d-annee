@@ -26,6 +26,8 @@ footer {
 
                 &:hover {
                    @include text-decoration(underline);
+                    color: $background-color_4; /* Change la couleur de fond du bouton lorsqu'il est survolé */
+                
                 }
             }
         }

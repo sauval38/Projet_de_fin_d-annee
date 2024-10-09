@@ -76,3 +76,6 @@ RewriteRule ^legalNotices$ index.php?action=legalNotices [L,QSA]
 
 # Redirection pour l'accès à 'politique de confidentialité'
 RewriteRule ^privacyPolicy$ index.php?action=privacyPolicy [L,QSA]
+
+# Redirection pour l'accès à 'contact'
+RewriteRule ^contact$ index.php?action=contact [L,QSA]
