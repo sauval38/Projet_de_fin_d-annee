@@ -7,6 +7,9 @@
             "Controllers\\": "App/controllers/",
             "Models\\": "App/models/",
             "Views\\": "App/views",
+            "AdminControllers\\": "App/controllers/admin",
+            "AdminModels\\": "App/models/admin",
+            "AdminViews\\": "App/views/admin",
             "Lib\\": "lib/"
         }
     },
