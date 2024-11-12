@@ -7,9 +7,12 @@ use PDOException; // Importation de l'exception PDOException pour la gestion des
 class Database {
     protected $cnx; // Propriété qui contiendra l'objet PDO une fois la connexion établie
     protected $host = 'localhost'; // Adresse de l'hôte de la base de données MySQL
-    protected $db = 'final-fantasy'; // Nom de la base de données
-    protected $login = 'root'; // Nom d'utilisateur pour la connexion à la base de données
-    protected $pw = 'root'; // Mot de passe pour la connexion à la base de données
+    protected $db = 'qcqc_charles'; // Nom de la base de données
+    protected $login = 'qcqc_dev'; // Nom d'utilisateur pour la connexion à la base de données
+    protected $pw = 'tralalapouetpouet'; // Mot de passe pour la connexion à la base de données
+    // protected $db = 'final-fantasy'; // Nom de la base de données
+    // protected $login = 'root'; // Nom d'utilisateur pour la connexion à la base de données
+    // protected $pw = 'root'; // Mot de passe pour la connexion à la base de données
 
     public function __construct() {
         try {

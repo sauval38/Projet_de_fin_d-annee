@@ -1,81 +1,89 @@
+# Active le moteur de réécriture d'URL
 RewriteEngine On
 
-# Redirection pour l'accès à 'accueil'
+# Redirige la racine (accueil) vers index.php avec l'action 'accueil'
 RewriteRule ^$ index.php?action=accueil [L,QSA]
 
-# Redirection pour l'accès à 'inscription'
+# Redirige '/register' vers index.php avec l'action 'register'
 RewriteRule ^register$ index.php?action=register [L,QSA]
 
-# Redirection pour l'accès à 'login'
+# Redirige '/login' vers index.php avec l'action 'login'
 RewriteRule ^login$ index.php?action=login [L,QSA]
 
-# Redirection pour l'accès à 'logout'
+# Redirige '/logout' vers index.php avec l'action 'logout'
 RewriteRule ^logout$ index.php?action=logout [L,QSA]
 
-# Redirection pour l'accès à 'Admin'
+# Redirige '/admin' vers index.php avec l'action 'admin'
 RewriteRule ^admin$ index.php?action=admin [L,QSA]
 
-# Redirection pour l'accès à 'Admin/ajouterunjeux'
+# Redirige '/admin/addGames' vers index.php avec l'action 'admin' et le paramètre 'step=addGames'
 RewriteRule ^admin/addGames$ index.php?action=admin&step=addGames [L,QSA]
 
-# Redirection pour l'accès à 'Admin/modifierunjeux'
+# Redirige '/admin/modifyGames' vers index.php avec l'action 'admin' et le paramètre 'step=modifyGames'
 RewriteRule ^admin/modifyGames$ index.php?action=admin&step=modifyGames [L,QSA]
-# Redirection pour l'accès à 'Admin/modifierunjeux'
+
+# Redirige '/admin/modifyGames/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^admin/modifyGames/(\d+)$ index.php?action=admin&step=modifyGames&id=$1 [L,QSA]
 
-# Redirection pour l'accès à 'Admin/supprimerunjeux'
+# Redirige '/admin/deleteGames' vers index.php avec l'action 'admin' et le paramètre 'step=deleteGames'
 RewriteRule ^admin/deleteGames$ index.php?action=admin&step=deleteGames [L,QSA]
 
-# Redirection pour l'accès à 'Admin/ajouterunpersonnage'
+# Redirige '/admin/addCharacter' vers index.php avec l'action 'admin' et le paramètre 'step=addCharacter'
 RewriteRule ^admin/addCharacter$ index.php?action=admin&step=addCharacter [L,QSA]
 
-# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+# Redirige '/admin/modifyCharacter' vers index.php avec l'action 'admin' et le paramètre 'step=modifyCharacter'
 RewriteRule ^admin/modifyCharacter$ index.php?action=admin&step=modifyCharacter [L,QSA]
-# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+
+# Redirige '/admin/modifyCharacter/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^admin/modifyCharacter/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1 [L,QSA]
-# Redirection pour l'accès à 'Admin/modifierunpersonnage'
+
+# Redirige '/admin/modifyCharacter/{id}/{characterId}' avec deux IDs vers index.php avec les paramètres correspondants
 RewriteRule ^admin/modifyCharacter/(\d+)/(\d+)$ index.php?action=admin&step=modifyCharacter&id=$1&characterId=$2 [L,QSA]
 
-# Redirection pour l'accès à 'Admin/supprimerunpersonnage'
+# Redirige '/admin/deleteCharacter' vers index.php avec l'action 'admin' et le paramètre 'step=deleteCharacter'
 RewriteRule ^admin/deleteCharacter$ index.php?action=admin&step=deleteCharacter [L,QSA]
-# Redirection pour l'accès à 'Admin/supprimerunpersonnage'
+
+# Redirige '/admin/deleteCharacter/{gameId}' avec un ID de jeu vers index.php avec les paramètres correspondants
 RewriteRule ^admin/deleteCharacter/(\d+)$ index.php?action=admin&step=deleteCharacter&gameId=$1 [L,QSA]
 
-# Redirection pour l'accès à 'Admin/ajouterunboss'
+# Redirige '/admin/addBoss' vers index.php avec l'action 'admin' et le paramètre 'step=addBoss'
 RewriteRule ^admin/addBoss$ index.php?action=admin&step=addBoss [L,QSA]
 
-# Redirection pour l'accès à 'Admin/modifierunboss'
+# Redirige '/admin/modifyBoss' vers index.php avec l'action 'admin' et le paramètre 'step=modifyBoss'
 RewriteRule ^admin/modifyBoss$ index.php?action=admin&step=modifyBoss [L,QSA]
-# Redirection pour l'accès à 'Admin/modifierunboss'
+
+# Redirige '/admin/modifyBoss/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^admin/modifyBoss/(\d+)$ index.php?action=admin&step=modifyBoss&id=$1 [L,QSA]
-# Redirection pour l'accès à 'Admin/modifierunboss'
+
+# Redirige '/admin/modifyBoss/{id}/{bossId}' avec deux IDs vers index.php avec les paramètres correspondants
 RewriteRule ^admin/modifyBoss/(\d+)/(\d+)$ index.php?action=admin&step=modifyBoss&id=$1&bossId=$2 [L,QSA]
 
-# Redirection pour l'accès à 'Admin/supprimerunboss'
+# Redirige '/admin/deleteBoss' vers index.php avec l'action 'admin' et le paramètre 'step=deleteBoss'
 RewriteRule ^admin/deleteBoss$ index.php?action=admin&step=deleteBoss [L,QSA]
-# Redirection pour l'accès à 'Admin/supprimerunboss'
+
+# Redirige '/admin/deleteBoss/{gameId}' avec un ID de jeu vers index.php avec les paramètres correspondants
 RewriteRule ^admin/deleteBoss/(\d+)$ index.php?action=admin&step=deleteBoss&gameId=$1 [L,QSA]
 
-# Redirection pour l'accès à 'liste jeux'
+# Redirige '/listgames' vers index.php avec l'action 'listgames'
 RewriteRule ^listgames$ index.php?action=listgames [L,QSA]
 
-# Redirection pour l'accès à 'jeux'
+# Redirige '/games/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^games/(\d+)$ index.php?action=games&id=$1 [L,QSA]
 
-# Redirection pour l'accès à 'histoire'
+# Redirige '/story/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^story/(\d+)$ index.php?action=story&id=$1 [L,QSA]
 
-# Redirection pour l'accès à 'personnage'
+# Redirige '/character/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^character/(\d+)$ index.php?action=character&id=$1 [L,QSA]
 
-# Redirection pour l'accès à 'boss'
+# Redirige '/boss/{id}' avec un ID vers index.php avec les paramètres correspondants
 RewriteRule ^boss/(\d+)$ index.php?action=boss&id=$1 [L,QSA]
 
-# Redirection pour l'accès à 'mentions legales'
+# Redirige '/legalNotices' vers index.php avec l'action 'legalNotices'
 RewriteRule ^legalNotices$ index.php?action=legalNotices [L,QSA]
 
-# Redirection pour l'accès à 'politique de confidentialité'
+# Redirige '/privacyPolicy' vers index.php avec l'action 'privacyPolicy'
 RewriteRule ^privacyPolicy$ index.php?action=privacyPolicy [L,QSA]
 
-# Redirection pour l'accès à 'contact'
+# Redirige '/contact' vers index.php avec l'action 'contact'
 RewriteRule ^contact$ index.php?action=contact [L,QSA]

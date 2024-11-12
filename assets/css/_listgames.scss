@@ -58,34 +58,54 @@
         }
     }
 }
+@media (max-width: 768px) { // Media query qui cible les écrans ayant une largeur maximale de 768px (tablettes et mobiles)
+    .list { // Sélection de la classe "list"
+        gap: 15px; // Ajoute un écart de 15px entre les éléments de la liste (si la liste est un flex container)
+        margin: 10px; // Définit une marge de 10px autour de la liste
+        flex: 1 1 100%; // Définit les propriétés du flex item pour occuper toute la largeur disponible
+        margin-bottom: 20px; // Ajoute une marge de 20px en bas de la liste
+        padding: 15px; // Ajoute un padding de 15px à l'intérieur de la liste
 
-// Styles pour les écrans de 768px ou moins (tablettes et mobiles).
-@media (max-width: 768px) {
-    
-    .list {
-        gap: 15px; // Définit un écart de 15px entre les éléments enfants du conteneur `.list`.
-        margin: 10px; // Réduit la marge externe à 10px.
-        flex: 1 1 100%; // Permet aux éléments de s'étendre et se rétrécir, avec une base de 100% de la largeur disponible.
-        margin-bottom: 20px; // Ajoute une marge inférieure de 20px pour espacer les éléments en colonne.
-        padding: 15px; // Réduit la marge interne à 15px.
-
-        h2 {
-            font-size: $font-size_sous-title; // Réduit la taille de la police des titres à 1.4rem sur les petits écrans.
-            margin-bottom: 15px; // Réduit la marge inférieure à 15px.
+        h2 { // Sélectionne tous les éléments <h2> à l'intérieur de .list
+            font-size: $font-size_sous-title; // Définit la taille de la police pour les titres (variable SCSS)
+            margin-bottom: 15px; // Ajoute une marge de 15px en bas des titres
         }
 
-        img {
-            margin-bottom: 10px; // Ajoute une marge inférieure de 10px aux images pour espacer les éléments en colonne.
+        img { // Sélectionne toutes les images à l'intérieur de .list
+            margin-bottom: 10px; // Ajoute une marge de 10px en bas des images
         }
 
-        p {
-            font-size: $font-size_mobile; // Réduit la taille de la police des paragraphes à 0.95rem pour les petits écrans.
-            margin-bottom: 10px; // Réduit la marge inférieure à 10px.
+        p { // Sélectionne tous les éléments <p> à l'intérieur de .list
+            font-size: $font-size_mobile; // Définit la taille de la police pour les paragraphes (variable SCSS)
+            margin-bottom: 10px; // Ajoute une marge de 10px en bas des paragraphes
         }
 
-        a {
-            font-size: $font-size_mobile; // Réduit la taille de la police des liens à 1.1em sur les petits écrans.
-            padding: 8px; // Réduit la marge interne à 8px.
+        .additional-links { // Sélectionne les éléments avec la classe "additional-links"
+            margin-top: 10px; // Ajoute une marge de 10px en haut des liens supplémentaires
+
+            a { // Sélectionne tous les éléments <a> (liens) à l'intérieur de .additional-links
+                font-family: Arial, sans-serif; // Définit la police du lien avec une police sans-serif par défaut (Arial)
+                color: #000; // Définit la couleur du texte du lien en noir
+                text-decoration: none; // Supprime la décoration de texte (soulignement par défaut)
+                visibility: visible; // S'assure que le lien est visible
+                opacity: 1; // Rend le lien pleinement visible
+                padding: 8px; // Ajoute un padding de 8px autour du lien
+                display: block; // Change le comportement du lien en bloc pour occuper toute la largeur disponible
+                width: 100%; // Définit la largeur du lien à 100% de son conteneur
+                text-align: center; // Aligne le texte du lien au centre
+                background-color: $background-color_2; // Définit la couleur de fond du lien (variable SCSS)
+                border-radius: $border_radius_2; // Définit un rayon de bordure pour les coins du lien (variable SCSS)
+                border: $border; // Ajoute une bordure autour du lien (variable SCSS)
+                transition: background-color 0.3s; // Ajoute une transition pour l'effet de survol sur la couleur de fond
+
+                &:hover { // Cible l'état de survol du lien
+                    background-color: $background-color_1; // Change la couleur de fond du lien au survol (variable SCSS)
+                }
+            }
         }
     }
 }
+
+
+
+
